@@ -1,0 +1,304 @@
+
+
+.hack-sc-container {
+    max-width: 1200px;
+    margin:  auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hack-sc-title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+
+.hack-sc-image {
+    width: 300px;
+    height: auto;
+    margin-right: 20px;
+    float: left;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hack-sc-paragraph {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 340px); /* Adjust width based on the image size */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.hack-sc-subtitle {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+ul.hack-sc-paragraph {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+ul.hack-sc-paragraph li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+
+.dr900-thumbnail-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-self: flex-start; /* Align thumbnails to the top of the main image */
+    margin-top: 50px;
+}
+
+.dr900-thumbnail {
+    width: 60px; /* Reduce the width to make thumbnails smaller */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.dr900-thumbnail.active {
+    border: 2px solid #007BFF;
+}
+
+.hack-sc-content-section {
+
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-container {
+    display: flex;
+    gap: 20px;
+}
+
+.cl17sc-thumbnail-container {
+    display: flex;
+    flex-direction: column; /* Arrange thumbnails vertically */
+    gap: 10px;
+    flex-basis: 30%; /* Thumbnails take up 30% of the space */
+    margin-top: 50px;
+}
+
+.cl17sc-thumbnail {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.cl17sc-thumbnail.active {
+    border: 2px solid #007BFF;
+}
+
+.hack-sc-paragraph {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+
+
+.tu5200-main-image-container {
+    margin-right: 20px;
+}
+
+.tu5200-main-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.tu5200-thumbnail-container {
+    display: flex;
+    /* flex-direction: column; */
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.tu5200-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.tu5200-thumbnail.active,
+.tu5200-thumbnail:hover {
+    border-color: #007bff;
+}
+
+/* Optional: Add fade-in effect for the main image */
+.tu5200-main-image.fade-in {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tu5200-main-image.fade-in {
+    opacity: 1;
+}
+
+
+hr {
+    margin: 40px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+@media screen and (max-width: 768px) {
+    .hack-sc-content-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hack-sc-image, .dr-900-main-image-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+@media screen and (max-width: 720px) {
+
+    /* Container and layout adjustments */
+    .hack-sc-container {
+        max-width: 100%;
+    }
+
+    /* Reduce title size */
+    .hack-sc-title {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+        gap: 10px; /* Add space between images */
+        align-items: center; /* Center images horizontally */
+        width: 100%; /* Ensure full width */
+    }
+
+    /* Adjust the size of images within the image container */
+    .image-container img {
+        width: 100%; /* Make images responsive */
+        max-width: 100%; /* Ensure no overflow */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 8px; /* Keep rounded corners */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better visibility */
+    }
+
+    /* Stack image and text content vertically */
+    .hack-sc-image {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 15px;
+        float: none;
+    }
+
+    .hack-sc-paragraph {
+        width: 100%;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Adjust subtitle font size */
+    .hack-sc-subtitle {
+        font-size: 20px;
+    }
+
+    /* Adjust UL lists */
+    ul.hack-sc-paragraph {
+        margin-left: 15px;
+    }
+
+    ul.hack-sc-paragraph li {
+        font-size: 14px;
+    }
+
+    /* DR-900 Thumbnail adjustments */
+    .dr900-thumbnail-container {
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+        margin-top: 30px;
+        margin-left: 20px;
+        height: auto;
+        width: 40px;
+    }
+
+    .dr900-thumbnail {
+        width: 40px;
+    }
+
+    /* TU-5200 Image and thumbnail adjustments */
+    .tu5200-main-image-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+        text-align: center; /* Center content */
+        width: 100%; /* Ensure full width */
+    }
+
+    .tu5200-main-image {
+        width: 100%; /* Make image take full width of the container */
+        max-width: 400px; /* Limit max-width for larger screens */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+
+    .tu5200-thumbnail-container {
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+        height: auto;
+        width:40px;
+    }
+
+    .tu5200-thumbnail {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* CL17SC thumbnail adjustments */
+    .cl17sc-thumbnail-container {
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+        height: auto;
+        width: 40px;
+    }
+
+    .cl17sc-thumbnail {
+        width: 80px;
+    }
+
+    /* Center content in hack-sc-content-section */
+    .hack-sc-content-section {
+        text-align: center;
+        gap: 10px;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+}

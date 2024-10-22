@@ -1,0 +1,116 @@
+
+.career-category-page-container {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.career-category-container {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.career-category-prod-list {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.career-category-prod-list .career-category-page {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.career-category-prod-list .career-category-page:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.career-category-prod-list .career-category-page-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.career-category-prod-list .career-category-list-group {
+    list-style: none;
+    padding: 0;
+}
+
+.career-category-prod-list .career-category-list-group-item {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.career-category-prod-list .career-category-list-group-item:hover {
+    background-color: #f0f0f0;
+    color: #007bff;
+}
+
+.career-category-prod-list .career-category-list-group-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Job Details Styles */
+.job-details {
+    flex: 3;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.job-details .job-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.job-details .job-location {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.job-details .job-qualification, 
+.job-details .job-certification {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.job-details .job-description {
+    font-size: 1em;
+}
+
+.job-details .job-description h5 {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.job-details .job-description ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.job-details .job-intro {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Submit Link Styles */
+.job-details a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.job-details a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+

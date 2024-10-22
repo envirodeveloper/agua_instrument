@@ -1,0 +1,524 @@
+/* .carousel-container {
+  position: relative;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  animation: bgChange 16s infinite;
+  background-image: url("../newImages/industry-home-header.jpg");
+}
+
+.leading-sustainable {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  width: 1200px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.leading-sustainable-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-btn {
+  display: inline-block;
+  position: relative;
+  padding: 0.50rem 1.5rem;
+  width: 160px;
+  font-size: 20px;
+  color: #fff; 
+  background: transparent;
+  text-decoration: none;
+  border: 2px solid #fff; 
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; 
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.4s ease;
+  z-index: 1;
+  opacity: 50%;
+}
+
+.contact-btn:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.contact-btn:hover {
+  color: #fff; 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); 
+  
+  
+}
+
+.contact-btn:hover .contact-span {
+  opacity: 0; 
+}
+
+.contact-btn:hover .icon {
+  opacity: 1;
+}
+
+.contact-span {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.4s ease;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #000;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+} */
+
+
+
+
+
+
+
+ .contact-btn {
+    position: relative;
+    padding: 8px 25px;
+    border: 1px solid #00aeff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #00aeff;
+    text-decoration: none;
+    overflow: hidden;
+    background-color: white;
+    opacity: 90%;
+    top: 25px;
+}
+
+.contact-btn .contact-span {
+    position: relative;
+    z-index: 1;
+    transition: 1s;
+    font-weight: 500;
+}
+
+.contact-btn .wave {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    width: 100%;
+    height: 15px; 
+    background: #00aeff;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    z-index: 0;
+    text-decoration: none;
+ 
+}
+
+.contact-btn:hover {
+    text-decoration: none;
+   
+   
+}
+
+.contact-btn:hover .wave {
+    transform: scaleY(1);
+    
+}
+
+.contact-btn .wave:before {
+    content: " ";
+    position: absolute;
+    top: -22px;
+    left: 0;
+    width: 100%;
+    height: 22px;
+    background: url("../newImages/wave.png");
+    animation: animate 0.5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: 118px;
+    }
+}
+
+.leading-sustainable{
+	position: absolute;
+     right: 15%; 
+     top: 180px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.leading-sustainable-title{
+    font-size: 30px;
+ } 
+
+   #moreContent {
+    display: none;
+  }
+
+  .about-readmore{
+    background-color: white;
+    padding: 5px 10px;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+
+  .about-readmore:hover{
+    background-color: #00aeff;
+  }
+
+
+.homepage-prod-col {
+    flex-basis: 0;
+    max-width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.homepage-prod-row{
+    display: flex;
+    justify-content:center ;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}  
+
+.bg-video{
+  min-width: 100%;
+	min-height: 40vh;
+	max-width: 100%;
+	max-height: 40vh;
+	object-fit: cover;
+	z-index: -1;
+	opacity: 0.9;
+}
+
+
+
+
+/**********************************Testimonials*********************************************/
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+
+.testimonials-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  flex: 0 0 auto;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+  position: relative;
+}
+
+.testimonial-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 5px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+.testimonial-author {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+
+.testimonial-position {
+  font-size: 14px;
+  color: #666;
+}
+
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-50%);
+  z-index: 10;
+  font-size: 20px;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 0px;
+}
+
+/************************************Testimonials*********************************************/
+
+
+
+/************************************Header**************************************************/
+
+
+
+
+.page-header-image-content {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.header-image-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.header-image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+.header-image-content .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.header-image-content .content {
+  position: absolute;
+  z-index: 2;
+  color: white;
+  padding: 20px;
+  max-width: 600px;
+  top: 100px;
+}
+
+.header-image-content .content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.header-image-content .content p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.header-image-content .content .btn {
+  border: 2px solid #fff;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.header-image-content .content .btn:hover {
+  background-color: #fff;
+  color: #005cbf;
+}
+
+
+/*******************************Products********************************************************/
+
+
+/************tech partners section ************************************************************/
+
+.hometech-partners-section {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping to new rows */
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+  background-color: #f7f7f7; /* Optional background color */
+}
+
+.hometech-partner {
+  flex: 1 1 calc(20% - 40px); /* Smaller size to fit 4 items per row */
+  max-width: calc(20% - 40px);
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hometech-partner img {
+  width: 100px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  object-fit: contain; /* Maintain aspect ratio within the box */
+  margin-bottom: 10px;
+  transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.hometech-partner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hometech-partner:hover img {
+  transform: scale(1.4); /* Zoom effect */
+}
+
+
+/************tech partners section ************************************************************/
+
+
+@media (max-width: 720px) {
+    .home-partners{
+        display: inline-flex;
+        row-gap: 5px;
+        position: relative;
+        top: 20px;
+        left: 0px;
+        flex-wrap: wrap;
+      }
+
+      .container {
+        width: 90%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .leading-sustainable{
+        position: absolute;
+         right: 15%; 
+         top: 120px;
+        left: 15%;
+        z-index: 10;
+        padding-top: 20px;
+        color: #fff;
+        text-align: center;
+    }
+
+  .leading-sustainable-title{
+     font-size: 20px;
+  }
+    
+  .hometech-partner {
+    flex: 1 1 calc(100% - 40px); /* Full width minus gaps */
+    max-width: calc(100% - 40px);
+}
+
+}
+  
+
+
+
+
+@media (max-width: 480px) {
+    .home-partners{
+        display: inline-flex;
+        row-gap: 5px;
+        position: relative;
+        top: 20px;
+        left: 0px;
+        flex-wrap: wrap;
+      }
+
+      .container {
+        width: 90%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .leading-sustainable{
+        position: absolute;
+         right: 5%; 
+         top: 100px;
+        left: 5%;
+        z-index: 10;
+        padding-top: 10px;
+        color: #fff;
+        text-align: center;
+    }
+
+  .leading-sustainable-title{
+     font-size: 16px;
+  }
+    
+
+}
+  
+  
+  
+  
+  
+  

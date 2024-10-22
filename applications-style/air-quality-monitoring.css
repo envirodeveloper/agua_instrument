@@ -1,0 +1,330 @@
+
+
+
+
+/* Main Content Styling */
+.airmonitor-intro-container {
+  overflow: hidden; /* Clear floats */
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.airmonitor-intro-img1,
+.airmonitor-intro-img2 {
+  max-width: 350px; /* Adjust width as needed */
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.airmonitor-intro-img1 {
+  float: left;
+  margin-right: 20px;
+}
+
+.airmonitor-intro-img2 {
+  float: right;
+  margin-left: 20px;
+}
+
+.airmonitor-intro-img1:hover,
+.airmonitor-intro-img2:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.airmonitor-intro-img1 img,
+.airmonitor-intro-img2 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.airmonitor-intro-para1,
+.airmonitor-intro-para2,
+.airmonitor-intro-para3 {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.airmonitor-needs-para1,
+.airmonitor-needs-para2{
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+  /*********************circle why choose us **********************************/
+/* Reset basic styles */
+
+
+.circle-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.why-choose-us {
+  background-color: #fff;
+}
+
+.why-choose-us h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.why-choose-us h2 span {
+  color: #4CAF50; /* Green color for emphasis */
+}
+
+.circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.air-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.air-circle:hover {
+  transform: translateY(-5px);
+}
+
+.air-circle h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.air-circle p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #666;
+}
+
+
+
+
+
+  /*****card***********************************************************************************************************************************/
+
+  
+.airmonitor-containercard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.airmonitor-containercard .airmonitor-card {
+  position: relative;
+  width: 320px;
+  height: 280px;
+  background: white;
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
+  transition: 0.5s;
+}
+
+.airmonitor-containercard .airmonitor-card:hover {
+  height: 250px;
+}
+
+.airmonitor-containercard .airmonitor-card .airmonitor-imgbox {
+  position: absolute;
+  top: 20px;
+  width: 270px;
+  height: 190px;
+  background: #333;
+  border-radius: 12px;
+  transition: 0.5s;
+  overflow: hidden;
+  left: 25px;
+}
+
+.airmonitor-containercard .airmonitor-card:hover .airmonitor-imgbox {
+  top: -100px;
+  scale: 0.8;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.airmonitor-containercard .airmonitor-card .airmonitor-imgbox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.airmonitor-containercard .airmonitor-card .airmonitor-cardcontent {
+  position: absolute;
+  width: 100%;
+  padding: 0 30px;
+  text-align: center;
+  top: 230px;
+  height: 45px;
+  overflow: hidden;
+  transition: 0.5s;
+  
+}
+
+.airmonitor-containercard .airmonitor-card:hover .airmonitor-cardcontent {
+  top: 80px;
+  height: 250px;
+  
+}
+
+.airmonitor-card-title{
+  position: relative;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom:30px ;
+
+}
+
+.airmonitor-containercard .airmonitor-card:hover .airmonitor-card-title {
+  margin-bottom: 0;  /* Remove margin-bottom on hover */
+}
+.airmonitor-cardpara{
+  font-size: 14px;
+}
+
+.airmonitor-cardpara2{
+  font-size: 14px;
+}
+
+
+/***************************HIGHLIGHT PRODUCTS********************************* */
+.air-productlist1 {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  position: relative;
+  padding-right: 25px;
+  transition: color 0.3s ease-in-out;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+/* Hover effect */
+.air-productlist1:hover {
+  color: #0056b3;
+}
+
+/* Custom arrow */
+.air-productlist1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #007bff;
+  border-top: 2px solid #007bff;
+  transform: translateY(-50%) rotate(45deg);
+  transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Hover effect for arrow */
+.air-productlist1:hover::after {
+  border-color: #0056b3;
+  transform: translateY(-50%) rotate(45deg) translateX(5px);
+}
+
+/* Additional effects */
+.air-productlist1::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -16px;
+  width: 8px;
+  height: 8px;
+  background-color: #007bff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Hover effect for additional effects */
+.air-productlist1:hover::before {
+  background-color: #0056b3;
+  transform: translateY(-50%) translateX(-5px);
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+/**********  Responsive ******************/
+
+
+
+  @media (max-width: 720px) {
+    .container {
+      padding: 10px;
+  }
+
+  .bg-dark {
+      width: 70%;
+  }
+
+  h1{
+    font-size: 20px;
+  }
+
+  .airmonitor-intro-img1,
+  .airmonitor-intro-img2 {
+      float: none;
+      margin: 0 auto 20px auto;
+      display: block;
+      max-width: 80%;
+  }
+
+
+  .table-responsive {
+    overflow-x: auto;
+}
+
+.banner h2 {
+    font-size: 1.5em;
+}
+
+.table {
+    font-size: 0.9em;
+}
+
+.table td {
+    word-break: break-word;
+}
+
+
+  }
+
+

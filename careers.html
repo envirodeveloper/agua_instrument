@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./NewStyle/careers.css">
+    <link rel="icon" href="./Favicon/aguaFavicon.png"  type="image/jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <title>Careers - Agua Instruments</title>
+
+    <meta name="description" content="Join the Agua Instruments team! Explore career opportunities and be part of a company dedicated to innovative water management solutions and environmental sustainability.">
+</head>
+
+<body>
+
+  <div data-include-html="header.html"></div>
+ 
+  <section class="justify">
+
+   
+    <div class="career-main-container">
+      <div class="career-main-header">
+          <h1>Join Our Team</h1>
+          <p>Explore exciting career opportunities at Agua Instruments Pvt Ltd.</p>
+      </div class="career-main-header">
+      
+      <div id="career-opportunities">
+          <h2>Current Openings</h2>
+          <div class="career-job-list">
+              <!-- career-Job Listing -->
+              <div class="career-job-card">
+                  <h3>Sales engineer</h3>
+                  <p>Location: Mumbai</p>
+                  <p>Full-time position responsible for analyzing and improving process performance.</p>
+                  <a href="./career-sales-engineer.html" class="apply-button">Apply Now</a>
+              </div>
+  
+              <div class="career-job-card">
+                  <h3>Unit head technical sales</h3>
+                  <p>Location: Mumbai</p>
+                  <p>Full-time position responsible for analyzing and improving process performance.</p>
+                  <a href="./career-unit-head-technical-sales.html" class="apply-button">Apply Now</a>
+              </div>
+              <!-- Add more job cards as needed -->
+          </div>
+      </div>
+  
+      <div id="career-why-join-us">
+          <h2>Why Join Us?</h2>
+  
+          <div class="career-progress-bar-container">
+              <div class="career-progress-bar">
+                  <div class="career-progress-segment" data-card="card1" style="width: 33%;">
+                      <span>Career Growth</span>
+                  </div>
+                  <div class="career-progress-segment" data-card="card2" style="width: 33%;">
+                      <span>Innovative Projects</span>
+                  </div>
+                  <div class="career-progress-segment" data-card="card3" style="width: 34%;">
+                      <span>Great Culture</span>
+                  </div>
+              </div>
+          </div>
+          <div class="career-card-container">
+              <div class="career-card" id="card1">
+                  <h3>Career Growth</h3>
+                  <p>At our company, we prioritize the professional development and career advancement of our employees. We offer comprehensive training programs, mentorship opportunities, and clear career pathways to ensure you can achieve your professional goals.</p>
+                  <p>Our internal promotion policies encourage growth from within, and we provide regular feedback and performance reviews to help you stay on track. Whether you are just starting out or looking to advance your career, we support your journey every step of the way.</p>
+              </div>
+              <div class="career-card" id="card2">
+                  <h3>Innovative Projects</h3>
+                  <p>We are at the forefront of technological innovation, working on cutting-edge projects that have a real impact on the world. Our teams are involved in groundbreaking research and development across various fields, including AI, machine learning, and advanced analytics.</p>
+                  <p>You will have the opportunity to collaborate with some of the brightest minds in the industry and contribute to projects that push the boundaries of what is possible. Our innovative approach allows you to develop unique solutions and gain invaluable experience in your field.</p>
+              </div>
+              <div class="career-card" id="card3">
+                  <h3>Great Culture</h3>
+                  <p>Our company culture is built on the principles of collaboration, inclusion, and respect. We foster a supportive and engaging work environment where everyone's voice is heard, and diverse perspectives are valued.</p>
+                  <p>We prioritize work-life balance, offer flexible working arrangements, and host regular team-building activities and social events. Our commitment to employee well-being extends to comprehensive health and wellness programs, ensuring you can thrive both personally and professionally. Join us to be part of a community that cares about your success and happiness.</p>
+              </div>
+          </div>
+      </div>
+  
+      <div class="contact-section-form-container">
+  
+      <section id="contact-section">
+          <div class="container">
+              <div class="form-header">
+                  <h2 class="contact-form-title">Please fill correct details</h2>
+              </div>
+              <form method="post" action="career.php" enctype="multipart/form-data" id="career_form">
+                  <div class="row">
+                      <div class="form-group">
+                          <label for="name">Enter Name</label>
+                          <input type="text" id="name" name="name" placeholder="Enter Name" required />
+                      </div>
+                      <div class="form-group">
+                          <label for="address">Enter Address</label>
+                          <textarea id="address" name="address" placeholder="Enter Address" required></textarea>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">Enter Email Address</label>
+                          <input type="email" id="email" name="email" placeholder="Enter Email Address" required />
+                      </div>
+                      <div class="form-group">
+                          <label for="skills">Select Your Skills</label>
+                          <select id="skills" name="skills[]" multiple required>
+                              <option value="Unit head technical sale">Unit head technical sale</option>
+                              <option value="Python-Django">Python-Django</option>
+                              <option value="Data Engineer">Sales Engineer</option>
+                              <option value="AI & Data Science">IOT Engineer</option>
+                              <option value="Arduino & Raspberry Pi">Arduino & Raspberry Pi</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label for="experience">Select Year of Experience</label>
+                          <select id="experience" name="experience" required>
+                              <option value="">Select Experience</option>
+                              <option value="0-1 years">0-1 years</option>
+                              <option value="2-3 years">2-3 years</option>
+                              <option value="4-5 years">4-5 years</option>
+                              <option value="6-7 years">6-7 years</option>
+                              <option value="8-9 years">8-9 years</option>
+                              <option value="10 or more years">10 or more years</option>
+                          </select>
+                      </div>
+                      <div class="form-group">
+                          <label for="mobile">Enter Mobile Number</label>
+                          <input type="text" id="mobile" name="mobile" placeholder="Enter Mobile Number" pattern="\d*" required />
+                      </div>
+                      <div class="form-group">
+                          <label for="resume">Select Your Resume</label>
+                          <input type="file" id="resume" name="resume" required />
+                      </div>
+                      <div class="form-group">
+                          <label for="additional_information">Enter Additional Information</label>
+                          <textarea id="additional_information" name="additional_information" placeholder="Enter Additional Information" rows="4" required></textarea>
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn-submit">Submit</button>
+                      </div>
+                  </div>
+              </form>
+              <div class="form_response"></div>
+          </div>
+  
+      </section>
+      </div>
+  
+      </div>
+
+   
+  </section>
+
+  <div data-include-html="footer.html"></div>
+
+  <script src="./javascript/sidebar.js"></script>
+  <script src="./javascript/main.js"></script>
+
+  <script src="./javascript/career.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+  <script type="text/javascript" src="api/validationA09.js"></script>
+</body>
+
+</html>

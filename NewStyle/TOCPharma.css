@@ -1,0 +1,181 @@
+.Toh-pharma-features-list{
+    position: relative;
+    left: 30px;
+}
+.toc-header-img{
+    margin-top: 10px;
+}
+
+
+.pharma-toc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+.pharma-toc-thead {
+    background-color: #f1f1f1;
+}
+
+.pharma-toc-th, .pharma-toc-td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.pharma-toc-th {
+    background-color: #007bff;
+    color: white;
+}
+
+.pharma-toc-tbody .pharma-toc-tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.pharma-toc-tbody .pharma-toc-tr:hover {
+    background-color: #007bff;
+    color: #f1f1f1;
+}
+
+.pharma-toc-th[colspan="3"] {
+    background-color: #ffffff;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pharma-toc-td[rowspan="13"] {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    text-align: center;
+}
+
+.pharma-toc-td[colspan="3"] {
+    text-align: center;
+}
+
+.pharma-toc-thead .pharma-toc-th {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/* Slider container */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #f8f8f8;
+}
+
+/* Wrapper for slides */
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Individual slides */
+.slider-slide {
+    min-width: 33.33%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* Slider images */
+.slider-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navigation buttons */
+/* Navigation buttons */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.slider-nav button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    pointer-events: auto;
+    z-index: 1; /* Ensure buttons are above the images */
+}
+
+.slider-nav button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.slider-nav button:focus {
+    outline: none;
+}
+
+/* Positioning for prev and next buttons */
+.slider-nav .prev {
+    margin-left: 10px;
+}
+
+.slider-nav .next {
+    margin-right: 10px;
+}
+
+.slider-nav button:disabled {
+    background-color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+}
+
+
+
+
+@media (max-width: 720px) {
+
+    .toc-header-img{
+        height: 100px;
+        width: 300px;
+    }
+
+    .Toh-pharma-features-list{
+        position: relative;
+        left: 10px;
+        width: 350px;
+    }
+
+
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .pharma-toc-table {
+        width: 100%;
+        min-width: 720px; /* Ensure minimum width for the .pharma-toc-table to be scrollable */
+    }
+
+    .pharma-toc-table, .pharma-toc-td {
+        white-space: nowrap; /* Prevent text from wrapping to maintain .pharma-toc-table structure */
+    }
+}

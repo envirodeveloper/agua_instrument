@@ -1,0 +1,37 @@
+.lar-header-logo{
+    height: 100px;
+    width: 450px;
+    position: relative;
+    top: 10px;
+}
+
+.larquicklab-img{
+    height: 150px;
+}
+
+.laqquicklab-image{
+    position: relative;
+    top: 30px;
+}
+
+
+@media (max-width: 720px) {
+    .lar-header-logo {
+        height: 80px; /* Adjust height for smaller screens */
+        width: 100%; /* Make it full width */
+        top: 5px; /* Adjust positioning */
+        object-fit: contain; /* Maintain aspect ratio */
+    }
+
+    .larquicklab-img {
+        height: 100px; /* Adjust height for smaller screens */
+        width: auto; /* Maintain aspect ratio */
+    }
+
+    .laqquicklab-image {
+        position: relative;
+        top: 15px; /* Adjust positioning for smaller screens */
+        width: 100%; /* Make the image full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}

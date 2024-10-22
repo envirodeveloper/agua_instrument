@@ -1,0 +1,517 @@
+Delivered-To: yogesh.pandey@technicrafts.com
+Received: by 2002:a05:6838:f2a9:b0:86a:5842:822f with SMTP id b9csp2967316nke;
+        Thu, 4 Jul 2024 05:44:17 -0700 (PDT)
+X-Received: by 2002:a67:facc:0:b0:48f:ddb3:edc0 with SMTP id ada2fe7eead31-48fee84ebc9mr1492935137.33.1720097056727;
+        Thu, 04 Jul 2024 05:44:16 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1720097056; cv=none;
+        d=google.com; s=arc-20160816;
+        b=sjh2x+HszfT6rf+wwdREv+Veg6bCRbvO2CDoP8AWoxGAiaMdzgQHiTcuGiYV8w98oB
+         uEXdBx/OVJ7f+A9KoJRuU0o+gMDYDSwrB57xI8gGYu87sGcl+BqA6hYbehJ5gbP7e2yB
+         XW789bBWFK7k1pVB8/IOsOTuLTTGXRrl8crmtfnICpk+f1yEHAZ16sbWi2wzc41zn55R
+         hzpFs7PqMvXpc+ZoA+CB34MDpAaV2FahtzygdW8JxVXOHf5prEQJuHbBAgLx7mk3soGC
+         K+G3Yz20NBfgJ4eiUqYb9eRzGJOFYmNIJL1O1cDBwdyNO6qqjiZfFA7p+wjbWUk3DgyJ
+         /t1A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:dkim-signature;
+        bh=i2bm2IIe9WlQup37SBs2VunmkC0Eszslljq5rGcnlmQ=;
+        fh=4lVx73gZ9Nmikf5Rm0PwBcLqCb46rnIl8zVUN02ipa0=;
+        b=u3c81zQwHjgP5bgyEbrUMiJPlipEIYlZrCAdO5zslUAfDk/txAJePSb9gRHNJyYNWL
+         pD4oJmiIPRbNH9TUbovs6tQeQ/oOiOIPLiEdM7/05DrXMhzHAsjDaiZUk1fR6/KwX26t
+         IH6yy2hVo/vRFzBMOmxwukepS7emy1pchGsIjXQsChoEx8oWhDm6FSXetPxKZ2VidQqE
+         I8+7jRxBCUUG5W0KaZii95aMWWKyfsF2ZqHFPzMy4vBIjWNbOZ/Ff9m2dAqGfbsB7L7F
+         WjwLzNrAn3MJ8Sl5Tid0wIF1pb3xpx4TjDvf+I6BImNEfVjfU8+x2AeZBtDiI1fQdrTd
+         W9yA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@technicrafts.com header.s=google header.b=OPdX4Aia;
+       spf=pass (google.com: domain of rastika@technicrafts.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rastika@technicrafts.com
+Return-Path: <rastika@technicrafts.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id ada2fe7eead31-48fde144962sor1322618137.11.2024.07.04.05.44.16
+        for <yogesh.pandey@technicrafts.com>
+        (Google Transport Security);
+        Thu, 04 Jul 2024 05:44:16 -0700 (PDT)
+Received-SPF: pass (google.com: domain of rastika@technicrafts.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@technicrafts.com header.s=google header.b=OPdX4Aia;
+       spf=pass (google.com: domain of rastika@technicrafts.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=rastika@technicrafts.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=technicrafts.com; s=google; t=1720097056; x=1720701856; darn=technicrafts.com;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:from:to:cc:subject:date:message-id:reply-to;
+        bh=i2bm2IIe9WlQup37SBs2VunmkC0Eszslljq5rGcnlmQ=;
+        b=OPdX4AiaonqfOfkNIB0neC6NutvPaerRm1bSalSOD9qGrRK5x72jZSjS1xo4JTYTgc
+         H044R5CWCDGbzXcNCvLCJGAO3UWAuGAZNY7w44Rfdplz3b6ugljiKao5+jkKbRxf19Xf
+         rpvfzZJrFjj4YaYrn9Vgf+/ivT4KXnzl7EQxvjuY00HAdYvV633JimYuhDkDg90dTXfM
+         UZgiSqM/wapjxHFqsqxWxz9UHli7/H6LyeBQmnmhw1luoFBZFQ0wxeVNAQ5kF8JjjmNt
+         FEHiuauYEya77eyAWYXzYOy3S6zhCr/qzplL/vbGWNDUJbg88zLd4czfvZ6MwCDBDyQ8
+         2apQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1720097056; x=1720701856;
+        h=cc:to:subject:message-id:date:from:in-reply-to:references
+         :mime-version:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=i2bm2IIe9WlQup37SBs2VunmkC0Eszslljq5rGcnlmQ=;
+        b=fWlz7d7I59zPh7or8xNulgAQ43RgyShw31dq3xxBS9+yG1ISN82U0F1xvfTEnvcn+A
+         90CQwbPpmaqjaDck7A9Lt6zhunSOTTzJrn+7jp+22N0CEv8tCFdRCeDnw7aE3Zr7O9TD
+         opazTyt/4DOGC7lbR7ZBb/oFXLD57BERihG31uJrv5UgdhXHjDATatg67G1twEBB1Y1F
+         nePSRgAELow2odkqts7fm8toocgnu4yH/g0+p5fqwIkjfmfN2FGgxCbj6wzym44UDyAO
+         cU4psxgJFDgLj7wcgDOV32dBBI/irwEFkeoj7UfL+4kK0MIkSKGmcsesFAr2+Y6Y8dYs
+         syZg==
+X-Gm-Message-State: AOJu0YwTlJ0i0m3bTRgPrV/0mVjpB7yS+O77MCmB6XN6C1pOLiD1btin
+	U06COsVBNyFYxpKP+XETRP1qtv2SU+iFWZ0r0RgW/KbmoyE82Eusc5Y104j6+OPMfBPQT/Jc/GC
+	NA71SN56h7Jh7XtZUszVUOulIXEelIVrxRlh+Gv0Q
+X-Google-Smtp-Source: AGHT+IH/IytK3JsnbFRtQGeHRBOnUqR3+311LCLnJRrcIdMTn887EBX0cT1hB2ytZif2spT/Y0JhagQsw3rnNC5+ojY=
+X-Received: by 2002:a67:fe0d:0:b0:48f:4857:18f5 with SMTP id
+ ada2fe7eead31-48fee6ba107mr1316208137.20.1720097056110; Thu, 04 Jul 2024
+ 05:44:16 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAO3+6XAv-ckg0nN=7HkfNRTd19G430TtFoc3Lwfx60OddS4inQ@mail.gmail.com>
+ <CAO3+6XDeNhJV_0d2t5MufZHr6YYMNtxuaOGnJ9ZPzkBPrpVSDQ@mail.gmail.com>
+ <CAO3+6XBwKtCSGWmGGymrEULHwu1fsCbaRZg20YpGOYmOe5Qf4w@mail.gmail.com>
+ <CAO3+6XDF7D=-SMk4cq03ym+CW0c_mMDa7LxtaxWWrqviaWpj1Q@mail.gmail.com>
+ <CAO3+6XAMtCvsfT3yzv1wE+c0a3LUFO8KvdgB9TbP=tgj2qd2cg@mail.gmail.com>
+ <CAO3+6XBVnun1AOHC9ic=kPW6u4fag=L=FeE_AV1ccq6hV84pvw@mail.gmail.com>
+ <CAO3+6XAc854yQQ_-t7Yb=4irGeH6Wj=_gta4ivfv+tbT30j10A@mail.gmail.com> <CAO3+6XC_8ncj+CMbCnR1Q9zK9uy+Xko1XgVoL9F4pMyFai1K=w@mail.gmail.com>
+In-Reply-To: <CAO3+6XC_8ncj+CMbCnR1Q9zK9uy+Xko1XgVoL9F4pMyFai1K=w@mail.gmail.com>
+From: Rastika Libin <rastika@technicrafts.com>
+Date: Thu, 4 Jul 2024 18:14:04 +0530
+Message-ID: <CAO3+6XAqGRDkQE94j=S2Bu5kWqhpickpEOv+beyiSWuTE5rskQ@mail.gmail.com>
+Subject: Re: MS chemicals site not working
+To: Narendra Kadam <scadasupport@mmamahad.com>
+Cc: Yogesh Pandey <yogesh.pandey@technicrafts.com>, 
+	Support Technicrafts <support@technicrafts.com>, 
+	Tech Support Technicrafts <tech-support@technicrafts.com>
+Content-Type: multipart/alternative; boundary="0000000000000258b0061c6b4e0a"
+
+--0000000000000258b0061c6b4e0a
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Sir,
+
+Greetings of the day!
+
+This is a reminder that we are still awaiting a response regarding the site
+MS Chemical connected to the CETP Portal. We are still not able to see data
+in the MS Chemical site logged in the CETP dashboard. We have attached the
+screenshot for your reference in the previous email.
+
+Requesting you to please look into this and help us get it resolved as soon
+as possible.
+
+*Thanks & Regards,*
+*Rastika Libin*
+
+
+*TechniCrafts Soft Solutions LLP*
+Industrial IOT | Vision Analytics | Cloud Computing | Mobility
+web: www.technicrafts.com email: sales@technicrafts.com I
+
+
+On Mon, 1 Jul 2024 at 15:27, Rastika Libin <rastika@technicrafts.com> wrote:
+
+> Dear Sir,
+>
+> Greetings of the day!
+>
+> This is a reminder that we are still awaiting a response regarding the
+> site MS Chemical connected to the CETP Portal. We are still not able to see
+> data in the MS Chemical site logged in the CETP dashboard. We have attached
+> the screenshot for your reference in the previous email.
+>
+> Requesting you to please look into this and help us get it resolved
+> as soon as possible.
+>
+> *Thanks & Regards,*
+> *Rastika Libin*
+>
+>
+> *TechniCrafts Soft Solutions LLP*
+> Industrial IOT | Vision Analytics | Cloud Computing | Mobility
+> web: www.technicrafts.com email: sales@technicrafts.com I
+>
+>
+> On Tue, 25 Jun 2024 at 19:21, Rastika Libin <rastika@technicrafts.com>
+> wrote:
+>
+>> Dear Sir,
+>>
+>> Greetings of the day!
+>>
+>> This is a reminder that we are still awaiting a response regarding the
+>> site MS Chemical connected to the CETP Portal. We are not able to see data
+>> in the MS Chemical site logged in the dashboard. We have attached below the
+>> screenshot for your reference in the previous email.
+>>
+>> Requesting you to please look into this and help us get it resolved
+>> as soon as possible.
+>>
+>> *Thanks & Regards,*
+>> *Rastika Libin*
+>>
+>>
+>> *TechniCrafts Soft Solutions LLP*
+>> Industrial IOT | Vision Analytics | Cloud Computing | Mobility
+>> web: www.technicrafts.com email: sales@technicrafts.com I
+>>
+>>
+>> On Thu, 20 Jun 2024 at 19:27, Rastika Libin <rastika@technicrafts.com>
+>> wrote:
+>>
+>>> Dear sir,
+>>>
+>>> Greetings of the day!
+>>>
+>>> This is regarding the site MS chemical connected to the CETP Portal. We
+>>> are not able to see data in the MS Chemical site logged in the dashboard.
+>>> We have attached below the screenshot for your reference.
+>>>
+>>> Requesting you to please look into this and help us get it resolved
+>>> as soon as possible.
+>>>
+>>> *Thanks & Regards,*
+>>> *Rastika Libin*
+>>>
+>>>
+>>> *TechniCrafts Soft Solutions LLP*
+>>> Industrial IOT | Vision Analytics | Cloud Computing | Mobility
+>>> web: www.technicrafts.com email: sales@technicrafts.com I
+>>>
+>>>
+>>> On Tue, 11 Jun 2024 at 19:45, Rastika Libin <rastika@technicrafts.com>
+>>> wrote:
+>>>
+>>>> Dear Sir,
+>>>>
+>>>> Greetings of the day!
+>>>>
+>>>> This is a reminder regarding the site MS Chemical connected to the CETP
+>>>> Portal. We are not able to see data in the MS Chemical site logged in the
+>>>> dashboard. We have attached below the screenshot in the previous mail for
+>>>> your reference.
+>>>>
+>>>> Requesting you to please look into this and help us get it resolved
+>>>> as soon as possible.
+>>>>
+>>>>
+>>>> On Wed, 5 Jun, 2024, 6:23 pm Rastika Libin, <rastika@technicrafts.com>
+>>>> wrote:
+>>>>
+>>>>> Dear Sir,
+>>>>>
+>>>>> Greetings of the day!
+>>>>>
+>>>>> This is a reminder regarding the site MS Chemical connected to the
+>>>>> CETP Portal. We are not able to see data in the MS Chemical site logged in
+>>>>> the dashboard. We have attached below the screenshot in the previous mail
+>>>>> for your reference.
+>>>>>
+>>>>> Requesting you to please look into this and help us get it resolved
+>>>>> as soon as possible.
+>>>>>
+>>>>> *Thanks & Regards,*
+>>>>> *Rastika Libin*
+>>>>>
+>>>>>
+>>>>> *TechniCrafts Soft Solutions LLP*
+>>>>> Industrial IOT | Vision Analytics | Cloud Computing | Mobility
+>>>>> web: www.technicrafts.com email: sales@technicrafts.com I
+>>>>>
+>>>>>
+>>>>> On Mon, 3 Jun 2024 at 18:35, Rastika Libin <rastika@technicrafts.com>
+>>>>> wrote:
+>>>>>
+>>>>>> Dear Sir,
+>>>>>>
+>>>>>> Greetings of the day!
+>>>>>>
+>>>>>> This is a reminder regarding the site MS Chemical connected to the
+>>>>>> CETP Portal. We are not able to see data in the MS Chemical site logged in
+>>>>>> the dashboard. We have attached below the screenshot in the previous mail
+>>>>>> for your reference.
+>>>>>>
+>>>>>> Requesting you to please look into this and help us get it resolved
+>>>>>> as soon as possible.
+>>>>>>
+>>>>>> *Thanks & Regards,*
+>>>>>> *Rastika Libin*
+>>>>>>
+>>>>>>
+>>>>>> *TechniCrafts Soft Solutions LLP*
+>>>>>> Industrial IOT | Vision Analytics | Cloud Computing | Mobility
+>>>>>> web: www.technicrafts.com email: sales@technicrafts.com I
+>>>>>>
+>>>>>>
+>>>>>> On Mon, 27 May 2024 at 18:41, Rastika Libin <rastika@technicrafts.com>
+>>>>>> wrote:
+>>>>>>
+>>>>>>> Dear Sir,
+>>>>>>>
+>>>>>>> Greetings of the day!
+>>>>>>>
+>>>>>>> This is a reminder regarding the site MS Chemical connected to the
+>>>>>>> CETP Portal. We are not able to see data in the MS Chemical site logged in
+>>>>>>> the dashboard. We have attached below the screenshot for your reference.
+>>>>>>>
+>>>>>>> Requesting you to please look into this and help us get it resolved
+>>>>>>> as soon as possible.
+>>>>>>>
+>>>>>>> *Thanks & Regards,*
+>>>>>>> *Rastika Libin*
+>>>>>>>
+>>>>>>>
+>>>>>>> *TechniCrafts Soft Solutions LLP*
+>>>>>>> Industrial IOT | Vision Analytics | Cloud Computing | Mobility
+>>>>>>> web: www.technicrafts.com email: sales@technicrafts.com I
+>>>>>>>
+>>>>>>>
+>>>>>>> On Tue, 21 May 2024 at 19:00, Rastika Libin <
+>>>>>>> rastika@technicrafts.com> wrote:
+>>>>>>>
+>>>>>>>> Dear sir,
+>>>>>>>>
+>>>>>>>> Greetings of the day!
+>>>>>>>>
+>>>>>>>> This is regarding the site MS chemical connected to the CETP
+>>>>>>>> Portal. We are not able to see data in the MS Chemical site logged in the
+>>>>>>>> dashboard. We have attached below the screenshot for your reference.
+>>>>>>>>
+>>>>>>>> Requesting you to please look into this and help us get it resolved
+>>>>>>>> as soon as possible.
+>>>>>>>>
+>>>>>>>> *Thanks & Regards,*
+>>>>>>>> *Rastika Libin*
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> *TechniCrafts Soft Solutions LLP*
+>>>>>>>> Industrial IOT | Vision Analytics | Cloud Computing | Mobility
+>>>>>>>> web: www.technicrafts.com email: sales@technicrafts.com I
+>>>>>>>>
+>>>>>>>
+
+--0000000000000258b0061c6b4e0a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span class=3D"gmail-im" style=3D"color:rgb(80,0,80)">Dear=
+ Sir,<div><br></div><div>Greetings of the day!</div><div><br></div></span><=
+div>This is a reminder that we are still awaiting a response regarding the =
+site MS Chemical connected to the CETP Portal. We are still not able to see=
+ data in the MS Chemical site logged in the CETP dashboard. We have attache=
+d the screenshot for your reference in the previous email.<span class=3D"gm=
+ail-im" style=3D"color:rgb(80,0,80)"><div><br></div><div>Requesting you to =
+please look into this and help us get it resolved as=C2=A0soon as possible.=
+</div><div><br></div></span></div><div><div dir=3D"ltr" class=3D"gmail_sign=
+ature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div style=3D"co=
+lor:rgb(34,34,34)"><b>Thanks &amp; Regards,</b></div><div><b><font color=3D=
+"#a64d79">Rastika Libin</font></b></div><div style=3D"color:rgb(34,34,34)">=
+<b><br></b></div><div style=3D"color:rgb(34,34,34)"><b><img width=3D"96" he=
+ight=3D"93" src=3D"https://ci3.googleusercontent.com/mail-sig/AIorK4wbr_h_P=
+c4Vt60FfF4YDnSea3Mb7XbWCisov0vsEj784VsQV2p8sR3WYjVBKPPIcE5KG0Z5VSo"><br></b=
+></div><div style=3D"color:rgb(34,34,34)"><b>TechniCrafts Soft Solutions LL=
+P</b><br></div><div style=3D"color:rgb(34,34,34)">Industrial IOT | Vision A=
+nalytics | Cloud Computing | Mobility</div><div style=3D"color:rgb(34,34,34=
+)">web:=C2=A0<a href=3D"http://www.technicrafts.com/" style=3D"color:rgb(17=
+,85,204)" target=3D"_blank">www.technicrafts.com</a>=C2=A0email:=C2=A0<a hr=
+ef=3D"mailto:sales@technicrafts.com" style=3D"color:rgb(17,85,204)" target=
+=3D"_blank">sales@technicrafts.com</a>=C2=A0I=C2=A0</div></div></div></div>=
+<br></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_at=
+tr">On Mon, 1 Jul 2024 at 15:27, Rastika Libin &lt;<a href=3D"mailto:rastik=
+a@technicrafts.com">rastika@technicrafts.com</a>&gt; wrote:<br></div><block=
+quote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1=
+px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr"><span style=3D=
+"color:rgb(80,0,80)">Dear Sir,<div><br></div><div>Greetings of the day!</di=
+v><div><br></div></span><div>This is a reminder that we are still awaiting =
+a response regarding the site MS Chemical connected to the CETP Portal. We =
+are still not able to see data in the MS Chemical site logged in the CETP d=
+ashboard. We have attached the screenshot for your reference in the previou=
+s email.<span style=3D"color:rgb(80,0,80)"><div><br></div><div>Requesting y=
+ou to please look into this and help us get it resolved as=C2=A0soon as pos=
+sible.</div><div><br></div></span></div><div><div dir=3D"ltr" class=3D"gmai=
+l_signature"><div dir=3D"ltr"><div style=3D"color:rgb(34,34,34)"><b>Thanks =
+&amp; Regards,</b></div><div><b><font color=3D"#a64d79">Rastika Libin</font=
+></b></div><div style=3D"color:rgb(34,34,34)"><b><br></b></div><div style=
+=3D"color:rgb(34,34,34)"><b><img width=3D"96" height=3D"93" src=3D"https://=
+ci3.googleusercontent.com/mail-sig/AIorK4wbr_h_Pc4Vt60FfF4YDnSea3Mb7XbWCiso=
+v0vsEj784VsQV2p8sR3WYjVBKPPIcE5KG0Z5VSo"><br></b></div><div style=3D"color:=
+rgb(34,34,34)"><b>TechniCrafts Soft Solutions LLP</b><br></div><div style=
+=3D"color:rgb(34,34,34)">Industrial IOT | Vision Analytics | Cloud Computin=
+g | Mobility</div><div style=3D"color:rgb(34,34,34)">web:=C2=A0<a href=3D"h=
+ttp://www.technicrafts.com/" style=3D"color:rgb(17,85,204)" target=3D"_blan=
+k">www.technicrafts.com</a>=C2=A0email:=C2=A0<a href=3D"mailto:sales@techni=
+crafts.com" style=3D"color:rgb(17,85,204)" target=3D"_blank">sales@technicr=
+afts.com</a>=C2=A0I=C2=A0</div></div></div></div><br></div><br><div class=
+=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, 25 Jun 2024 =
+at 19:21, Rastika Libin &lt;<a href=3D"mailto:rastika@technicrafts.com" tar=
+get=3D"_blank">rastika@technicrafts.com</a>&gt; wrote:<br></div><blockquote=
+ class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px so=
+lid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Dear Sir,<div><br><=
+/div><div>Greetings of the day!</div><div><br></div><div>This is a reminder=
+ that we are still awaiting a response regarding the site MS Chemical conne=
+cted to the CETP Portal. We are not able to see data in the MS Chemical sit=
+e logged in the dashboard. We have attached below the screenshot for your r=
+eference in the previous email.<span style=3D"color:rgb(80,0,80)"><div><br>=
+</div><div>Requesting you to please look into this and help us get it resol=
+ved as=C2=A0soon as possible.</div><div><br></div></span></div><div><div di=
+r=3D"ltr" class=3D"gmail_signature"><div dir=3D"ltr"><div style=3D"color:rg=
+b(34,34,34)"><b>Thanks &amp; Regards,</b></div><div><b><font color=3D"#a64d=
+79">Rastika Libin</font></b></div><div style=3D"color:rgb(34,34,34)"><b><br=
+></b></div><div style=3D"color:rgb(34,34,34)"><b><img width=3D"96" height=
+=3D"93" src=3D"https://ci3.googleusercontent.com/mail-sig/AIorK4wbr_h_Pc4Vt=
+60FfF4YDnSea3Mb7XbWCisov0vsEj784VsQV2p8sR3WYjVBKPPIcE5KG0Z5VSo"><br></b></d=
+iv><div style=3D"color:rgb(34,34,34)"><b>TechniCrafts Soft Solutions LLP</b=
+><br></div><div style=3D"color:rgb(34,34,34)">Industrial IOT | Vision Analy=
+tics | Cloud Computing | Mobility</div><div style=3D"color:rgb(34,34,34)">w=
+eb:=C2=A0<a href=3D"http://www.technicrafts.com/" style=3D"color:rgb(17,85,=
+204)" target=3D"_blank">www.technicrafts.com</a>=C2=A0email:=C2=A0<a href=
+=3D"mailto:sales@technicrafts.com" style=3D"color:rgb(17,85,204)" target=3D=
+"_blank">sales@technicrafts.com</a>=C2=A0I=C2=A0</div></div></div></div><br=
+></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr"=
+>On Thu, 20 Jun 2024 at 19:27, Rastika Libin &lt;<a href=3D"mailto:rastika@=
+technicrafts.com" target=3D"_blank">rastika@technicrafts.com</a>&gt; wrote:=
+<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8=
+ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr=
+">Dear sir,<div><br></div><div>Greetings=C2=A0of the day!</div><div><br></d=
+iv><div>This is regarding the site MS chemical connected to the CETP Portal=
+. We are not able to see data in the MS Chemical site logged in the dashboa=
+rd. We have attached below the screenshot for your reference.</div><div><br=
+></div><div>Requesting you to please look into this and help us get it reso=
+lved as=C2=A0soon as possible.</div><div><br></div><div><div dir=3D"ltr" cl=
+ass=3D"gmail_signature"><div dir=3D"ltr"><div style=3D"color:rgb(34,34,34)"=
+><b>Thanks &amp; Regards,</b></div><div><b><font color=3D"#a64d79">Rastika =
+Libin</font></b></div><div style=3D"color:rgb(34,34,34)"><b><br></b></div><=
+div style=3D"color:rgb(34,34,34)"><b><img width=3D"96" height=3D"93" src=3D=
+"https://ci3.googleusercontent.com/mail-sig/AIorK4wbr_h_Pc4Vt60FfF4YDnSea3M=
+b7XbWCisov0vsEj784VsQV2p8sR3WYjVBKPPIcE5KG0Z5VSo"><br></b></div><div style=
+=3D"color:rgb(34,34,34)"><b>TechniCrafts Soft Solutions LLP</b><br></div><d=
+iv style=3D"color:rgb(34,34,34)">Industrial IOT | Vision Analytics | Cloud =
+Computing | Mobility</div><div style=3D"color:rgb(34,34,34)">web:=C2=A0<a h=
+ref=3D"http://www.technicrafts.com/" style=3D"color:rgb(17,85,204)" target=
+=3D"_blank">www.technicrafts.com</a>=C2=A0email:=C2=A0<a href=3D"mailto:sal=
+es@technicrafts.com" style=3D"color:rgb(17,85,204)" target=3D"_blank">sales=
+@technicrafts.com</a>=C2=A0I=C2=A0</div></div></div></div><br></div><br><di=
+v class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, 11 Ju=
+n 2024 at 19:45, Rastika Libin &lt;<a href=3D"mailto:rastika@technicrafts.c=
+om" target=3D"_blank">rastika@technicrafts.com</a>&gt; wrote:<br></div><blo=
+ckquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left=
+:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"auto"><div style=
+=3D"color:rgb(80,0,80)" dir=3D"auto">Dear Sir,<div><br></div><div>Greetings=
+ of the day!</div><div><br></div></div><div dir=3D"auto">This is a reminder=
+ regarding the site MS Chemical connected to the CETP Portal. We are not ab=
+le to see data in the MS Chemical site logged in the dashboard. We have att=
+ached below the screenshot in the previous mail for your reference.<div sty=
+le=3D"color:rgb(80,0,80)"><div dir=3D"auto"><br></div><div dir=3D"auto">Req=
+uesting you to please look into this and help us get it resolved as=C2=A0so=
+on as possible.</div><div dir=3D"auto"><br style=3D"font-size:12.8px"></div=
+></div></div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D=
+"gmail_attr">On Wed, 5 Jun, 2024, 6:23 pm Rastika Libin, &lt;<a href=3D"mai=
+lto:rastika@technicrafts.com" target=3D"_blank">rastika@technicrafts.com</a=
+>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0px=
+ 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><di=
+v dir=3D"ltr"><span style=3D"color:rgb(80,0,80)">Dear Sir,<div><br></div><d=
+iv>Greetings of the day!</div><div><br></div></span><div>This is a reminder=
+ regarding the site MS Chemical connected to the CETP Portal. We are not ab=
+le to see data in the MS Chemical site logged in the dashboard. We have att=
+ached below the screenshot in the previous mail for your reference.<span st=
+yle=3D"color:rgb(80,0,80)"><div><br></div><div>Requesting you to please loo=
+k into this and help us get it resolved as=C2=A0soon as possible.</div><div=
+><br></div></span></div><div><div dir=3D"ltr" class=3D"gmail_signature"><di=
+v dir=3D"ltr"><div style=3D"color:rgb(34,34,34)"><b>Thanks &amp; Regards,</=
+b></div><div><b><font color=3D"#a64d79">Rastika Libin</font></b></div><div =
+style=3D"color:rgb(34,34,34)"><b><br></b></div><div style=3D"color:rgb(34,3=
+4,34)"><b><img width=3D"96" height=3D"93" src=3D"https://ci3.googleusercont=
+ent.com/mail-sig/AIorK4wbr_h_Pc4Vt60FfF4YDnSea3Mb7XbWCisov0vsEj784VsQV2p8sR=
+3WYjVBKPPIcE5KG0Z5VSo"><br></b></div><div style=3D"color:rgb(34,34,34)"><b>=
+TechniCrafts Soft Solutions LLP</b><br></div><div style=3D"color:rgb(34,34,=
+34)">Industrial IOT | Vision Analytics | Cloud Computing | Mobility</div><d=
+iv style=3D"color:rgb(34,34,34)">web:=C2=A0<a href=3D"http://www.technicraf=
+ts.com/" style=3D"color:rgb(17,85,204)" rel=3D"noreferrer" target=3D"_blank=
+">www.technicrafts.com</a>=C2=A0email:=C2=A0<a href=3D"mailto:sales@technic=
+rafts.com" style=3D"color:rgb(17,85,204)" rel=3D"noreferrer" target=3D"_bla=
+nk">sales@technicrafts.com</a>=C2=A0I=C2=A0</div></div></div></div><br></di=
+v><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On M=
+on, 3 Jun 2024 at 18:35, Rastika Libin &lt;<a href=3D"mailto:rastika@techni=
+crafts.com" rel=3D"noreferrer" target=3D"_blank">rastika@technicrafts.com</=
+a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin:0p=
+x 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"><d=
+iv dir=3D"ltr">Dear Sir,<div><br></div><div>Greetings of the day!</div><div=
+><br></div><div>This is a reminder regarding the site MS Chemical connected=
+ to the CETP Portal. We are not able to see data in the MS Chemical site lo=
+gged in the dashboard. We have attached below the screenshot in the previou=
+s mail for your reference.<span style=3D"color:rgb(80,0,80)"><div><br></div=
+><div>Requesting you to please look into this and help us get it resolved a=
+s=C2=A0soon as possible.</div><div><br></div></span></div><div><div dir=3D"=
+ltr" class=3D"gmail_signature"><div dir=3D"ltr"><div style=3D"color:rgb(34,=
+34,34)"><b>Thanks &amp; Regards,</b></div><div><b><font color=3D"#a64d79">R=
+astika Libin</font></b></div><div style=3D"color:rgb(34,34,34)"><b><br></b>=
+</div><div style=3D"color:rgb(34,34,34)"><b><img width=3D"96" height=3D"93"=
+ src=3D"https://ci3.googleusercontent.com/mail-sig/AIorK4wbr_h_Pc4Vt60FfF4Y=
+DnSea3Mb7XbWCisov0vsEj784VsQV2p8sR3WYjVBKPPIcE5KG0Z5VSo"><br></b></div><div=
+ style=3D"color:rgb(34,34,34)"><b>TechniCrafts Soft Solutions LLP</b><br></=
+div><div style=3D"color:rgb(34,34,34)">Industrial IOT | Vision Analytics | =
+Cloud Computing | Mobility</div><div style=3D"color:rgb(34,34,34)">web:=C2=
+=A0<a href=3D"http://www.technicrafts.com/" style=3D"color:rgb(17,85,204)" =
+rel=3D"noreferrer" target=3D"_blank">www.technicrafts.com</a>=C2=A0email:=
+=C2=A0<a href=3D"mailto:sales@technicrafts.com" style=3D"color:rgb(17,85,20=
+4)" rel=3D"noreferrer" target=3D"_blank">sales@technicrafts.com</a>=C2=A0I=
+=C2=A0</div></div></div></div><br></div><br><div class=3D"gmail_quote"><div=
+ dir=3D"ltr" class=3D"gmail_attr">On Mon, 27 May 2024 at 18:41, Rastika Lib=
+in &lt;<a href=3D"mailto:rastika@technicrafts.com" rel=3D"noreferrer" targe=
+t=3D"_blank">rastika@technicrafts.com</a>&gt; wrote:<br></div><blockquote c=
+lass=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px soli=
+d rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr">Dear Sir,<div><br></d=
+iv><div>Greetings of the day!</div><div><br></div><div>This is a reminder r=
+egarding the site MS Chemical connected to the CETP Portal. We are not able=
+ to see data in the MS Chemical site logged in the dashboard. We have attac=
+hed below the screenshot for your reference.<div><br></div><div>Requesting =
+you to please look into this and help us get it resolved as=C2=A0soon as po=
+ssible.</div><div><br></div><div><div dir=3D"ltr" class=3D"gmail_signature"=
+><div dir=3D"ltr"><div style=3D"color:rgb(34,34,34)"><b>Thanks &amp; Regard=
+s,</b></div><div><b><font color=3D"#a64d79">Rastika Libin</font></b></div><=
+div style=3D"color:rgb(34,34,34)"><b><br></b></div><div style=3D"color:rgb(=
+34,34,34)"><b><img width=3D"96" height=3D"93" src=3D"https://ci3.googleuser=
+content.com/mail-sig/AIorK4wbr_h_Pc4Vt60FfF4YDnSea3Mb7XbWCisov0vsEj784VsQV2=
+p8sR3WYjVBKPPIcE5KG0Z5VSo"><br></b></div><div style=3D"color:rgb(34,34,34)"=
+><b>TechniCrafts Soft Solutions LLP</b><br></div><div style=3D"color:rgb(34=
+,34,34)">Industrial IOT | Vision Analytics | Cloud Computing | Mobility</di=
+v><div style=3D"color:rgb(34,34,34)">web:=C2=A0<a href=3D"http://www.techni=
+crafts.com/" style=3D"color:rgb(17,85,204)" rel=3D"noreferrer" target=3D"_b=
+lank">www.technicrafts.com</a>=C2=A0email:=C2=A0<a href=3D"mailto:sales@tec=
+hnicrafts.com" style=3D"color:rgb(17,85,204)" rel=3D"noreferrer" target=3D"=
+_blank">sales@technicrafts.com</a>=C2=A0I=C2=A0</div></div></div></div><br>=
+</div></div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_=
+attr">On Tue, 21 May 2024 at 19:00, Rastika Libin &lt;<a href=3D"mailto:ras=
+tika@technicrafts.com" rel=3D"noreferrer" target=3D"_blank">rastika@technic=
+rafts.com</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=
+=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding=
+-left:1ex"><div dir=3D"ltr">Dear sir,<div><br></div><div>Greetings=C2=A0of =
+the day!</div><div><br></div><div>This is regarding the site MS chemical co=
+nnected to the CETP Portal. We are not able to see data in the MS Chemical =
+site logged in the dashboard. We have attached below the screenshot for you=
+r reference.</div><div><br></div><div>Requesting you to please look into th=
+is and help us get it resolved as=C2=A0soon as possible.</div><div><br clea=
+r=3D"all"><div><div dir=3D"ltr" class=3D"gmail_signature"><div dir=3D"ltr">=
+<div style=3D"color:rgb(34,34,34)"><b>Thanks &amp; Regards,</b></div><div><=
+b><font color=3D"#a64d79">Rastika Libin</font></b></div><div style=3D"color=
+:rgb(34,34,34)"><b><br></b></div><div style=3D"color:rgb(34,34,34)"><b><img=
+ width=3D"96" height=3D"93" src=3D"https://ci3.googleusercontent.com/mail-s=
+ig/AIorK4wbr_h_Pc4Vt60FfF4YDnSea3Mb7XbWCisov0vsEj784VsQV2p8sR3WYjVBKPPIcE5K=
+G0Z5VSo"><br></b></div><div style=3D"color:rgb(34,34,34)"><b>TechniCrafts S=
+oft Solutions LLP</b><br></div><div style=3D"color:rgb(34,34,34)">Industria=
+l IOT | Vision Analytics | Cloud Computing | Mobility</div><div style=3D"co=
+lor:rgb(34,34,34)">web:=C2=A0<a href=3D"http://www.technicrafts.com/" style=
+=3D"color:rgb(17,85,204)" rel=3D"noreferrer" target=3D"_blank">www.technicr=
+afts.com</a>=C2=A0email:=C2=A0<a href=3D"mailto:sales@technicrafts.com" sty=
+le=3D"color:rgb(17,85,204)" rel=3D"noreferrer" target=3D"_blank">sales@tech=
+nicrafts.com</a>=C2=A0I=C2=A0</div></div></div></div></div></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+</blockquote></div>
+
+--0000000000000258b0061c6b4e0a--

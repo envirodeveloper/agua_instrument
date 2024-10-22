@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Agua Instruments</title>
+    <style>
+      
+
+      .aboutus-aipl{
+        text-align: center;
+        width: 700px;
+      margin-left: 300px;
+      }
+
+
+        .about-us h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .about-us p {
+            font-size: 1.2em;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-card {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-card .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+        }
+
+        .image-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .image-card:hover {
+            transform: scale(1.05);
+        }
+
+        .overlay .text {
+            font-size: 1.5em;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content {
+            text-align: left;
+            max-width: 1000px;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            animation: fadeIn 1.5s ease;
+            position: relative;
+            z-index: 1;
+            left: 180px;
+            top: 10px;
+        }
+
+        .content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.5));
+            z-index: -1;
+            border-radius: 10px;
+        }
+
+        .content h2 {
+            font-size: 2em;
+            color: #333;
+            margin-top: 20px;
+            position: relative;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+        }
+
+        .content p {
+            font-size: 1.2em;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .content p:hover {
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .image-card {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <meta name="description" content="Learn about Agua Instruments, a leading provider of advanced water management solutions. Discover our history, mission, and commitment to sustainability and innovation." />
+</head>
+<body>
+
+  <div data-include-html="header.html"></div>
+
+    <section>
+
+      <div class="aboutus-aipl">
+        <h1>About Us</h1>
+        <p>We are a company dedicated to providing the best gas, water, and air analyzers. Our mission is to deliver quality products and services to our customers, ensuring safety and efficiency in their operations.</p>
+      </div>
+      
+        <div class="image-container">
+            <div class="image-card">
+                <img src="./aboutus-images/passionate-innovation.jpg" alt="Team member 1">
+                <div class="overlay">
+                    <div class="text">Passionate about innovation</div>
+                </div>
+            </div>
+            <div class="image-card">
+                <img src="./aboutus-images/excellence.jpeg" alt="Team member 2">
+                <div class="overlay">
+                    <div class="text">Committed to excellence</div>
+                </div>
+            </div>
+            <div class="image-card">
+                <img src="./aboutus-images/dedicated-to-quality.jpg" alt="Team member 3">
+                <div class="overlay">
+                    <div class="text">Dedicated to quality</div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h2>Profile</h2>
+            <p>Agua Instruments Private Limited is headquartered in Mumbai and has a presence in all major cities like Delhi, Kolkata, Bangalore, and Chennai. We are a leading solutions provider and system integrator in the field of Process Analytics, Process Instrumentation, Environment and Emission Monitoring & Automation. We provide process solutions for pressure, level, flow, temperature, analytics, recording, and digital communications. Today, our innovative enterprise caters to the entire water industry, starting from drinking water to sewage and wastewater, and we strive to achieve the same feat in the Emission market also. We serve various industries like Dye & Dye Intermediate, Pulp & Paper, Pesticides, Pharmaceuticals, Tanneries, Distillery, Sugar, Power Plants, Cement, Oil Refineries, Fertilizer, Chloral Alkali Plants, Units, Common Bio-Medical Waste, Common Effluent Treatment Plants (CETP), STPs, and Common Hazardous Waste Incinerators, etc.</p>
+            <h2>INNOVATION APPLIED TO ONLINE ANALYSERS</h2>
+            <p>We are a technology-led company run by qualified professionals backed by strong project management skills. Our teams specialize in executing small to large turnkey projects from design and engineering to procurement, manufacturing, testing, installation, commissioning, and servicing. Our technically viable collaborations with leading names worldwide have helped us innovate and secure a position that Agua Instruments enjoys in the Process Industry. We take pride in our ability to deliver cost-effective and timely projects while meeting the highest quality standards and ensuring safe and environmentally conscious operations.</p>
+            </div>
+    </section>
+
+
+     
+  <div data-include-html="footer.html"></div>
+
+  <script src="./javascript/sidebar.js"></script>
+  <script src="./javascript/Accordion.js"></script>
+  <script src="./javascript/main.js"></script>
+
+
+</body>
+</html>
