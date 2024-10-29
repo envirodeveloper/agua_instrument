@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    background-image: url('https://media.istockphoto.com/id/1312284846/photo/tree-on-the-background-of-nature-and-industrial-plant.jpg?s=1024x1024&w=is&k=20&c=r7UH2KCu2QW7jtBECwivGvvKcgp2LMDCCMSaHEjt1qE='); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    height: 70vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.left-section {
+    flex: 1;
+    color: white;
+    padding: 20px;
+}
+
+.left-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.left-section p {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.social-icons a {
+    color: white;
+    margin-right: 15px;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.signin-form h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.signin-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #333;
+}
+
+.signin-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.remember-me input {
+    margin-right: 10px;
+}
+
+.signin-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.signin-btn:hover {
+    background-color: darkorange;
+}
+
+.forgot-password {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #555;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.signin-form p {
+    font-size: 12px;
+    color: #555;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.signin-form p a {
+    color: orange;
+    text-decoration: none;
+}
+
+.signin-form p a:hover {
+    text-decoration: underline;
+}
