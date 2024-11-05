@@ -10,7 +10,6 @@ function includeHTML() {
             .then(response => response.text())
             .then(data => {
                 el.innerHTML = data;
-            
             })
             .catch(error => console.error('Error loading HTML:', error));
     });

@@ -88,14 +88,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // { img: './blogs-images/new-image3.jpg', title: 'Community and Public Health', text: 'Promoting Public Health: Monitoring Drinking Water Quality', link: '#' },
 // { img: './blogs-images/new-image4.jpg', title: 'Case Studies', text: 'Case Study: Monitoring Air Quality in Urban Centers', link: '#' },
 // { img: './blogs-images/new-image5.jpg', title: 'Innovative Applications', text: 'Innovative Use of IoT Sensors in Industrial Emissions Monitoring', link: '#' },
-
 // ],
+
 // [
 // { img: './blogs-images/new-image1.jpg', title: 'Impact of International Standards', text: 'Understanding ISO Standards: Ensuring Global Compliance in Environmental Monitoring', link: '' },
 // { img: './blogs-images/new-image2.jpg', title: 'Regulatory Training and Education', text: 'Workshop Recap: Training Session on Navigating Environmental Regulations', link: '#' },
 // { img: './blogs-images/new-image3.jpg', title: 'Expert Insights on Compliance Strategies', text: 'Expert Panel Discussion: Strategies for Staying Ahead in Environmental Compliance.', link: '#' },
 // { img: './blogs-images/new-image4.jpg', title: 'Best Practices in Regulatory Reporting', text: 'Best Practices for Environmental Data Reporting Under New Regulations', link: '#' },
-
 // ],
         // Add more sets of cards for other vertical items if needed
     ];
