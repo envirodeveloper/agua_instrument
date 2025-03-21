@@ -1,104 +1,3 @@
-/* .carousel-container {
-  position: relative;
-  height: 50vh;
-  background-size: cover;
-  background-position: center;
-  animation: bgChange 16s infinite;
-  background-image: url("../newImages/industry-home-header.jpg");
-}
-
-.leading-sustainable {
-  position: absolute;
-  top: 53%;
-  left: 50%;
-  width: 1200px;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-}
-
-.leading-sustainable-title {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.contact-btn {
-  display: inline-block;
-  position: relative;
-  padding: 0.50rem 1.5rem;
-  width: 160px;
-  font-size: 20px;
-  color: #fff; 
-  background: transparent;
-  text-decoration: none;
-  border: 2px solid #fff; 
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
-}
-
-.contact-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #fff; 
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.4s ease;
-  z-index: 1;
-  opacity: 50%;
-}
-
-.contact-btn:hover::before {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.contact-btn:hover {
-  color: #fff; 
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-  transform: scale(1.05); 
-  
-  
-}
-
-.contact-btn:hover .contact-span {
-  opacity: 0; 
-}
-
-.contact-btn:hover .icon {
-  opacity: 1;
-}
-
-.contact-span {
-  position: relative;
-  z-index: 2;
-  transition: opacity 0.4s ease;
-}
-
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 1.2rem;
-  color: #000;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  z-index: 2;
-} */
-
-
-
-
-
 
 
  .contact-btn {
@@ -433,6 +332,125 @@
   transform: scale(1.4); /* Zoom effect */
 }
 
+
+.hometech-partner-arrow-main-container, .client-arrow-main-container, .testimonials-arrow-main-container, .home-industry-arrow-main-container, .home-prod-arrow-main-container, .home-blog-arrow-main-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.hometech-partner-arrow-container, .client-arrow-container, .testimonials-arrow-container, .home-industry-arrow-container, .home-prod-arrow-container, .home-blog-arrow-container {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.hometech-partner-arrow-rotate, .client-arrow-rotate, .testimonials-arrow-rotate, .home-industry-arrow-rotate, .home-prod-arrow-rotate, .home-blog-arrow-rotate {
+  transform: rotate(180deg);
+}
+.hometech-partner-arrow-content, .client-arrow-content, .testimonials-arrow-content, .home-industry-arrow-content, .home-prod-arrow-content, .home-blog-arrow-content {
+  display: none;
+  padding: 15px;
+  font-size: 16px;
+  color: #333;
+  background: #fff;
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  align-self: flex-start;
+}
+.hometech-partner-arrow-show, .client-arrow-show, .testimonials-arrow-show, .home-industry-arrow-show, .home-prod-arrow-show, .home-blog-arrow-show{
+  display: block;
+}
+.arrow-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+}
+.arrow-animation span {
+  font-size: 32px;
+  animation: scrollDown 1.5s infinite;
+}
+@keyframes scrollDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  50% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(10px);
+  }
+}
+
+
+
+/*******home blogs **************************/
+
+.home-blog-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+.home-blog-card {
+  width: 30%;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+.home-blog-card:hover {
+  transform: translateY(-5px);
+}
+.home-blog-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.home-blog-content {
+  padding: 15px;
+}
+.home-blog-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.home-blog-text {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+.home-blog-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.home-blog-link:hover {
+  background: #0056b3;
+}
+@media (max-width: 768px) {
+  .home-blog-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .home-blog-card {
+      width: 90%;
+  }
+}
 
 /************tech partners section ************************************************************/
 

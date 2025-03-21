@@ -289,6 +289,64 @@ section {
 }
 
 
+/* home prod arrow extra content */
+
+.uae-home-prod-expand-arrow-main-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+.home-prod-expand-arrow-container {
+	cursor: pointer;
+	font-size: 32px;
+	transition: transform 0.3s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.home-prod-expand-arrow-rotate {
+	transform: rotate(180deg);
+}
+.home-prod-expand-arrow-content {
+	display: none;
+	padding: 15px;
+	font-size: 16px;
+	color: #333;
+	background: #fff;
+	width: 100%;
+	border-radius: 8px;
+	margin-top: 10px;
+	align-self: flex-start;
+}
+.home-prod-expand-arrow-show {
+	display: block;
+}
+.arrow-animation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 5px;
+}
+.arrow-animation span {
+	font-size: 32px;
+	animation: bounce 1.5s infinite;
+}
+.arrow-animation span:nth-child(2) {
+	animation-delay: 0.2s;
+}
+.arrow-animation span:nth-child(3) {
+	animation-delay: 0.4s;
+}
+@keyframes bounce {
+	0%, 100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+}
+
 /* Products cards overrrrrrrrrrrr  */
 
 
