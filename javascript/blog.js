@@ -54,16 +54,24 @@ const prevButton = document.getElementById('prev');
 
         // Initialize the carousel position
         updateCarousel();
-
+        
         // Auto-slide
         setInterval(() => {
             nextButton.click();
         }, 5000);
 
 
+
+
+
+
+
+
+
+
         /////////////////////////blog sharing icon//////////////////////////////
 
-          document.querySelector('.share-icon').addEventListener('click', () => {
+        document.querySelector('.share-icon').addEventListener('click', () => {
             const socialIcons = document.querySelector('.social-icons');
             socialIcons.style.display = socialIcons.style.display === 'none' || socialIcons.style.display === '' ? 'flex' : 'none';
           });

@@ -8,15 +8,16 @@
 //     document.querySelector('.content').style.marginLeft = '0';
 //   });
   
-function toggleSidebar() {
-  var sidebar = document.getElementById("sidebar");
-  sidebar.classList.toggle("show");
-}
+// function toggleSidebar() {
+//   var sidebar = document.getElementById("sidebar");
+//   sidebar.classList.toggle("show");
+// }
 
-function toggleDropdown(section) {
-  var dropdown = document.getElementById(section + "-dropdown");
-  dropdown.classList.toggle("show");
+// function toggleDropdown(section) {
+//   var dropdown = document.getElementById(section + "-dropdown");
+//   dropdown.classList.toggle("show");
 
-  var arrow = document.querySelector('.has-dropdown a.' + section + '.arrow');
-  arrow.classList.toggle("up", dropdown.classList.contains("show")); // Add this line
-}
+//   var arrow = document.querySelector('.has-dropdown a.' + section + '.arrow');
+//   arrow.classList.toggle("up", dropdown.classList.contains("show")); // Add this line
+// }
+

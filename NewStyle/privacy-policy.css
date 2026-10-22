@@ -1,0 +1,86 @@
+/* Privacy Policy Page Styles for AguA Instruments */
+.privacy-policy {
+  font-family: "Poppins", sans-serif;
+  background-color: #f9fafb;
+  color: #222;
+  padding-bottom: 60px;
+  line-height: 1.8;
+}
+
+.privacy-policy__header {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+
+.privacy-policy__header img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  filter: brightness(60%);
+}
+
+.privacy-policy__header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.privacy-policy__container {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px 50px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.privacy-policy__container:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-policy__container h2 {
+  margin-top: 30px;
+  color: #0059b3;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-left: 4px solid #00aaff;
+  padding-left: 12px;
+}
+
+.privacy-policy__container p,
+.privacy-policy__container ul {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 10px;
+}
+
+.privacy-policy__container ul {
+  margin-left: 25px;
+  list-style-type: disc;
+}
+
+.privacy-policy__container a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.privacy-policy__container a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .privacy-policy__container {
+    padding: 25px 20px;
+  }
+
+  .privacy-policy__header h1 {
+    font-size: 2rem;
+  }
+}

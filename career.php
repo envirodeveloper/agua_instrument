@@ -1,94 +1,79 @@
+
+
+
+
+
+
+
+
+
+
 <?php
-// echo "<pre>";
-// print_r($_POST);
-// exit;
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
+// ================= DATABASE CONNECTION =================
+$conn = new mysqli("localhost", "u308786844_sales_agua", "jWJeVL22&HT26nV*", "u308786844_career");
 
-require('emailservices/PHPMailer.php');
-require('emailservices/SMTP.php');
-require('emailservices/Exception.php');
-
-$message = '';
-
-
-if (isset($_POST["submit"])) {
-    $skills = '';
-    foreach ($_POST["skills"] as $row) {
-        $skills .= $row . ', ';
-    }
-    $skills = substr($skills, 0, -2);
-    $path = 'upload/' . $_FILES["resume"]["name"];
-    move_uploaded_file($_FILES["resume"]["tmp_name"], $path);
-    $message = '
-		<h3 align="center">Applicant Details</h3>
-		<table border="1" width="100%" cellpadding="5" cellspacing="5">
-			<tr>
-				<td width="30%">Name</td>
-				<td width="70%">' . $_POST["name"] . '</td>
-			</tr>
-			<tr>
-				<td width="30%">Address</td>
-				<td width="70%">' . $_POST["address"] . '</td>
-			</tr>
-			<tr>
-				<td width="30%">Email Address</td>
-				<td width="70%">' . $_POST["email"] . '</td>
-			</tr>
-			<tr>
-				<td width="30%">Area of Interest</td>
-				<td width="70%">' . $skills . '</td>
-			</tr>
-			<tr>
-				<td width="30%">Experience Year</td>
-				<td width="70%">' . $_POST["experience"] . '</td>
-			</tr>
-			<tr>
-				<td width="30%">Phone Number</td>
-				<td width="70%">' . $_POST["mobile"] . '</td>
-			</tr>
-			<tr>
-				<td width="30%">Additional Information</td>
-				<td width="70%">' . $_POST["additional_information"] . '</td>
-			</tr>
-		</table>
-	';
-
-    $mail = new PHPMailer;
-    $mail->IsSMTP();                                //Sets Mailer to send message using SMTP
-
-    // $mail->SMTPDebug  = 3;      
-    // $mail->Debugoutput = 'html';   
-    // ADD YOUR DETAILS HERE
-    $mail->Host = 'smtp.gmail.com';        //Sets the SMTP hosts of your Email hosting, this for Godaddy
-    $mail->Port = 587;                                //Sets the default SMTP server port
-    $mail->SMTPAuth = true;                            //Sets SMTP authentication. Utilizes the Username and Password variables
-    $mail->Username = 'support@technicrafts.com';                    //Sets SMTP username
-    $mail->Password = 'Koq46276';                    //Sets SMTP password
-    $mail->SMTPSecure = 'tls';                            //Sets connection prefix. Options are "", "ssl" or "tls"
-    $mail->From = 'support@technicrafts.com';                    //Sets the From email address for the message
-    $mail->FromName = 'support@technicrafts.com';                //Sets the From name of the message
-    $mail->AddAddress('info@aguainstruments.com', 'Technicrafts');        //Adds a "To" address
-    // ADD YOUR DETAILS HERE
-    // print_r($path);exit;
-    $mail->WordWrap = 50;                            //Sets word wrapping on the body of the message to a given number of characters
-    $mail->IsHTML(true);                            //Sets message type to HTML
-    $mail->addAttachment(''.$path.'');                //Adds an attachment from a path on the filesystem
-    $mail->Subject = 'Application for JOB';                //Sets the Subject of the message
-    $mail->Body = $message;                            //An HTML or plain text message body
-    if ($mail->Send())                                //Send an Email. Return true on success or false on error
-    {
-        // print_r("Data sucessfully sent ");exit;
-        // return true;
-        sendResponse(1,'Thank you for enquiry');
-    } else {
-        // echo $mail->ErrorInfo; exit;
-        //$message = '<div class="alert alert-danger">There is an Error</div>';
-        sendResponse(0,'Failed to Send Email');
-    }
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
- 
 
+// ================= GET FORM DATA =================
+$name = $_POST['name'];
+$mobile = $_POST['mobile'];
+$email = $_POST['email'];
+$address = $_POST['address'];
+$skills = implode(", ", $_POST['skills']);
+$experience = $_POST['experience'];
+$additional = $_POST['additional_info'];
+
+// ================= FILE UPLOAD =================
+$targetDir = "uploads/";
+
+// create folder if not exists
+if (!is_dir($targetDir)) {
+    mkdir($targetDir, 0777, true);
+}
+
+$fileName = time() . "_" . basename($_FILES["resume"]["name"]);
+$targetFilePath = $targetDir . $fileName;
+
+// upload file
+if (!move_uploaded_file($_FILES["resume"]["tmp_name"], $targetFilePath)) {
+    die("Error uploading file");
+}
+
+// ================= INSERT INTO DATABASE =================
+$sql = "INSERT INTO career_applications 
+(name, mobile, email, address, skills, experience, resume, additional_info) 
+VALUES ('$name', '$mobile', '$email', '$address', '$skills', '$experience', '$fileName', '$additional')";
+
+if (!$conn->query($sql)) {
+    die("Database Error: " . $conn->error);
+}
+
+// ================= CREATE RESUME URL =================
+// IMPORTANT: Replace with your actual domain
+$resumeURL = "https://aguainstruments.com/" . $targetFilePath;
+
+// ================= WHATSAPP MESSAGE =================
+$message = urlencode(
+"New Job Application:\n\n".
+"Name: $name\n".
+"Mobile: $mobile\n".
+"Email: $email\n".
+"Experience: $experience\n".
+"Skills: $skills\n".
+"Resume: $resumeURL\n"
+);
+
+// ================= WHATSAPP NUMBER =================
+$phone = "917620971243";
+
+// ================= REDIRECT TO WHATSAPP =================
+header("Location: https://wa.me/$phone?text=$message");
+exit;
+
+$conn->close();
 ?>

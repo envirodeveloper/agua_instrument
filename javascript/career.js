@@ -1,30 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Function to update the progress segments
-    const updateProgressSegments = (activeIndex) => {
-        document.querySelectorAll('.career-progress-segment').forEach((segment, index) => {
-            if (index <= activeIndex) {
-                segment.classList.add('active');
-            } else {
-                segment.classList.remove('active');
-            }
-        });
-    };
-    
+document.addEventListener("DOMContentLoaded", () => {
+  emailjs.init("4trZayuz-uQG6Zu47ri6a");
 
-    // Show the first card by default and set the initial active segments
-    document.getElementById('card1').classList.add('show');
-    updateProgressSegments(0);
-    
-    // Add click event listeners to all progress segments
-    document.querySelectorAll('.career-progress-segment').forEach((segment, index) => {
-        segment.addEventListener('click', () => {
-            // Hide all cards
-            document.querySelectorAll('.career-card').forEach(card => card.classList.remove('show'));
-            // Show the clicked card
-            const cardId = segment.getAttribute('data-card');
-            document.getElementById(cardId).classList.add('show');
-            // Update the active segments
-            updateProgressSegments(index);
-        });
-    });
+  const form = document.querySelector(".career-form form");
+  const btnText = document.getElementById("career-submit-text");
+  const spinner = document.getElementById("career-spinner");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    btnText.style.display = "none";
+    spinner.style.display = "inline-block";
+
+    emailjs
+      .sendForm("service_1fflnk9", "template_uih9iqh", this)
+      .then(() => {
+        alert("Application submitted successfully!");
+        form.reset();
+      })
+      .catch((error) => {
+        console.error(error);
+        alert("Submission failed. Please try again.");
+      })
+      .finally(() => {
+        btnText.style.display = "inline";
+        spinner.style.display = "none";
+      });
+  });
 });

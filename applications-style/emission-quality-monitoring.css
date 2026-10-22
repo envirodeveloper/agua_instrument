@@ -1,351 +1,831 @@
+/* ═══════════════════════════════════════════════
+   Emission Monitoring — Premium CSS
+   Agua Instruments
+   Matches water & air quality monitoring design system
+   ═══════════════════════════════════════════════ */
 
+/* ── TOKENS ── */
+:root {
+  --agua-navy:       #0b2e4e;
+  --agua-blue:       #0d7abf;
+  --agua-blue-lt:    #1a9be0;
+  --agua-teal:       #0fa891;
+  --agua-teal-lt:    #17c9ae;
+  --agua-accent:     #f97316;
+  --agua-white:      #ffffff;
+  --agua-off:        #f0f6fb;
+  --agua-surface:    #e8f3fb;
+  --agua-text:       #0f2035;
+  --agua-muted:      #4a6580;
+  --agua-border:     rgba(13, 122, 191, 0.15);
 
-  /* Main Content Styling */
-  .emissionmonitor-intro-container {
-    overflow: hidden; /* Clear floats */
-    padding: 20px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  }
-  
-  .emissionmonitor-intro-img1,
-  .emissionmonitor-intro-img2 {
-    max-width: 350px; /* Adjust width as needed */
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .emissionmonitor-intro-img1 {
-    float: left;
-    margin-right: 20px;
-  }
-  
-  .emissionmonitor-intro-img2 {
-    float: right;
-    margin-left: 20px;
-  }
-  
-  .emissionmonitor-intro-img1:hover,
-  .emissionmonitor-intro-img2:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  .emissionmonitor-intro-img1 img,
-  .emissionmonitor-intro-img2 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 8px;
-  }
-  
-  .emissionmonitor-intro-para1,
-  .emissionmonitor-intro-para2,
-  .emissionmonitor-intro-para3 {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 10px;
-  }
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  30px;
 
+  --shadow-sm:  0 2px 10px rgba(11, 46, 78, 0.08);
+  --shadow-md:  0 6px 24px rgba(11, 46, 78, 0.12);
+  --shadow-lg:  0 16px 48px rgba(11, 46, 78, 0.16);
 
-  .emissionmonitor-intro-para01{
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 100px;
-  }
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-
-  /* .emissionmonitor-intro-para02 {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-top: 10px;
-  } */
-  
-  .emissionmonitor-needs-para1,
-  .emissionmonitor-needs-para2{
-    line-height: 1.8;
-    font-size: 18px;
-  }
-
-  /*********************circle why choose us **********************************/
-/* Reset basic styles */
-
-
-.circle-container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    text-align: center;
+  --font-display: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-body:    'Montserrat', 'Segoe UI', sans-serif;
 }
 
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--agua-text);
+  background: var(--agua-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── VIDEO HERO ── */
+.bg-video {
+  min-width: 100%;
+  min-height: 46vh;
+  max-width: 100%;
+  max-height: 46vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.85;
+  display: block;
+}
+
+/* ── BANNER HEADINGS ── */
+.banner {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.banner h1,
+.banner h2 {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.head-color {
+  color: var(--agua-navy);
+}
+
+.banner hr.bg-dark {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border: none;
+  border-radius: 2px;
+  margin: 8px auto 0;
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   INTRO SECTION
+═══════════════════════════════════════════════ */
+.emissionmonitor-intro-container {
+  overflow: hidden;
+  padding: 2.5rem;
+  background: var(--agua-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--agua-border);
+  position: relative;
+}
+
+.emissionmonitor-intro-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.emissionmonitor-intro-img1,
+.emissionmonitor-intro-img2 {
+  max-width: 360px;
+  height: 240px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 3px solid var(--agua-white);
+  outline: 1px solid var(--agua-border);
+}
+
+.emissionmonitor-intro-img1 {
+  float: left;
+  margin-right: 2rem;
+  margin-top: 0.5rem;
+}
+
+.emissionmonitor-intro-img2 {
+  float: right;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.emissionmonitor-intro-img1:hover,
+.emissionmonitor-intro-img2:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.emissionmonitor-intro-img1 img,
+.emissionmonitor-intro-img2 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.emissionmonitor-intro-container h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--agua-navy);
+  letter-spacing: 0.05em;
+  margin: 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emissionmonitor-intro-container h3::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: linear-gradient(to bottom, var(--agua-blue), var(--agua-teal));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.emissionmonitor-intro-para1,
+.emissionmonitor-intro-para2,
+.emissionmonitor-intro-para3 {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--agua-muted);
+  margin-bottom: 1rem;
+}
+
+.emissionmonitor-intro-para01 {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--agua-muted);
+  margin-bottom: 2rem;
+}
+
+/* ═══════════════════════════════════════════════
+   NEEDS SECTION
+═══════════════════════════════════════════════ */
+.emissionmonitor-needs-para1,
+.emissionmonitor-needs-para2 {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--agua-muted);
+}
+
+/* ═══════════════════════════════════════════════
+   WHY CHOOSE US — CIRCLES
+═══════════════════════════════════════════════ */
 .why-choose-us {
-    background-color: #fff;
-  
+  background: linear-gradient(135deg, var(--agua-off) 0%, var(--agua-surface) 100%);
+  border-radius: var(--radius-lg);
+  margin: 2.5rem 0;
+  padding: 2rem 0;
+  border: 1px solid var(--agua-border);
+}
+
+.circle-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
 }
 
 .why-choose-us h2 {
-    font-size: 1.8rem;
-    margin-bottom: 30px;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--agua-navy);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
 }
 
 .why-choose-us h2 span {
-    color: #4CAF50; /* Green color for emphasis */
+  color: var(--agua-blue);
+  position: relative;
+}
+
+.why-choose-us h2 span::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border-radius: 1px;
 }
 
 .circles {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
 .circle {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background-color: #f9f9f9;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: var(--agua-white);
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid var(--agua-border);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--agua-surface) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  border-radius: 50%;
 }
 
 .circle:hover {
-    transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--agua-blue);
+}
+
+.circle:hover::before {
+  opacity: 1;
 }
 
 .circle h3 {
-    font-size: 1.5rem;
-    color: #333;
-    margin-bottom: 15px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--agua-navy);
+  margin-bottom: 0.75rem;
+  position: relative;
+  line-height: 1.3;
 }
 
 .circle p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #666;
-}
-
-
-
-
-/*****card***********************************************************************************************************************************/
-  
-    
-  .emissionmonitor-containercard {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .emissionmonitor-containercard .emissionmonitor-card {
-    position: relative;
-    width: 320px;
-    height: 280px;
-    background: white;
-    border: 1px solid lightgray;
-    border-radius: 20px;
-    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.15);
-    transition: 0.5s;
-  }
-  
-  .emissionmonitor-containercard .emissionmonitor-card:hover {
-    height: 250px;
-  }
-  
-  .emissionmonitor-containercard .emissionmonitor-card .emissionmonitor-imgbox {
-    position: absolute;
-    top: 20px;
-    width: 270px;
-    height: 190px;
-    background: #333;
-    border-radius: 12px;
-    transition: 0.5s;
-    overflow: hidden;
-    left: 25px;
-  }
-  
-  .emissionmonitor-containercard .emissionmonitor-card:hover .emissionmonitor-imgbox {
-    top: -100px;
-    scale: 0.8;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
-  }
-  
-  .emissionmonitor-containercard .emissionmonitor-card .emissionmonitor-imgbox img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .emissionmonitor-containercard .emissionmonitor-card .emissionmonitor-cardcontent {
-    position: absolute;
-    width: 100%;
-    padding: 0 30px;
-    text-align: center;
-    top: 230px;
-    height: 45px;
-    overflow: hidden;
-    transition: 0.5s;
-    
-  }
-  
-  .emissionmonitor-containercard .emissionmonitor-card:hover .emissionmonitor-cardcontent {
-    top: 80px;
-    height: 250px;
-    
-  }
-  
-  .emissionmonitor-card-title{
-    position: relative;
-    font-size: 14px;
-    font-weight: 800;
-    margin-bottom:30px ;
-  
-  }
-  
-  .emissionmonitor-containercard .emissionmonitor-card:hover .emissionmonitor-card-title {
-    margin-bottom: 0;  /* Remove margin-bottom on hover */
-  }
-  .emissionmonitor-cardpara{
-    font-size: 14px;
-  }
-  
-  .emissionmonitor-cardpara2{
-    font-size: 14px;
-  }
-  
-
-
-  /***********************FAQ**********************************************/
-
-  .accordion-button {
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, font-weight 0.3s ease;
-  
-  }
-  
-  .accordion-button:hover {
-    background-color: #7ecffb;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-weight: bold;
-  }
-
-
-
-
-
-  
-/* General link styles */
-
-.emission-productlist{
-  display: inline-grid;
-}
-
-
-.emission-productlist1 {
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--agua-muted);
   position: relative;
-  padding-right: 25px;
-  transition: color 0.3s ease-in-out;
-  display: inline-block;
-  margin-left: 20px;
+  margin: 0;
 }
 
-/* Hover effect */
-.emission-productlist1:hover {
-  color: #0056b3;
+.circle:nth-child(even) {
+  border-color: rgba(15, 168, 145, 0.2);
 }
 
-/* Custom arrow */
-.emission-productlist1::after {
+.circle:nth-child(even):hover {
+  border-color: var(--agua-teal);
+}
+
+/* ═══════════════════════════════════════════════
+   APPLICATION CARDS
+═══════════════════════════════════════════════ */
+.emissionmonitor-containercard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem 0 2rem;
+}
+
+.emissionmonitor-containercard .emissionmonitor-card {
+  position: relative;
+  width: 300px;
+  height: 260px;
+  background: var(--agua-white);
+  border: 1px solid var(--agua-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+  overflow: visible;
+}
+
+.emissionmonitor-containercard .emissionmonitor-card:hover {
+  height: 260px;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.emissionmonitor-containercard .emissionmonitor-card .emissionmonitor-imgbox {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 260px;
+  height: 185px;
+  background: var(--agua-navy);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.emissionmonitor-containercard .emissionmonitor-card:hover .emissionmonitor-imgbox {
+  top: -90px;
+  scale: 0.82;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+}
+
+.emissionmonitor-containercard .emissionmonitor-card .emissionmonitor-imgbox::after {
   content: '';
   position: absolute;
-  top: 50%;
-  right: 0;
-  width: 10px;
-  height: 10px;
-  border-right: 2px solid #007bff;
-  border-top: 2px solid #007bff;
-  transform: translateY(-50%) rotate(45deg);
-  transition: border-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(11, 46, 78, 0.5));
+  transition: opacity var(--transition);
+  opacity: 0;
 }
 
-/* Hover effect for arrow */
-.emission-productlist1:hover::after {
-  border-color: #0056b3;
-  transform: translateY(-50%) rotate(45deg) translateX(5px);
+.emissionmonitor-containercard .emissionmonitor-card:hover .emissionmonitor-imgbox::after {
+  opacity: 1;
 }
 
-/* Additional effects */
+.emissionmonitor-containercard .emissionmonitor-card .emissionmonitor-imgbox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.emissionmonitor-containercard .emissionmonitor-card:hover .emissionmonitor-imgbox img {
+  transform: scale(1.05);
+}
+
+.emissionmonitor-containercard .emissionmonitor-card .emissionmonitor-cardcontent {
+  position: absolute;
+  width: 100%;
+  padding: 0 24px;
+  text-align: center;
+  top: 222px;
+  height: 30px;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.emissionmonitor-containercard .emissionmonitor-card:hover .emissionmonitor-cardcontent {
+  top: 76px;
+  height: 200px;
+}
+
+.emissionmonitor-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--agua-navy);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  position: relative;
+}
+
+.emissionmonitor-containercard .emissionmonitor-card:hover .emissionmonitor-card-title {
+  color: var(--agua-blue);
+  margin-bottom: 8px;
+}
+
+.emissionmonitor-cardpara,
+.emissionmonitor-cardpara2 {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--agua-muted);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   TABLE
+═══════════════════════════════════════════════ */
+.table-bordered {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--agua-border) !important;
+  width: 100%;
+}
+
+.table-bordered thead th {
+  background: linear-gradient(135deg, var(--agua-navy), var(--agua-blue));
+  color: var(--agua-white);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  border: none;
+}
+
+.table-bordered tbody tr {
+  transition: background var(--transition);
+}
+
+.table-bordered tbody tr:nth-child(odd) {
+  background: var(--agua-white);
+}
+
+.table-bordered tbody tr:nth-child(even) {
+  background: var(--agua-off);
+}
+
+.table-bordered tbody tr:hover {
+  background: var(--agua-surface);
+}
+
+.table-bordered tbody td {
+  padding: 11px 16px;
+  font-size: 14px;
+  color: var(--agua-muted);
+  border: none;
+  border-bottom: 1px solid var(--agua-border);
+  vertical-align: middle;
+  transition: color var(--transition);
+}
+
+.table-bordered tbody tr:hover td {
+  color: var(--agua-navy);
+}
+
+.table-bordered tbody td:first-child {
+  font-weight: 500;
+  color: var(--agua-text);
+}
+
+.table-bordered tbody td:nth-child(2) {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--agua-blue);
+  font-weight: 600;
+}
+
+.table-bordered tbody td:last-child {
+  font-size: 13px;
+  color: var(--agua-muted);
+}
+
+.table-bordered tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-responsive {
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+/* ═══════════════════════════════════════════════
+   HIGHLIGHT PRODUCTS
+═══════════════════════════════════════════════ */
+.emission-productlist {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.emission-productlist1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--agua-white);
+  background: linear-gradient(135deg, var(--agua-blue), var(--agua-teal));
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 50px;
+  margin-left: 16px;
+  margin-top: 4px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 16px rgba(13, 122, 191, 0.3);
+}
+
+.emission-productlist1::after {
+  content: '→';
+  font-size: 14px;
+  transition: transform var(--transition);
+}
+
 .emission-productlist1::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: -16px;
-  width: 8px;
-  height: 8px;
-  background-color: #007bff;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  inset: 0;
+  background: linear-gradient(135deg, var(--agua-blue-lt), var(--agua-teal-lt));
   opacity: 0;
-  visibility: hidden;
+  transition: opacity var(--transition);
 }
 
-/* Hover effect for additional effects */
+.emission-productlist1:hover {
+  color: var(--agua-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 122, 191, 0.4);
+}
+
 .emission-productlist1:hover::before {
-  background-color: #0056b3;
-  transform: translateY(-50%) translateX(-5px);
   opacity: 1;
-  visibility: visible;
 }
 
-  
-  
-  
-  /**********  Responsive ******************/
-  
-  
-  
-    @media (max-width: 720px) {
+.emission-productlist1:hover::after {
+  transform: translateX(4px);
+}
 
-      h1 {
-        font-size: 20px; /* Adjust font size for smaller screens */
-       /* Adjust word spacing for better readability */
-    }
-      .container {
-        padding: 10px;
-    }
+/* ═══════════════════════════════════════════════
+   FAQ ACCORDION
+═══════════════════════════════════════════════ */
+.accordion {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--agua-border);
+  margin-bottom: 2rem;
+}
 
-    .banner h2 {
-      font-size: 1.5em;
+.accordion-item {
+  border-bottom: 1px solid var(--agua-border);
+  transition: background var(--transition);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-button {
+  background: var(--agua-white);
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  padding: 18px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--agua-navy);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), padding-left var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.accordion-button::before {
+  content: '';
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--agua-surface);
+  border: 1px solid var(--agua-border);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d7abf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+  transition: transform var(--transition), background-color var(--transition);
+  flex-shrink: 0;
+}
+
+.accordion-button:hover {
+  background: var(--agua-off);
+  color: var(--agua-blue);
+  padding-left: 30px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.accordion-button:hover::before {
+  background-color: var(--agua-blue);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  padding: 0 24px 0;
+  display: none;
+  background: var(--agua-off);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--agua-muted);
+  border-top: 1px solid var(--agua-border);
+}
+
+.accordion-body.show {
+  display: block;
+  padding: 16px 24px 20px 64px;
+  animation: accordionOpen 0.2s ease;
+}
+
+@keyframes accordionOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════
+   GLOBAL UTILITY
+═══════════════════════════════════════════════ */
+.section-container {
+  position: relative;
+  top: 70px;
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .emissionmonitor-intro-container {
+    padding: 1.5rem;
   }
-  
-    .bg-dark {
-        width: 70%;
-    }
-  
-    .emissionmonitor-intro-img1,
-    .emissionmonitor-intro-img2 {
-        float: none;
-        margin: 0 auto 20px auto;
-        display: block;
-        max-width: 80%;
-    }
-    }
-  
+
+  .emissionmonitor-intro-img1,
+  .emissionmonitor-intro-img2 {
+    float: none;
+    margin: 0 auto 1.5rem;
+    display: block;
+    max-width: 100%;
+    height: 220px;
+  }
+
+  .circles {
+    gap: 1.25rem;
+  }
+
+  .circle {
+    width: 190px;
+    height: 190px;
+  }
+
+  .circle h3 {
+    font-size: 0.85rem;
+  }
+
+  .circle p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .banner h2 {
+    font-size: 1.35rem;
+  }
+
+  .bg-video {
+    min-height: 30vh;
+    max-height: 30vh;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .bg-dark {
+    width: 70%;
+  }
+
+  .emissionmonitor-intro-container {
+    padding: 1.25rem;
+  }
+
+  .emissionmonitor-intro-img1,
+  .emissionmonitor-intro-img2 {
+    float: none;
+    margin: 0 auto 1rem;
+    display: block;
+    max-width: 80%;
+    height: auto;
+  }
+
+  .emissionmonitor-intro-para1,
+  .emissionmonitor-intro-para2,
+  .emissionmonitor-intro-para3,
+  .emissionmonitor-intro-para01,
+  .emissionmonitor-needs-para1,
+  .emissionmonitor-needs-para2 {
+    font-size: 15px;
+  }
+
+  .why-choose-us {
+    border-radius: var(--radius-md);
+  }
+
+  .circle-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .why-choose-us h2 {
+    font-size: 1.35rem;
+  }
+
+  .circle {
+    width: 160px;
+    height: 160px;
+    padding: 1rem;
+  }
+
+  .emissionmonitor-containercard .emissionmonitor-card {
+    width: 280px;
+    height: 270px;
+  }
+
+  .emissionmonitor-containercard .emissionmonitor-card .emissionmonitor-imgbox {
+    width: 240px;
+    left: 20px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table {
+    font-size: 13px;
+  }
+
+  .table td {
+    word-break: break-word;
+    padding: 10px 12px;
+  }
+
+  .accordion-button {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .accordion-body.show {
+    padding: 14px 16px 16px 48px;
+  }
+
+  .emission-productlist1 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .circles {
+    justify-content: center;
+  }
+
+  .circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .emissionmonitor-containercard {
+    gap: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   PRINT
+═══════════════════════════════════════════════ */
+@media print {
+  .bg-video { display: none; }
+  .why-choose-us { background: none; }
+  .emissionmonitor-card { box-shadow: none; border: 1px solid #ccc; }
+}
