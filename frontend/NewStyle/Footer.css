@@ -1,0 +1,344 @@
+/* ═══════════════════════════════════════════════
+   Footer CSS — Agua Instruments
+   Fixed: Sales Enquiry & Service Support contact section
+   Everything else unchanged
+═══════════════════════════════════════════════ */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background: linear-gradient(135deg, #4b79a1, #283e51);
+  color: #fff;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-logo {
+  flex-basis: 100%;
+  margin-bottom: 10px;
+}
+
+.footer-logo img {
+  width: 250px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.footer-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  margin: 10px;
+}
+
+.footer-section h3 {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700;
+}
+
+.footer-section address {
+  margin-bottom: 10px;
+  font-style: normal;
+}
+
+.footer-section address p {
+  margin: 5px 0;
+}
+
+/* ═══════════════════════════════════════════════
+   CONTACT SECTION — Sales & Service blocks
+═══════════════════════════════════════════════ */
+
+/* Label rows: "Sales Enquiry:" / "Service Support:" */
+.footer-section address p strong {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 8px;
+  margin-top: 4px;
+}
+
+/* Each contact block (Sales / Service) */
+/* .footer-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  transition: background 0.25s ease;
+} */
+
+/* .footer-contact-block:hover {
+  background: rgba(255, 255, 255, 0.12);
+} */
+
+/* Label inside block */
+.footer-contact-block .contact-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0 0 4px;
+}
+
+/* Individual WhatsApp link row */
+.footer-contact-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 5px 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  width: fit-content;
+}
+
+.footer-contact-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transform: translateX(3px);
+  text-decoration: none;
+}
+
+/* WhatsApp icon inside link */
+.footer-contact-link .fab.fa-whatsapp {
+  font-size: 1.1rem;
+  color:#fff;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.footer-contact-link:hover .fab.fa-whatsapp {
+  transform: scale(1.2);
+}
+
+
+/* Parent wrapper */
+.footer-contact-wrapper {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* Equal width boxes */
+.footer-contact-wrapper .footer-contact-block {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .footer-contact-wrapper {
+        flex-direction: column;
+    }
+}
+
+/* Email link */
+.footer-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 5px 8px;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.footer-email-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffd700;
+}
+
+.footer-email-link .fas.fa-envelope {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   MAP
+═══════════════════════════════════════════════ */
+.footer-map {
+  flex-basis: 100%;
+  margin: 10px 0;
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 8px;
+}
+
+.footer-map h3 {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
+  font-size: 1.2em;
+}
+
+/* ═══════════════════════════════════════════════
+   SOCIAL MEDIA
+═══════════════════════════════════════════════ */
+.footer-section.social-media ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section.social-media ul li a {
+  color: #fff;
+  font-size: 24px;
+  transition: transform 0.3s, color 0.3s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.footer-section.social-media ul li a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform: scale(0);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.footer-section.social-media ul li a:hover::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.footer-section.social-media ul li a:hover {
+  color: #ffd700;
+  transform: rotate(360deg);
+}
+
+.footer-section .social-icons-copyright {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.footer-section .social-icons-copyright ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section .social-icons-copyright ul li a {
+  color: #fff;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.footer-section .social-icons-copyright ul li a:hover {
+  color: #ffd700;
+}
+
+.footer-section .social-icons-copyright p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9em;
+  margin: 0;
+}
+
+/* Privacy Policy link */
+.privacy-link {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 5px;
+  transition: color 0.3s ease;
+}
+
+.privacy-link:hover {
+  color: #ffd700;
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-sections {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-contact-block {
+    padding: 10px 12px;
+  }
+
+  .footer-contact-link {
+    font-size: 0.88rem;
+  }
+}

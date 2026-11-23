@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./NewStyle/contact.css">
+    <link rel="stylesheet" href="./NewStyle/Footer.css">
+    <link rel="stylesheet" href="./NewStyle/Navbar.css">
+    <link rel="stylesheet" href="./NewStyle/sidebar.css">
+    <title>Contact Us - Agua Instruments</title>
+    <meta name="description" content="Get in touch with Agua Instruments. Whether you have a question, need support, or want to learn more about our air, water & gas management solutions, our team is here to help."/>
+</head>
+<body>
+
+    <div data-include-html="header.html"></div>
+
+    <section class="justify">
+
+    <div class="contact-header">
+        <div class="animated-text">
+            <span class="fixed-text">Contact us for</span>
+            <div class="changing-text-container">
+                <div class="changing-text">
+                    <span>Gas analyzer</span>
+                    <span>Water analyzer</span>
+                    <span>Ambient air quality</span>
+                    <span>Dust analyzer</span>
+                    <span>Auto sampler</span>
+                    <!-- Repeat the text for seamless looping -->
+                    <span>Gas analyzer</span>
+                    <span>Water analyzer</span>
+                    <span>Ambient air quality</span>
+                    <span>Dust analyzer</span>
+                    <span>Auto sampler</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-contact-container">
+        <div class="contact-card-container">
+            <div class="contact-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h5>Address</h5>
+                <p>Office No.202, Vini Solitare
+Y.R. Tawade Road, Dahisar (W)
+Mumbai 400068.</p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-phone-alt"></i>
+                <h5>Phone</h5>
+                <p>Feel free to give us a call during business hours for any inquiries or support.</p>
+                <p><a href="tel:+919820540015">+91-9820540015</a></p>
+            </div>
+            <div class="contact-card">
+                <i class="fas fa-envelope"></i>
+                <h5>Email</h5>
+                <p>Send us an email anytime. We strive to respond within 24 hours.</p>
+                <p><a href="mailto:info@aguainstruments.com">info@aguainstruments.com</a></p>
+            </div>
+
+            <div class="contact-gas-image">
+                <img class="gas_meter" src="./img/contactus_gas_meter.jpg" alt="Gas Meter">
+            </div>
+        </div>
+        <div class="contact-form-container">
+            <div class="progress-bar-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="contact-form">
+                <h2>Contact Form</h2>
+                <div>
+                    <form method="POST" action="contactus.php"  name="contact-form" id="contact_form">
+        
+                      <!--Grid row-->
+                      <div >
+                        
+                        <!--Grid column-->
+                        <div>
+                          <div class="form-group mb-0">
+                            <label for="name" class="">Your name</label>
+                            <input type="text" placeholder="Name" id="name" name="name" class="form-control">
+                          </div>
+                        </div>
+                        
+                        <!--Grid column-->
+                        
+                        <div>
+                          <div class="form-group mb-0">
+                            <label for="email" class="">Your email</label>
+                            <input type="text" placeholder="Email" id="email" name="email" class="form-control">
+        
+                          </div>
+                        </div>
+                        <!--Grid column-->
+        
+                      </div>
+                      <!--Grid row-->
+        
+                      <!--Grid row-->
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group mt-2 mb-0">
+                            <label for="subject" class="">Subject</label>
+                            <input type="text" placeholder="Subject" id="subject" name="subject" class="form-control">
+        
+                          </div>
+                        </div>
+                      </div>
+                      <!--Grid row-->
+        
+                      <!--Grid row-->
+                      <div class="row">
+        
+                        <!--Grid column-->
+                        <div class="col-md-12">
+                          <div class="form-group mt-2">
+                            <label for="message">Your message</label>
+                            <textarea type="text" placeholder="Description(message)" id="message" name="message" rows="2"
+                              class="form-control md-textarea"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <!--Grid row-->
+                      <div class="text-center mt-2 text-md-left">
+                        <input type="submit" name="submit" value="Submit" class="btn btn-primary contact-snd" />
+                        <!-- <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a> -->
+                      </div>
+                    </form>
+                    <div class="form_response"></div>  
+                    <div class="status"></div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+    <div data-include-html="footer.html"></div>
+
+    <script src="./javascript/sidebar.js"></script>
+    <script src="./javascript/main.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script>
+    <script type="text/javascript" src="api/validationA09.js"></script>
+</body>
+</html>

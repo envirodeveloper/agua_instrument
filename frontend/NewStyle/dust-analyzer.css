@@ -1,0 +1,467 @@
+/* ═══════════════════════════════════════════════
+   LKS Dust Analyzer — Premium CSS
+   Agua Instruments
+   Matches site-wide design system
+   ═══════════════════════════════════════════════ */
+
+/* ── TOKENS ── */
+:root {
+  --agua-navy:       #0b2e4e;
+  --agua-blue:       #0d7abf;
+  --agua-blue-lt:    #1a9be0;
+  --agua-teal:       #0fa891;
+  --agua-teal-lt:    #17c9ae;
+  --agua-white:      #ffffff;
+  --agua-off:        #f0f6fb;
+  --agua-surface:    #e8f3fb;
+  --agua-text:       #0f2035;
+  --agua-muted:      #4a6580;
+  --agua-border:     rgba(13, 122, 191, 0.15);
+
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  --shadow-sm:  0 2px 10px rgba(11, 46, 78, 0.08);
+  --shadow-md:  0 6px 24px rgba(11, 46, 78, 0.12);
+  --shadow-lg:  0 16px 48px rgba(11, 46, 78, 0.16);
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-display: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-body:    'Montserrat', 'Segoe UI', sans-serif;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--agua-text);
+  background: var(--agua-off);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+section.justify {
+  text-align: justify;
+  padding-bottom: 3rem;
+}
+
+/* ═══════════════════════════════════════════════
+   HERO IMAGE BANNER
+═══════════════════════════════════════════════ */
+#mydiv {
+  position: relative;
+  overflow: hidden;
+  margin-top: 68px;
+}
+
+#mydiv img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.8);
+}
+
+#mydiv::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 35%,
+    rgba(11, 46, 78, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════
+   LKS BRAND LOGO
+═══════════════════════════════════════════════ */
+.container img[src*="applks"] {
+  display: block !important;
+  margin: 2rem auto 0.5rem !important;
+  width: auto !important;
+  height: 80px !important;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(11, 46, 78, 0.1));
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.container img[src*="applks"]:hover {
+  transform: scale(1.03);
+}
+
+hr.bg-dark {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border: none;
+  border-radius: 2px;
+  margin: 0.5rem auto 1.75rem;
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   INTRO TEXT CARD
+═══════════════════════════════════════════════ */
+.container > .row > .col-md-12 > .row .col > p,
+.container > .row > .col-md-12 > .col.mt-3 > p {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--agua-muted);
+  margin-bottom: 1rem;
+}
+
+/* ── Centered product image (dust-lks.png) ── */
+.col.d-flex.justify-content-center > img[src*="dust-lks"] {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--agua-border);
+  background: var(--agua-off);
+  padding: 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.col.d-flex.justify-content-center > img[src*="dust-lks"]:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ═══════════════════════════════════════════════
+   3-IMAGE ROW (meter, receiver, setupdust)
+═══════════════════════════════════════════════ */
+.container .row:has(img[src*="meter"]) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.container .row:has(img[src*="meter"]) .col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container .row:has(img[src*="meter"]) .col img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--agua-border);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: block;
+}
+
+.container .row:has(img[src*="meter"]) .col img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ═══════════════════════════════════════════════
+   DETAIL CARD — Dust & Opacity Analyzer
+═══════════════════════════════════════════════ */
+.container > .container {
+  background: var(--agua-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--agua-border);
+  padding: 2.25rem 2.5rem 2.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.container > .container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* ── Section title (h3) ── */
+.container > .container h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--agua-navy) !important;
+  text-align: center;
+  margin-bottom: 1.75rem;
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 0.02em;
+}
+
+.container > .container h3::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border-radius: 2px;
+}
+
+/* ── Sub headings (h5) ── */
+.container > .container h5 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--agua-blue) !important;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.container > .container h5::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1em;
+  background: linear-gradient(to bottom, var(--agua-blue), var(--agua-teal));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Body paragraphs inside detail card ── */
+.container > .container p {
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--agua-muted);
+  margin-bottom: 0.85rem;
+}
+
+/* ── Lists (Features, Benefits, Applications) ── */
+.container > .container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  border: 1px solid var(--agua-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--agua-white);
+}
+
+.container > .container ul li {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--agua-muted);
+  padding: 10px 1rem 10px 2.25rem;
+  position: relative;
+  border-bottom: 1px solid var(--agua-border);
+  transition: background var(--transition), color var(--transition), padding-left var(--transition);
+}
+
+.container > .container ul li:last-child {
+  border-bottom: none;
+}
+
+.container > .container ul li:hover {
+  background: var(--agua-surface);
+  color: var(--agua-text);
+  padding-left: 2.75rem;
+}
+
+.container > .container ul li::before {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--agua-blue), var(--agua-teal));
+  transition: transform var(--transition);
+}
+
+.container > .container ul li:hover::before {
+  transform: translateY(-50%) scale(1.4);
+}
+
+/* ── Measuring Principle layout (text + image) ── */
+.container > .container .row:first-of-type {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.container > .container .row .col img[src*="princidust"] {
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--agua-border);
+  display: block;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.container > .container .row .col img[src*="princidust"]:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Features/Benefits/Application layout (lists + image) ── */
+.container > .container .row:last-of-type {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-top: 1rem;
+}
+
+.container > .container .row .col img[src*="setupdust"] {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--agua-border);
+  display: block;
+  margin-top: 0 !important;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.container > .container .row .col img[src*="setupdust"]:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  #mydiv img {
+    height: 40vh;
+  }
+
+  .container > .container {
+    padding: 1.75rem 1.75rem 2rem;
+  }
+
+  .container > .container .row:first-of-type,
+  .container > .container .row:last-of-type {
+    grid-template-columns: 1fr;
+  }
+
+  .container > .container .row .col img[src*="princidust"],
+  .container > .container .row .col img[src*="setupdust"] {
+    width: 100%;
+    max-width: 380px;
+    margin: 1rem auto 0;
+  }
+
+  .container .row:has(img[src*="meter"]) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+  }
+
+  .container .row:has(img[src*="meter"]) .col img {
+    height: 160px;
+  }
+}
+
+@media (max-width: 720px) {
+  #mydiv {
+    margin-top: 60px;
+  }
+
+  #mydiv img {
+    height: 30vh;
+  }
+
+  .container img[src*="applks"] {
+    height: 65px !important;
+    max-width: 260px;
+  }
+
+  .container > .container {
+    padding: 1.25rem 1.25rem 1.5rem;
+    border-radius: var(--radius-md);
+  }
+
+  .container > .container h3 {
+    font-size: 1.1rem;
+  }
+
+  .container > .container h5 {
+    font-size: 0.95rem;
+  }
+
+  .container > .container p,
+  .container > .container ul li {
+    font-size: 14.5px;
+  }
+
+  .col.d-flex.justify-content-center > img[src*="dust-lks"] {
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+
+  .container .row:has(img[src*="meter"]) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .container .row:has(img[src*="meter"]) .col img {
+    height: 200px;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .container > .container h3 {
+    font-size: 1rem;
+  }
+
+  .container > .container {
+    padding: 1rem;
+  }
+
+  .container > .container ul li {
+    font-size: 14px;
+    padding: 9px 1rem 9px 2rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   PRINT
+═══════════════════════════════════════════════ */
+@media print {
+  #mydiv { display: none; }
+
+  .container > .container {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  .container > .container ul {
+    border: 1px solid #ccc;
+  }
+}

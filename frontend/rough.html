@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../Favicon/aguaFavicon.png" type="image/jpeg">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../NewStyle/Navbar.css">
+  <title>Agua Instruments</title>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<header class="header">
+  <div class="header-inner" id="header-inner">
+    <div class="header-container">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="../index.html">
+        <img src="../Logo/Agua_logo.png" class="img-fluid" alt="Agua Instruments">
+      </a>
+
+      <!-- Desktop Nav -->
+      <div class="navbar-links">
+        <ul>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+
+          <!-- About Us -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="../aboutus.html">About Us</a>
+            <ul class="dropdown-menu">
+              <li class="nav-item dropdown">
+                <a href="../careers.html">Careers</a>
+                <ul class="sub-menu">
+                  <li class="nav-item"><a href="../career-sales-engineer.html">Sales Engineer</a></li>
+                  <li class="nav-item"><a href="../career-unit-head-technical-sales.html">Unit Head Technical Sales</a></li>
+                  <li class="nav-item"><a href="../career-admin-role.html">Receptionist Admin Role</a></li>
+                </ul>
+              </li>
+              <li class="nav-item"><a href="../vision.html">Vision</a></li>
+              <li class="nav-item"><a href="../mission.html">Mission</a></li>
+              <li class="nav-item"><a href="../client.html">Client</a></li>
+              <li class="nav-item dropdown">
+                <a href="#">Technical Partners</a>
+                <ul class="sub-menu">
+                  <li class="nav-item"><a href="../tech-airpointer.html"><img class="navbar-tech-logo" src="../newImages/AirpointerLogo.PNG" alt="Airpointer"></a></li>
+                  <li class="nav-item"><a href="../instran.html"><img class="navbar-tech-logo" src="../img/instran.png" alt="Instran"></a></li>
+                  <li class="nav-item"><a href="../suntex.html"><img class="navbar-tech-logo" src="../newImages/Logo_Large-suntex.png" alt="Suntex"></a></li>
+                  <li class="nav-item"><a href="../tech-maxx.html"><img class="navbar-tech-logo" src="../newImages/logo_maxx.png" alt="Maxx"></a></li>
+                  <li class="nav-item"><a href="../hach.html"><img class="navbar-tech-logo hach-logo" src="../newImages/hach-technical-partner.png" alt="Hach"></a></li>
+                  <li class="nav-item"><a href="../tech-lks.html"><img class="navbar-tech-logo lks-logo-tech" src="../newImages/LksLogo.PNG" alt="LKS"></a></li>
+                  <li class="nav-item"><a href="../t&c.html"><img class="navbar-tech-logo" src="../newImages/T&C_Logo.png" alt="T&C"></a></li>
+                  <li class="nav-item"><a href="../technicrafts.html"><img class="navbar-tech-logo" src="../img/technicrafts.png" alt="Technicrafts"></a></li>
+                  <li class="nav-item"><a href="../lar.html"><img class="navbar-tech-logo" src="../newImages/LAR_Logo.png" alt="LAR"></a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <!-- Application -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Application</a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a href="../water-quality-monitoring-system.html">Water Quality Monitoring</a></li>
+              <li class="nav-item"><a href="../air-quality-monitoring-system.html">Air Quality Monitoring</a></li>
+              <li class="nav-item"><a href="../emission-monitoring-system.html">Emission Monitoring System</a></li>
+              <li class="nav-item"><a href="../gas-monitoring-system.html">Gas Monitoring System</a></li>
+              <li class="nav-item"><a href="../weather-monitoring-system.html">Weather Monitoring System</a></li>
+            </ul>
+          </li>
+
+          <!-- Products -->
+          <li class="nav-item dropdown">
+            <a class="nav-link" href="#">Products</a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a href="../gas-analyzer.html">Gas Analyzer</a></li>
+              <li class="nav-item"><a href="../water-analyzer.html">Water Analyzer</a></li>
+              <li class="nav-item"><a href="../ambient-air-quality.html">Ambient Air Quality</a></li>
+              <li class="nav-item"><a href="../dust-analyzer.html">Dust Analyzer</a></li>
+              <li class="nav-item"><a href="../auto-sampler.html">Auto Sampler</a></li>
+              <li class="nav-item"><a href="../pharma-toc.html">Pharma TOC Analyzer</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../blogs.html">Blogs</a>
+          </li>
+
+          <!-- Contact styled as CTA button -->
+          <li class="nav-item nav-cta">
+            <a class="nav-link" href="../contact.html">Contact Us</a>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="toggle-btn" id="toggle-btn" onclick="toggleSidebar()" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Backdrop -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="closeSidebar()"></div>
+
+  <!-- Mobile Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul class="sidebar-nav">
+
+      <li><a href="../index.html">Home</a></li>
+
+      <!-- About -->
+      <li class="has-dropdown">
+        <a href="javascript:void(0);" onclick="toggleDropdown(this, 'about-dropdown')">About Us</a>
+        <ul class="sidebar-dropdown-menu" id="about-dropdown">
+          <li class="has-dropdown">
+            <a href="javascript:void(0);" onclick="toggleDropdown(this, 'careers-dropdown')">Careers</a>
+            <ul class="sidebar-dropdown-menu sidebar-sub-menu" id="careers-dropdown">
+              <li><a href="../career-sales-engineer.html">Sales Engineer</a></li>
+              <li><a href="../career-unit-head-technical-sales.html">Unit Head Technical Sales</a></li>
+              <li><a href="../career-admin-role.html">Receptionist Admin Role</a></li>
+            </ul>
+          </li>
+          <li><a href="../vision.html">Vision</a></li>
+          <li><a href="../mission.html">Mission</a></li>
+          <li><a href="../client.html">Client</a></li>
+          <li class="has-dropdown">
+            <a href="javascript:void(0);" onclick="toggleDropdown(this, 'tech-dropdown')">Technical Partners</a>
+            <ul class="sidebar-dropdown-menu sidebar-sub-menu" id="tech-dropdown">
+              <li><a href="../tech-airpointer.html"><img class="navbar-tech-logo" src="../newImages/AirpointerLogo.PNG" alt="Airpointer"></a></li>
+              <li><a href="../instran.html"><img class="navbar-tech-logo" src="../img/instran.png" alt="Instran"></a></li>
+              <li><a href="../suntex.html"><img class="navbar-tech-logo" src="../newImages/Logo_Large-suntex.png" alt="Suntex"></a></li>
+              <li><a href="../tech-maxx.html"><img class="navbar-tech-logo" src="../newImages/logo_maxx.png" alt="Maxx"></a></li>
+              <li><a href="../hach.html"><img class="navbar-tech-logo hach-logo" src="../newImages/hach-technical-partner.png" alt="Hach"></a></li>
+              <li><a href="../tech-lks.html"><img class="navbar-tech-logo lks-logo-tech" src="../newImages/LksLogo.PNG" alt="LKS"></a></li>
+              <li><a href="../t&c.html"><img class="navbar-tech-logo" src="../newImages/T&C_Logo.png" alt="T&C"></a></li>
+              <li><a href="../technicrafts.html"><img class="navbar-tech-logo" src="../img/technicrafts.png" alt="Technicrafts"></a></li>
+              <li><a href="../lar.html"><img class="navbar-tech-logo" src="../newImages/LAR_Logo.png" alt="LAR"></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Application -->
+      <li class="has-dropdown">
+        <a href="javascript:void(0);" onclick="toggleDropdown(this, 'app-dropdown')">Application</a>
+        <ul class="sidebar-dropdown-menu" id="app-dropdown">
+          <li><a href="../water-quality-monitoring-system.html">Water Quality Monitoring</a></li>
+          <li><a href="../air-quality-monitoring-system.html">Air Quality Monitoring</a></li>
+          <li><a href="../emission-monitoring-system.html">Emission Monitoring System</a></li>
+          <li><a href="../gas-monitoring-system.html">Gas Monitoring System</a></li>
+          <li><a href="../weather-monitoring-system.html">Weather Monitoring System</a></li>
+        </ul>
+      </li>
+
+      <!-- Products -->
+      <li class="has-dropdown">
+        <a href="javascript:void(0);" onclick="toggleDropdown(this, 'prod-dropdown')">Products</a>
+        <ul class="sidebar-dropdown-menu" id="prod-dropdown">
+          <li><a href="../gas-analyzer.html">Gas Analyzer</a></li>
+          <li><a href="../water-analyzer.html">Water Analyzer</a></li>
+          <li><a href="../ambient-air-quality.html">Ambient Air Quality</a></li>
+          <li><a href="../dust-analyzer.html">Dust Analyzer</a></li>
+          <li><a href="../auto-sampler.html">Auto Sampler</a></li>
+          <li><a href="../pharma-toc.html">Pharma TOC Analyzer</a></li>
+        </ul>
+      </li>
+
+      <li><a href="../blogs.html">Blogs</a></li>
+      <li><a href="../contact.html">Contact Us</a></li>
+
+    </ul>
+  </div>
+</header>
+
+<script>
+  // ── Scroll shadow
+  window.addEventListener('scroll', function () {
+    const h = document.getElementById('header-inner');
+    if (h) h.classList.toggle('navbar-scroll', window.scrollY > 40);
+  });
+
+  // ── Sidebar open / close
+  function toggleSidebar() {
+    const btn      = document.getElementById('toggle-btn');
+    const sidebar  = document.getElementById('sidebar');
+    const backdrop = document.getElementById('sidebar-backdrop');
+    const open     = sidebar.classList.toggle('show');
+    btn.classList.toggle('open', open);
+    backdrop.classList.toggle('show', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('show');
+    document.getElementById('toggle-btn').classList.remove('open');
+    document.getElementById('sidebar-backdrop').classList.remove('show');
+    document.body.style.overflow = '';
+  }
+
+  // ── Sidebar accordion dropdowns
+  function toggleDropdown(anchor, menuId) {
+    const menu = document.getElementById(menuId);
+    if (!menu) return;
+    const isOpen = menu.classList.contains('show');
+
+    // close siblings
+    anchor.closest('ul').querySelectorAll('.sidebar-dropdown-menu').forEach(m => {
+      m.classList.remove('show');
+    });
+    anchor.closest('ul').querySelectorAll('.has-dropdown > a').forEach(a => {
+      a.classList.remove('open');
+    });
+
+    if (!isOpen) {
+      menu.classList.add('show');
+      anchor.classList.add('open');
+    }
+  }
+
+  // ── Desktop: hover with delay to prevent accidental close
+  document.querySelectorAll('.nav-item.dropdown').forEach(function (item) {
+    let timer;
+    item.addEventListener('mouseenter', function () {
+      clearTimeout(timer);
+      item.classList.add('show');
+    });
+    item.addEventListener('mouseleave', function () {
+      timer = setTimeout(function () { item.classList.remove('show'); }, 160);
+    });
+  });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" href="../Favicon/aguaFavicon.png"  type="image/jpeg">
+
+    <!-- <link rel="stylesheet" href="../style.css"> -->
+    <link rel="stylesheet" href="../NewStyle/homepage.css">
+    <link rel="stylesheet" href="../NewStyle/Footer.css">
+    <link rel="stylesheet" href="../NewStyle/Navbar.css">
+    <link rel="stylesheet" href="../NewStyle/sidebar.css">
+    <link rel="stylesheet" href="../NewStyle/blogs.css">
+    <link rel="stylesheet" href="../NewStyle/blogs-category.css">
+    <link rel="stylesheet" href="../NewStyle/contact.css">
+    <link rel="stylesheet" href="../NewStyle/Global.css">
+    <link rel="stylesheet" href="../NewStyle/TOCPharma.css">
+    <link rel="stylesheet" href="../NewStyle/wateranalyzers.css">
+    <link rel="stylesheet" href="../NewStyle/tech-hamera.css">
+    <link rel="stylesheet" href="./applications-style/gas-quality-monitoring.css">
+    <link rel="stylesheet" href="./Products-style/gas-analyzer-demo.css">
+    <title>Agua instruments</title>    
+    
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-inner">
+          <div class="header-container">
+            <div class="toggle-btn" onclick="toggleSidebar()">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+    
+            <div class="sidebar" id="sidebar">
+              <ul class="sidebar-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li class="has-dropdown">
+                  <a href="javascript:void(0);" onclick="toggleDropdown('about')">About Us
+
+                  </a>
+                  <ul class="sidebar-dropdown-menu" id="about-dropdown">
+                    <li><a href="../careers.html">Careers</a></li>
+                    <li><a href="../vision.html">Vision</a></li>
+                    <li><a href="../mission.html">Mission</a></li>
+                    <li><a href="../client.html">Client</a></li>
+                    <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleDropdown('technical')">Technical Partners</a>
+                      <ul class="sidebar-sub-menu" id="technical-dropdown">
+                        
+                        <li><a href="../tech-airpointer.html"><img class="navbar-tech-logo"  src="../newImages/AirpointerLogo.PNG" /></a></li>
+                        <!-- <li><a href="../tech-hemera.html"><img class="navbar-tech-logo" src="../newImages/hemera-canvaLogoscopy.png" /></a></li> -->
+                        <li><a href="../instran.html"><img class="navbar-tech-logo" src="../img/instran.png" /></a></li>
+                        <li><a href="../suntex.html"><img class="navbar-tech-logo" src="../newImages/Logo_Large-suntex.png" /></a></li>
+                        <li><a href="../tech-maxx.html"><img class="navbar-tech-logo" src="../newImages/logo_maxx.png" /></a></li>
+                        <li><a href="../hach.html"><img class="navbar-tech-logo hach-logo" src="../newImages/hach-technical-partner.png" /></a></li>
+                        <li><a href="../tech-lks.html"><img class="navbar-tech-logo lks-logo-tech" src="../newImages/LksLogo.PNG" /></a></li>
+                        <li><a href="../t&c.html"><img class="navbar-tech-logo" src="../newImages/T&C_Logo.png" /></a></li>
+                        <li><a href="../technicrafts.html"><img class="navbar-tech-logo" src="../img/technicrafts.png" /></a></li>
+                        <li><a href="../lar.html"><img class="navbar-tech-logo" src="../newImages/LAR_Logo.png" /></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="has-dropdown">
+                  <a href="javascript:void(0);" onclick="toggleDropdown('application')">Application
+                  
+                  </a>
+                  <ul class="sidebar-dropdown-menu" id="application-dropdown">
+                    <li><a href="../water-quality-monitoring-system.html">Water Quality Monitoring</a></li>
+                    <li><a href="../air-quality-monitoring-system.html">Air Quality Monitoring</a></li>
+                    <li><a href="../emission-monitoring-system.html">Emission Monitoring System </a></li>
+                    <li><a href="../gas-monitoring-system.html">Gas Monitoring System</a></li>
+                    <li><a href="../weather-monitoring-system.html">Weather Monitoring System</a></li>
+                  </ul>
+                </li>
+                <li class="has-dropdown">
+                  <a href="javascript:void(0);" onclick="toggleDropdown('products')">Products
+
+                  </a>
+                  <ul class="sidebar-dropdown-menu" id="products-dropdown">
+                    <li><a  href="../gas-analyzer.html">Gas Analyzer</a></a></li>
+                    <li><a href="../water-analyzer.html">Water Analyzer</a></li>
+                    <li><a href="../air-analyzer.html">Air Analyzer</a></li>
+                    <li><a href="../dust-analyzer.html">Dust Analyzer</a></li>
+                    <li><a href="../auto-sampler.html">Auto Sampler</a></li>
+                    <li><a href="../pharma-toc.html">Pharma TOC Analyzer</a></li>
+                  </ul>
+                </li>
+                <li><a href="../blogs.html">Blogs</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+            <nav class="navbar navbar-expand-lg my-navbar">
+              <a class="navbar-brand" href="../index.html">
+                <span class="logo">
+                  <img src="../Logo/Agua_logo.png" class="img-fluid" style="width:30px; margin:-3px 0px 0px 0px; height: 55px;width: 240px; ">
+                </span>
+              </a>
+              <div class="navbar-links">
+                <ul>
+                  <li class="nav-item dropdown"><a class="nav-link" href="../index.html">Home</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link" href="../aboutus.html">About Us</a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item dropdown"><a href="../../careers.html">Careers</a>
+                          <ul class="sub-menu">
+                            <li class="nav-item dropdown"><a href="../career-sales-engineer.html">Sales Engineer</a></li>
+                            <li class="nav-item dropdown"><a href="../career-unit-head-technical-sales.html">Unit Head Technical Sales</a></li>
+                            <li class="nav-item dropdown"><a href="../career-admin-role.html">Receptionist Admin Role</a></li>
+                          </ul>
+                        </li>
+                        <li class="nav-item dropdown"><a href="../vision.html">Vision</a></li>
+                        <li class="nav-item dropdown"><a href="../mission.html">Mission</a></li>
+                        <li class="nav-item dropdown"><a href="../client.html">Client</a></li>
+
+                        <li class="nav-item dropdown"><a href="#">Technical Partners</a>
+                          <ul class="sub-menu">
+                            <li class="nav-item dropdown"><a href="../tech-airpointer.html"> <img class="navbar-tech-logo"  src="../newImages/AirpointerLogo.PNG" /></a></li>
+                            <li class="nav-item dropdown"><a href="../instran.html"><img class="navbar-tech-logo" src="../img/instran.png" /></a></li>
+                            <li class="nav-item dropdown"><a href="../suntex.html"><img class="navbar-tech-logo" src="../newImages/Logo_Large-suntex.png" /></a></li>
+                            <li class="nav-item dropdown"><a href="../tech-maxx.html"><img class="navbar-tech-logo" src="../newImages/logo_maxx.png" /></a></li>
+                            <li class="nav-item dropdown"><a href="../hach.html"><img class="navbar-tech-logo hach-logo" src="../newImages/hach-technical-partner.png" /></a></li>
+                            <li class="nav-item dropdown"><a href="../tech-lks.html"><img class="navbar-tech-logo lks-logo-tech" src="../newImages/LksLogo.PNG" /></a></li>
+                            <li class="nav-item dropdown"><a href="../t&c.html"><img class="navbar-tech-logo" src="../newImages/T&C_Logo.png" /></a></li>
+                            <li class="nav-item dropdown"><a href="../technicrafts.html"><img class="navbar-tech-logo" src="../img/technicrafts.png" /></a></li>
+                            <li class="nav-item dropdown"><a href="../lar.html"><img class="navbar-tech-logo" src="../newImages/LAR_Logo.png" /></a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown"><a class="nav-link" href="#">Application</a>
+                    <ul class="dropdown-menu small-font-dropdown">
+                      <li class="nav-item dropdown"><a href="../water-quality-monitoring-system.html">Water Quality Monitoring</a></li>
+                      <li class="nav-item dropdown"><a href="../air-quality-monitoring-system.html">Air Quality Monitoring</a></li>
+                      <li class="nav-item dropdown"><a href="../emission-monitoring-system.html">Emission Monitoring System </a></li>
+                      <li class="nav-item dropdown"><a href="../gas-monitoring-system.html">Gas Monitoring System</a></li>
+                      <li class="nav-item dropdown"><a href="../weather-monitoring-system.html">Weather Monitoring System</a></li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item dropdown"><a class="nav-link" href="#">Products</a>
+                    <ul class="dropdown-menu small-font-dropdown">
+                      <li class="nav-item dropdown"><a href="../gas-analyzer.html">Gas Analyzer</a></li>
+                      <li class="nav-item dropdown"><a href="../water-analyzer.html">Water Analyzer</a></li>
+                      <li class="nav-item dropdown longword"><a href="../ambient-air-quality.html">Ambient Air Quality</a></li>
+                      <li class="nav-item dropdown"><a href="../dust-analyzer.html">Dust Analyzer</a></li>
+                      <li class="nav-item dropdown"><a href="../auto-sampler.html">Auto Sampler</a></li>
+                      <li class="nav-item dropdown"><a href="../pharma-toc.html">Pharma TOC Analyzer</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown"><a class="nav-link" href="../blogs.html">Blogs</a></li>
+                  <li class="nav-item dropdown"><a class="nav-link" href="../contact.html">Contact</a></li>
+                </ul>
+              </div>
+            </nav>
+
+          </div>
+        </div>
+
+      </header>
+
+
+      <script src="./javascript/navbar.js"></script>
+
+      <script>
+        
+        document.querySelectorAll('.nav-item.dropdown').forEach(function(dropdown) {
+          dropdown.addEventListener('mouseenter', function() {
+              clearTimeout(dropdown.hideTimeout);
+              dropdown.classList.add('show');
+          });
+
+          dropdown.addEventListener('mouseleave', function() {
+              dropdown.hideTimeout = setTimeout(function() {
+                  dropdown.classList.remove('show');
+              }, 500); // 500ms delay before closing
+          });
+      }); 
+
+      </script>
+</body>
+</html>
+
+
+
+

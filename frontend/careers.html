@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <link rel="icon" href="./Favicon/aguaFavicon.png" type="image/jpeg">
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="./NewStyle/careers.css">
+   <link rel="stylesheet" href="./NewStyle/Footer.css">
+   <link rel="stylesheet" href="./NewStyle/Navbar.css">
+   <link rel="stylesheet" href="./NewStyle/sidebar.css">
+   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+   <title>Careers – Agua Instruments</title>
+   <meta name="description" content="Join the Agua Instruments team! Explore career opportunities and be part of a company dedicated to innovative water management solutions and environmental sustainability.">
+
+
+   <style>
+     /* ===== Visitor popup (frosted glass over the careers content only; header & footer stay visible) ===== */
+     #cr-page { position: relative; z-index: 1; }
+     .vp-overlay[hidden], #vp-form[hidden], .vp-thanks[hidden] { display: none !important; }
+     #cr-page .vp-overlay {
+       position: absolute; inset: 0; z-index: 10;
+       display: flex; align-items: flex-start; justify-content: center;
+       padding: 0 16px;
+       background: rgba(255, 255, 255, 0.18);
+       -webkit-backdrop-filter: blur(14px) saturate(1.3);
+       backdrop-filter: blur(14px) saturate(1.3);
+     }
+     /* old browsers without blur support: dark cover so the page stays hidden */
+     @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+       #cr-page .vp-overlay { background: rgba(10, 20, 35, 0.9); }
+     }
+     .vp-box {
+       position: sticky; top: 24px; margin-top: 80px;
+       width: 100%; max-width: 440px; max-height: calc(100vh - 150px); overflow-y: auto;
+       padding: 30px 28px 26px;
+       background: rgba(255, 255, 255, 0.94);
+       border-radius: 16px; border-top: 6px solid #0e8f8a;
+       box-shadow: 0 24px 70px -18px rgba(8, 42, 90, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.6);
+       color: #12263a; font-family: "DM Sans", system-ui, sans-serif; text-align: left;
+     }
+     .vp-box h2 { margin: 0 0 6px; font-size: 1.35rem; font-weight: 600; color: #12263a; font-family: "Fraunces", Georgia, serif; }
+     .vp-sub { margin: 0 0 6px; font-size: 0.92rem; color: #5b6b7b; }
+     .vp-box label { display: block; margin: 14px 0 5px; font-size: 14px; font-weight: 500; color: #12263a; }
+     .vp-box input[type="text"], .vp-box input[type="tel"], .vp-box input[type="email"] {
+       width: 100%; padding: 11px 13px; border: 1px solid #c4d0dc; border-radius: 10px;
+       background: #fff; font: inherit; font-size: 0.97rem; color: #12263a;
+     }
+     .vp-box input:focus { outline: 2px solid #0e8f8a; border-color: #0e8f8a; }
+     .vp-consent { margin: 14px 0 0; font-size: 12.5px; color: #5b6b7b; }
+     .vp-status { min-height: 1.2em; margin: 8px 0 0; font-size: 0.9rem; font-weight: 600; color: #b3261e; }
+     #vp-submit {
+       width: 100%; margin-top: 10px; padding: 13px; border: none; border-radius: 40px;
+       background: #0e8f8a; color: #fff; font: inherit; font-size: 1rem; font-weight: 600; cursor: pointer;
+     }
+     #vp-submit:hover { background: #0b726e; }
+     #vp-submit:disabled { opacity: 0.7; cursor: wait; }
+     .vp-thanks { padding: 24px 0 8px; text-align: center; }
+     .vp-thanks p { margin: 8px 0 0; color: #5b6b7b; }
+   </style>
+</head>
+<body>
+
+  <div data-include-html="header.html"></div>
+
+  <!-- Page content: the visitor popup blurs ONLY this area, so header and footer stay visible -->
+  <div id="cr-page">
+
+  <!-- Visitor details popup -->
+  <div class="vp-overlay" id="visitor-popup" hidden role="dialog" aria-modal="true" aria-labelledby="vp-title">
+    <div class="vp-box">
+      <form id="vp-form">
+        <h2 id="vp-title">Welcome! Tell us about yourself</h2>
+        <p class="vp-sub">Please fill in your details to view our current openings.</p>
+
+        <label for="vp-name">Full Name</label>
+        <input type="text" id="vp-name" name="name" required autocomplete="name" />
+
+        <label for="vp-phone">Mobile Number</label>
+        <input type="tel" id="vp-phone" name="phone" required inputmode="numeric" maxlength="10" pattern="[0-9]{10}" autocomplete="tel-national" placeholder="10-digit number" />
+
+        <label for="vp-email">Email</label>
+        <input type="email" id="vp-email" name="email" required autocomplete="email" />
+
+        <label for="vp-education">Education</label>
+        <input type="text" id="vp-education" name="education" required maxlength="300" placeholder="Eg: MBA (Marketing), BE EXTC, Diploma" />
+
+        <!-- Spam trap: real visitors never see or fill this -->
+        <input type="text" name="hp_check" class="vp-trap" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;opacity:0;overflow:hidden;" />
+
+        <p class="vp-consent">By submitting, you agree that Agua Instruments may contact you about job openings.</p>
+        <p class="vp-status" id="vp-status" role="alert"></p>
+
+        <button type="submit" id="vp-submit">Submit</button>
+      </form>
+
+      <div class="vp-thanks" id="vp-thanks" hidden>
+        <h2>Thank you!</h2>
+        <p>Your details have been saved. Opening the careers page&hellip;</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <svg class="hero-rings" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="260" cy="260" r="80"/>
+      <circle cx="260" cy="260" r="140"/>
+      <circle cx="260" cy="260" r="200"/>
+      <circle cx="260" cy="260" r="260"/>
+    </svg>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Agua Instruments — Careers</div>
+      <h1>Build a career around<br><em>water that matters.</em></h1>
+      <p class="hero-sub">Join a passionate team shaping the future of water management and environmental monitoring across India.</p>
+      <a href="#openings" class="hero-cta">
+        See Open Roles
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 8h10M9 4l4 4-4 4"/>
+        </svg>
+      </a>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="hero-stat-num">4+</div>
+          <div class="hero-stat-label">Open Positions</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">10+</div>
+          <div class="hero-stat-label">Locations Served</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">100%</div>
+          <div class="hero-stat-label">Growth-Focused</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JOB LISTINGS ── -->
+  <section class="section jobs-section" id="openings">
+    <div class="section-inner">
+      <div class="section-label">Current Openings</div>
+      <h2 class="section-title">Find your role at Agua</h2>
+
+      <div class="jobs-grid">
+
+        <div class="job-card">
+          <div class="job-card-top">
+            <div>
+              <span class="job-badge">Hiring</span>
+              <h3 style="margin-top:10px;">Sales Engineer</h3>
+            </div>
+          </div>
+          <div class="job-location">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.5-2-4.5-4.5-4.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+            Aurangabad · Pune · Nasik · Nagpur · Vapi · Baroda & more
+          </div>
+          <p class="job-desc">Drive business growth by delivering technical solutions, managing client relationships, and promoting analytical instruments across multiple regions.</p>
+          <div class="job-divider"></div>
+          <div class="job-actions">
+            <a href="./career-sales-engineer.html" class="btn-ghost">Full Detail</a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@aguainstruments.com&amp;su=Application%20for%20Sales%20Engineer&amp;body=Hi%2C%20I%20am%20interested%20in%20the%20Sales%20Engineer%20role%20at%20Agua%20Instruments.%20Please%20find%20my%20CV%20attached." target="_blank" rel="noopener" class="btn-teal">Apply Now</a>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-card-top">
+            <div>
+              <span class="job-badge">Hiring</span>
+              <h3 style="margin-top:10px;">Service Engineer</h3>
+            </div>
+          </div>
+          <div class="job-location">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.5-2-4.5-4.5-4.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+            Mumbai
+          </div>
+          <p class="job-desc">Install, commission, calibrate and maintain water, gas and air quality analyzers, and support customers on site with hands-on technical service.</p>
+          <div class="job-divider"></div>
+          <div class="job-actions">
+            <a href="./career-service-engineer.html" class="btn-ghost">Full Detail</a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@aguainstruments.com,support@aguainstruments.com&amp;su=Application%20for%20Service%20Engineer&amp;body=Hi%2C%20I%20am%20interested%20in%20the%20Service%20Engineer%20role%20at%20Agua%20Instruments.%20Please%20find%20my%20resume%20attached." target="_blank" rel="noopener" class="btn-teal">Apply Now</a>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-card-top">
+            <div>
+              <span class="job-badge">Hiring</span>
+              <h3 style="margin-top:10px;">Unit Head – Technical Sales</h3>
+            </div>
+          </div>
+          <div class="job-location">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.5-2-4.5-4.5-4.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+            Mumbai
+          </div>
+          <p class="job-desc">Lead and manage the technical sales team, develop strategic plans, and oversee high-value client engagements to achieve business targets.</p>
+          <div class="job-divider"></div>
+          <div class="job-actions">
+            <a href="./career-unit-head-technical-sales.html" class="btn-ghost">Full Detail</a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@aguainstruments.com&amp;su=Application%20for%20Unit%20Head%20Technical%20Sales&amp;body=Hi%2C%20I%20am%20interested%20in%20the%20Unit%20Head%20Technical%20Sales%20role%20at%20Agua%20Instruments.%20Please%20find%20my%20CV%20attached." target="_blank" rel="noopener" class="btn-teal">Apply Now</a>
+          </div>
+        </div>
+
+        <div class="job-card">
+          <div class="job-card-top">
+            <div>
+              <span class="job-badge">Hiring</span>
+              <h3 style="margin-top:10px;">Receptionist cum Admin cum Telecaller</h3>
+            </div>
+          </div>
+          <div class="job-location">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.5-2-4.5-4.5-4.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+            Mumbai
+          </div>
+          <p class="job-desc">Manage front-office operations, handle calls and emails, support administrative tasks, and assist with client coordination and follow-ups.</p>
+          <div class="job-divider"></div>
+          <div class="job-actions">
+            <a href="./career-admin-role.html" class="btn-ghost">Full Detail</a>
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@aguainstruments.com&amp;su=Application%20for%20Receptionist%20cum%20Admin%20cum%20Telecaller&amp;body=Hi%2C%20I%20am%20interested%20in%20the%20Receptionist%20cum%20Admin%20cum%20Telecaller%20role%20at%20Agua%20Instruments.%20Please%20find%20my%20CV%20attached." target="_blank" rel="noopener" class="btn-teal">Apply Now</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY JOIN US ── -->
+  <section class="section why-section">
+    <div class="section-inner">
+      <div class="section-label">Why Agua</div>
+      <h2 class="section-title">A place to grow, create,<br>and belong.</h2>
+
+      <div class="why-grid">
+
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Career Growth</h3>
+          <p>Comprehensive training, mentorship, and clear pathways for promotion from within. We invest in your journey — from day one to leadership.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>Innovative Projects</h3>
+          <p>Work on cutting-edge water and environmental monitoring technology alongside some of the sharpest minds in the industry.</p>
+        </div>
+
+        <div class="why-item">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Great Culture</h3>
+          <p>Collaboration, inclusion, and work-life balance sit at the heart of everything we do. Your well-being is a priority, not an afterthought.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── APPLY BY EMAIL ── -->
+  <section class="form-section" id="contact-section">
+    <div class="section-inner">
+
+      <div class="form-intro">
+        <div class="section-label">Apply Now</div>
+        <h2 class="section-title">Let's get to<br>know you.</h2>
+        <p class="form-intro-desc">Email your resume to our team and mention the role you are applying for, along with your current &amp; expected salary and notice period. Our team reviews every application personally and reaches out to shortlisted candidates.</p>
+
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@aguainstruments.com&amp;su=Job%20Application%20-%20Agua%20Instruments&amp;body=Hi%2C%20I%20would%20like%20to%20apply%20for%20the%20following%20role%3A%20%0A%0ACurrent%20salary%3A%20%0AExpected%20salary%3A%20%0ANotice%20period%3A%20%0A%0APlease%20find%20my%20CV%20attached." target="_blank" rel="noopener" class="btn-teal" style="display:inline-block;margin:8px 0 28px;">Apply via Email</a>
+
+        <div class="form-contact-item">
+          <div class="form-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <span class="form-contact-text">info@aguainstruments.com</span>
+        </div>
+        <div class="form-contact-item">
+          <div class="form-contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="form-contact-text">Mumbai, Maharashtra, India</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  </div><!-- /#cr-page -->
+
+  <div data-include-html="footer.html"></div>
+
+  <script src="./javascript/sidebar.js"></script>
+  <script src="./javascript/main.js"></script>
+  <script src="./javascript/visitor-popup.js?v=1" defer></script>
+</body>
+</html>

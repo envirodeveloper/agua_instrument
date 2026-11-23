@@ -1,0 +1,106 @@
+/* Header Image Container */
+.header-image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.header-image {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+/* Add an overlay effect */
+.header-image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    z-index: 5;
+}
+
+/* Text inside the Image */
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    z-index: 10; /* Higher than the overlay */
+}
+
+
+
+/* Divider */
+.divider {
+    background-color: #000;
+    height: 2px;
+    border: none;
+}
+
+
+
+.section-title {
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Content Layout */
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col {
+    flex: 1;
+    padding: 0px 0px;
+}
+
+.content-left {
+    padding-right: 30px;
+}
+
+.content-right {
+    padding-left: 30px;
+}
+
+/* Datalogger Image */
+.datalogger-image {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* List Styles */
+/* ul {
+    margin-top: 15px;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 5px;
+} */
+
+/* List Styles */
+ul {
+    margin-top: 15px;
+    padding-left: 20px; /* Adds some spacing on the left for bullet points */
+    list-style-type: disc; /* Displays bullet icons */
+}
+
+ul li {
+    margin-bottom: 10px; /* Adds spacing between bullet points */
+    color: #444; /* Darker color for the text */
+    font-size: 16px; /* Adjust font size as needed */
+    line-height: 1.6; /* Improves readability */
+    font-weight: 600;
+}
+
+

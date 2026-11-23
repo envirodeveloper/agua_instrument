@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" href="/images/logo/specturm-favicon.png?v=2" type="image/png" />
+    <title>Visitors Download | Agua Instruments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 16px; background: #eef2f6; font-family: "Plus Jakarta Sans", system-ui, sans-serif; color: #1b2a3a; }
+      .box { background: #fff; width: 100%; max-width: 400px; border-radius: 16px; padding: 32px 28px; box-shadow: 0 10px 40px rgba(0,0,0,.1); }
+      h1 { margin: 0 0 6px; font-size: 22px; }
+      p.sub { margin: 0 0 22px; font-size: 14px; color: #4a5b6c; }
+      label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+      input { width: 100%; padding: 11px 12px; font: inherit; border: 1px solid #c5d0db; border-radius: 8px; margin-bottom: 16px; }
+      button { width: 100%; background: #1f4e79; color: #fff; border: 0; border-radius: 8px; padding: 12px; font: inherit; font-weight: 600; cursor: pointer; }
+      button:hover { background: #173b5c; }
+      button:disabled { opacity: .6; cursor: wait; }
+      #msg { min-height: 20px; margin: 12px 0 0; font-size: 14px; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h1>Download Visitors Excel</h1>
+      <p class="sub">Enter the admin key to download the latest AguaInstruments-visitors.xlsx.</p>
+
+      <form id="dl-form">
+        <label for="key">Admin Key</label>
+        <input type="password" id="key" autocomplete="current-password" required />
+        <button type="submit" id="dl-btn">Download Excel</button>
+      </form>
+      <p id="msg" role="alert"></p>
+    </div>
+
+    <script>
+      // Live:  https://.aguainstruments.com/api/visitors/download
+      // Local: http://localhost:5000/api/visitors/download
+      // var ENDPOINT = "https://aguainstruments.com/api/visitors/download";
+      var ENDPOINT = "http://localhost:5000/api/visitors/download";
+
+      var form = document.getElementById("dl-form");
+      var btn = document.getElementById("dl-btn");
+      var msg = document.getElementById("msg");
+
+      function say(text, ok) {
+        msg.textContent = text;
+        msg.style.color = ok ? "#1a7f37" : "#b42318";
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        say("", true);
+        btn.disabled = true;
+        btn.textContent = "Downloading...";
+
+        // The key is sent in a header (not in the URL) so it is not saved in logs or history
+        fetch(ENDPOINT, { headers: { "x-admin-key": document.getElementById("key").value } })
+          .then(function (res) {
+            if (res.status === 401) throw new Error("Wrong admin key.");
+            if (res.status === 404) throw new Error("No visitors yet, so there is no file to download.");
+            if (!res.ok) throw new Error("Server error (" + res.status + "). Try again.");
+            return res.blob();
+          })
+          .then(function (blob) {
+            var d = new Date();
+            var stamp = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement("a");
+            a.href = url;
+            a.download = "spectrum-visitors_" + stamp + ".xlsx";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            URL.revokeObjectURL(url);
+            say("Downloaded.", true);
+          })
+          .catch(function (err) {
+            say(err instanceof TypeError ? "Could not reach the server. Check your internet." : err.message, false);
+          })
+          .finally(function () {
+            btn.disabled = false;
+            btn.textContent = "Download Excel";
+          });
+      });
+    </script>
+  </body>
+</html>

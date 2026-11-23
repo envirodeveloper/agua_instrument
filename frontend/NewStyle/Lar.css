@@ -1,0 +1,444 @@
+/* ═══════════════════════════════════════════════
+   LAR Water Analyzer — Premium CSS
+   Agua Instruments
+   Matches site-wide design system
+   ═══════════════════════════════════════════════ */
+
+/* ── TOKENS ── */
+:root {
+  --agua-navy:       #0b2e4e;
+  --agua-blue:       #0d7abf;
+  --agua-blue-lt:    #1a9be0;
+  --agua-teal:       #0fa891;
+  --agua-teal-lt:    #17c9ae;
+  --agua-white:      #ffffff;
+  --agua-off:        #f0f6fb;
+  --agua-surface:    #e8f3fb;
+  --agua-text:       #0f2035;
+  --agua-muted:      #4a6580;
+  --agua-border:     rgba(13, 122, 191, 0.15);
+
+  --radius-md:  12px;
+  --radius-lg:  20px;
+
+  --shadow-sm:  0 2px 10px rgba(11, 46, 78, 0.08);
+  --shadow-md:  0 6px 24px rgba(11, 46, 78, 0.12);
+  --shadow-lg:  0 16px 48px rgba(11, 46, 78, 0.16);
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-display: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-body:    'Montserrat', 'Segoe UI', sans-serif;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--agua-text);
+  background: var(--agua-off);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+section.justify {
+  text-align: justify;
+  padding-bottom: 3rem;
+}
+
+/* ═══════════════════════════════════════════════
+   HERO IMAGE BANNER
+═══════════════════════════════════════════════ */
+#mydiv {
+  position: relative;
+  overflow: hidden;
+  margin-top: 68px;
+}
+
+#mydiv img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.82);
+}
+
+#mydiv::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 40%,
+    rgba(11, 46, 78, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════
+   LAR BRAND LOGO
+═══════════════════════════════════════════════ */
+.lar-logo {
+  display: block;
+  margin: 2rem auto 0.5rem;
+  filter: drop-shadow(0 2px 8px rgba(11, 46, 78, 0.1));
+  transition: transform var(--transition), filter var(--transition);
+}
+
+.lar-logo:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 4px 16px rgba(13, 122, 191, 0.2));
+}
+
+.lar-header-logo {
+  height: 90px;
+  width: auto;
+  max-width: 420px;
+  object-fit: contain;
+  position: relative;
+  top: 0;
+}
+
+hr.bg-dark {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border: none;
+  border-radius: 2px;
+  margin: 0.75rem auto 1.75rem;
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   PRODUCT TITLE BANNER
+═══════════════════════════════════════════════ */
+.banner h1 {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--agua-navy);
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+/* ═══════════════════════════════════════════════
+   PRODUCT INTRO — TEXT + IMAGE ROW
+═══════════════════════════════════════════════ */
+.container .row.mt-3 {
+  background: var(--agua-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--agua-border);
+  padding: 2rem;
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.container .row.mt-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* intro paragraph */
+.col-md-8 > p {
+  font-size: 15.5px;
+  line-height: 1.85;
+  color: var(--agua-muted);
+  margin-bottom: 1rem;
+  position: relative;
+  top: 0 !important;
+}
+
+/* read more button */
+.btn.btn-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, var(--agua-blue), var(--agua-teal));
+  color: var(--agua-white);
+  border: none;
+  padding: 9px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-body);
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 14px rgba(13, 122, 191, 0.3);
+  margin-top: 0.5rem;
+  text-decoration: none;
+}
+
+.btn.btn-info:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(13, 122, 191, 0.4);
+  color: var(--agua-white);
+}
+
+/* product image */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.hameraimg {
+  max-width: 100%;
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--agua-border);
+  background: var(--agua-off);
+  padding: 1rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+  margin-top: 0 !important;
+}
+
+.hameraimg:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ═══════════════════════════════════════════════
+   BENEFITS & FEATURES SECTION
+═══════════════════════════════════════════════ */
+.Lar-Benefits-features {
+  background: var(--agua-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--agua-border);
+  padding: 2.5rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.Lar-Benefits-features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.Lar-Benefits-features h2 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--agua-navy);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.Lar-Benefits-features h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.3em;
+  background: linear-gradient(to bottom, var(--agua-blue), var(--agua-teal));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.Lar-Benefits-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.Lar-Benefits-features ul li {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--agua-muted);
+  padding: 11px 0 11px 1.75rem;
+  position: relative;
+  border-bottom: 1px solid var(--agua-border);
+  transition: background var(--transition), color var(--transition);
+  border-radius: var(--radius-md);
+}
+
+.Lar-Benefits-features ul li:last-child {
+  border-bottom: none;
+}
+
+.Lar-Benefits-features ul li:hover {
+  color: var(--agua-text);
+  background: var(--agua-surface);
+  padding-left: 2rem;
+}
+
+.Lar-Benefits-features ul li::before {
+  content: '';
+  position: absolute;
+  left: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--agua-blue), var(--agua-teal));
+  transition: transform var(--transition);
+}
+
+.Lar-Benefits-features ul li:hover::before {
+  transform: translateY(-50%) scale(1.4);
+}
+
+/* ═══════════════════════════════════════════════
+   OTHER PRODUCT IMAGES
+═══════════════════════════════════════════════ */
+.larquicklab-img {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--agua-border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.larquicklab-img:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.laqquicklab-image {
+  position: relative;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  #mydiv img {
+    height: 40vh;
+  }
+
+  .container .row.mt-3 {
+    padding: 1.5rem;
+  }
+
+  .hameraimg {
+    width: 220px;
+  }
+
+  .Lar-Benefits-features {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  #mydiv {
+    margin-top: 60px;
+  }
+
+  #mydiv img {
+    height: 30vh;
+  }
+
+  .lar-header-logo {
+    height: 70px;
+    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    top: 0;
+  }
+
+  .banner h1 {
+    font-size: 1.25rem;
+  }
+
+  .container .row.mt-3 {
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .col-md-8 > p {
+    font-size: 15px;
+  }
+
+  .col-md-4 {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .hameraimg {
+    width: 200px;
+    margin-top: 0 !important;
+  }
+
+  .Lar-Benefits-features {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .Lar-Benefits-features h2 {
+    font-size: 1.15rem;
+  }
+
+  .Lar-Benefits-features ul li {
+    font-size: 14.5px;
+    padding: 10px 0 10px 1.5rem;
+  }
+
+  .larquicklab-img {
+    height: 100px;
+  }
+
+  .laqquicklab-image {
+    top: 15px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner h1 {
+    font-size: 1.1rem;
+  }
+
+  .hameraimg {
+    width: 180px;
+  }
+
+  .Lar-Benefits-features ul li {
+    font-size: 14px;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   PRINT
+═══════════════════════════════════════════════ */
+@media print {
+  #mydiv { display: none; }
+  .container .row.mt-3,
+  .Lar-Benefits-features {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}

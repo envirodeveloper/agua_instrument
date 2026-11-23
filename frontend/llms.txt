@@ -1,0 +1,73 @@
+# Agua Instruments
+
+> Agua Instruments supplies certified instrumentation and analyzers for environmental monitoring — water & wastewater quality, ambient air quality, continuous emission (stack/CEMS), industrial gas detection, and weather monitoring — serving industries, municipalities, and regulatory-compliance projects across India, the UAE, and export markets.
+
+## Company
+
+- [Home](https://www.aguainstruments.com/): Overview of Agua Instruments' product range and services
+- [About Us](https://www.aguainstruments.com/aboutus.html): Company background
+- [Vision](https://www.aguainstruments.com/vision.html): Company vision statement
+- [Mission](https://www.aguainstruments.com/mission.html): Company mission statement
+- [Clients](https://www.aguainstruments.com/client.html): Client list and references
+- [Careers](https://www.aguainstruments.com/careers.html): Open positions at Agua Instruments
+- [Sales Engineer Role](https://www.aguainstruments.com/career-sales-engineer.html): Sales engineer job listing
+- [Contact](https://www.aguainstruments.com/contact.html): Contact details and enquiry form
+
+## Products & Monitoring Systems
+
+- [Water Quality Monitoring System](https://www.aguainstruments.com/water-quality-monitoring-system.html): Online analyzers for STP/ETP/CETP and effluent (OCEMS) monitoring
+- [Air Quality Monitoring System](https://www.aguainstruments.com/air-quality-monitoring-system.html): CAAQMS and indoor air quality monitors
+- [Emission Monitoring System](https://www.aguainstruments.com/emission-monitoring-system.html): Continuous Emission Monitoring Systems (CEMS) for stack emissions
+- [Gas Monitoring System](https://www.aguainstruments.com/gas-monitoring-system.html): Fixed and portable toxic/combustible gas detection
+- [Weather Monitoring System](https://www.aguainstruments.com/weather-monitoring-system.html): Automatic weather stations and agromet systems
+- [Gas Analyzer](https://www.aguainstruments.com/gas-analyzer.html): Gas analyzer product line
+- [Water Analyzer](https://www.aguainstruments.com/water-analyzer.html): Water quality analyzer product line
+- [Ambient Air Quality](https://www.aguainstruments.com/ambient-air-quality.html): Ambient air quality analyzer product line
+- [Dust Analyzer](https://www.aguainstruments.com/dust-analyzer.html): Particulate matter and dust monitoring instruments
+- [Auto Sampler](https://www.aguainstruments.com/auto-sampler.html): Automatic water/wastewater sampling equipment
+- [Pharma TOC](https://www.aguainstruments.com/pharma-toc.html): Total Organic Carbon analyzers for pharmaceutical applications
+
+## B2B Distributor / Partner Program
+
+- [Water Quality Monitoring System – B2B Distributor](https://www.aguainstruments.com/distributor/water-quality-monitoring-system-b2b-distributor.html): Become a distributor/channel partner for water quality instruments
+- [Air Quality Monitoring System – B2B Distributor](https://www.aguainstruments.com/distributor/air-quality-monitoring-system-b2b-distributor.html): Become a distributor/channel partner for air quality instruments
+- [Emission Monitoring System – B2B Distributor](https://www.aguainstruments.com/distributor/emission-monitoring-system-b2b-distributor.html): Become a distributor/channel partner for CEMS/emission instruments
+- [Gas Monitoring System – B2B Distributor](https://www.aguainstruments.com/distributor/gas-monitoring-system-b2b-distributor.html): Become a distributor/channel partner for gas detection systems
+- [Weather Monitoring System – B2B Distributor](https://www.aguainstruments.com/distributor/weather-monitoring-system-b2b-distributor.html): Become a distributor/channel partner for weather monitoring systems
+
+## Regional & Location Pages
+
+- [UAE](https://www.aguainstruments.com/uae.html): Agua Instruments UAE operations
+- [Water Analyzer – UAE](https://www.aguainstruments.com/uae/water-analyzer.html): Water analyzer products for the UAE market
+- [Water Quality Monitoring System – UAE](https://www.aguainstruments.com/uae/water-quality-monitoring-system.html): Water quality monitoring for the UAE market
+- [Water Quality Monitoring System – Mumbai](https://www.aguainstruments.com/mumbai/water-quality-monitoring-system.html): Water quality monitoring services in Mumbai
+- [Water Quality Monitoring System – Delhi](https://www.aguainstruments.com/delhi/water-quality-monitoring-system.html): Water quality monitoring services in Delhi
+- [Water Quality Monitoring System – Noida](https://www.aguainstruments.com/noida/water-quality-monitoring-system.html): Water quality monitoring services in Noida
+- [Kolkata](https://www.aguainstruments.com/kolkata.html): Regional page for Kolkata
+- [Andhra Pradesh](https://www.aguainstruments.com/andhra-pradesh.html): State location page
+- [Madhya Pradesh](https://www.aguainstruments.com/madhya-pradesh.html): State location page
+- [Gujarat](https://www.aguainstruments.com/gujarat.html): State location page
+- [Sikkim](https://www.aguainstruments.com/sikkim.html): State location page
+
+## Blog / Resources
+
+- [Blogs](https://www.aguainstruments.com/blogs.html): Blog index
+- [Gas Analyzer Installation](https://www.aguainstruments.com/blogs/technical-guide/gas-analyzer-installation.html): Technical guide
+- [Water Analyzer Calibration](https://www.aguainstruments.com/blogs/technical-guide/water-analyzer-calibration.html): Technical guide
+- [Dust Analyzer Maintenance](https://www.aguainstruments.com/blogs/technical-guide/dust-analyzer-maintenance.html): Technical guide
+- [Auto Sampler Integration](https://www.aguainstruments.com/blogs/technical-guide/auto-sampler-integration.html): Technical guide
+- [AAQMS Data Interpretation](https://www.aguainstruments.com/blogs/technical-guide/aaqms-data-interpretation.html): Technical guide
+- [Gas Analyzer ATEX Certified](https://www.aguainstruments.com/blogs/technical-guide/gas-analyzer-atex-certified.html): Technical guide
+- [TOC Analyzer Product Comparisons](https://www.aguainstruments.com/blogs/technical-guide/toc-analyzer-product-comparisons.html): Technical guide
+- [Smart Sensors](https://www.aguainstruments.com/blogs/innovations-and-technologies/smart-sensors.html): Innovations & technology article
+- [Water Quality Sensors](https://www.aguainstruments.com/blogs/innovations-and-technologies/water-quality-sensors.html): Innovations & technology article
+- [Emissions Control](https://www.aguainstruments.com/blogs/innovations-and-technologies/emissions-control.html): Innovations & technology article
+- [Biotechnology in Remediation](https://www.aguainstruments.com/blogs/innovations-and-technologies/biotechnology-in-remediation.html): Innovations & technology article
+- [Blockchain in Environmental Monitoring](https://www.aguainstruments.com/blogs/innovations-and-technologies/blockchain-in-environmental-monitoring.html): Innovations & technology article
+- [Renewable Energy Monitoring](https://www.aguainstruments.com/blogs/innovations-and-technologies/renewable-energy-monitoring.html): Innovations & technology article
+- [Data Visualization](https://www.aguainstruments.com/blogs/innovations-and-technologies/data-visualization.html): Innovations & technology article
+
+## Optional
+
+- [Sitemap](https://www.aguainstruments.com/sitemap.html): Full HTML sitemap of the website
+- [Partnership & Collaboration Blog Posts](https://www.aguainstruments.com/blogs/partnership-and-collabration/new-partnership.html): Company news on partnerships and collaborations

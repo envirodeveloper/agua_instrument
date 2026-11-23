@@ -1,0 +1,11 @@
+node_modules/
+**/node_modules/
+.env
+.env.*
+!.env.example
+.git/
+.vscode/
+backend/data/*.xlsx
+backend/uploads/*
+!backend/uploads/.keep
+npm-debug.log*

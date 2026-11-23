@@ -1,0 +1,685 @@
+/* ==========================================================================
+   Agua Instruments — B2B / Distributor Page
+   Design language: calibrated-instrument / spec-sheet aesthetic, refined.
+   All classes are namespaced with `water-distributor-` so this file can
+   fully own the page without depending on other stylesheets.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+/* ---- Design tokens ---------------------------------------------------- */
+:root {
+  --wd-ink: #101c1f;
+  --wd-ink-soft: #445356;
+  --wd-paper: #eff3f2;
+  --wd-white: #ffffff;
+  --wd-teal-900: #0b3b4d;
+  --wd-teal-700: #0f5268;
+  --wd-teal-600: #146a82;
+  --wd-teal-100: #dcebec;
+  --wd-signal: #e2711d;
+  --wd-signal-dark: #b8590f;
+  --wd-line: #d7dfde;
+  --wd-line-soft: #e3e9e8;
+  --wd-whatsapp: #1f9e56;
+
+  --wd-font-display: 'Poppins', 'Segoe UI', sans-serif;
+  --wd-font-body: 'Inter', 'Segoe UI', sans-serif;
+
+  --wd-radius: 12px;
+  --wd-radius-sm: 8px;
+  --wd-container: 1120px;
+}
+
+/* ---- Base -------------------------------------------------------------- */
+.water-distributor-page {
+  font-family: var(--wd-font-body);
+  color: var(--wd-ink);
+  background: var(--wd-paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 20px;
+}
+
+.water-distributor-page * {
+  box-sizing: border-box;
+}
+
+.water-distributor-page :focus-visible {
+  outline: 2px solid var(--wd-signal);
+  outline-offset: 2px;
+}
+
+.water-distributor-shell {
+  max-width: var(--wd-container);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.water-distributor-section {
+  padding: 76px 0;
+  border-bottom: 1px solid var(--wd-line-soft);
+}
+
+.water-distributor-section:last-of-type {
+  border-bottom: none;
+}
+
+.water-distributor-section-head {
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+
+.water-distributor-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--wd-font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--wd-teal-600);
+  margin-bottom: 10px;
+  letter-spacing: 0.01em;
+}
+
+.water-distributor-section-title {
+  font-family: var(--wd-font-display);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  color: var(--wd-teal-900);
+  margin: 0 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.water-distributor-section-lede {
+  color: var(--wd-ink-soft);
+  font-size: 16px;
+  max-width: 60ch;
+}
+
+/* ---- Hero ---------------------------------------------------------------- */
+.water-distributor-hero {
+  padding: 60px 0 68px;
+  background: linear-gradient(160deg, var(--wd-teal-900) 0%, #0d4557 100%);
+  color: var(--wd-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.water-distributor-hero-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.water-distributor-hero-copy .water-distributor-eyebrow {
+  color: #8fd2e0;
+}
+
+.water-distributor-title {
+  font-family: var(--wd-font-display);
+  font-size: clamp(32px, 4.2vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 18px;
+  max-width: 15ch;
+}
+
+.water-distributor-subtitle {
+  font-size: 16.5px;
+  color: #cfe3e8;
+  max-width: 52ch;
+  margin: 0 0 28px;
+}
+
+.water-distributor-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.water-distributor-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--wd-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: #d9ecef;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 100px;
+  padding: 8px 14px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.water-distributor-badge i {
+  color: var(--wd-signal);
+  font-size: 11px;
+}
+
+/* Hero instrument panel */
+.water-distributor-hero-panel {
+  position: relative;
+  padding: 22px;
+}
+
+.water-distributor-panel-frame {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--wd-radius);
+  padding: 26px 24px;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.35);
+}
+
+.water-distributor-panel-title {
+  font-family: var(--wd-font-body);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #9fc7d1;
+  margin: 0 0 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.water-distributor-panel-title span:last-child {
+  color: #6fe3a1;
+}
+
+.water-distributor-readout {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.water-distributor-readout-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.water-distributor-readout-label {
+  font-size: 13.5px;
+  color: #b8d3d9;
+}
+
+.water-distributor-readout-value {
+  font-family: var(--wd-font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--wd-white);
+}
+
+.water-distributor-readout-unit {
+  font-size: 11.5px;
+  color: #7fa6ae;
+  margin-left: 4px;
+  font-weight: 400;
+  font-family: var(--wd-font-body);
+}
+
+/* ---- Intro / why now ---------------------------------------------------- */
+.water-distributor-intro-para {
+  color: var(--wd-ink-soft);
+  font-size: 16px;
+  max-width: 74ch;
+  margin: 0 0 18px;
+}
+
+.water-distributor-callout {
+  border-left: 3px solid var(--wd-signal);
+  padding: 4px 0 4px 20px;
+  margin-top: 8px;
+  max-width: 74ch;
+}
+
+.water-distributor-callout p {
+  margin: 0;
+  color: var(--wd-ink-soft);
+  font-size: 15.5px;
+}
+
+/* ---- Benefits: spec-sheet rows ------------------------------------------ */
+.water-distributor-benefits {
+  border-top: 1px solid var(--wd-line);
+}
+
+.water-distributor-benefit-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--wd-line);
+}
+
+.water-distributor-benefit-tag {
+  font-family: var(--wd-font-body);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--wd-teal-600);
+  padding-top: 3px;
+}
+
+.water-distributor-benefit-title {
+  font-family: var(--wd-font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--wd-teal-900);
+  margin: 0 0 6px;
+}
+
+.water-distributor-benefit-desc {
+  color: var(--wd-ink-soft);
+  font-size: 15px;
+  margin: 0;
+  max-width: 60ch;
+}
+
+/* ---- Partner types --------------------------------------------------- */
+.water-distributor-types-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.water-distributor-type-card {
+  background: var(--wd-white);
+  border: 1px solid var(--wd-line);
+  border-radius: var(--wd-radius);
+  padding: 26px 24px;
+  position: relative;
+}
+
+.water-distributor-type-card::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  width: 26px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--wd-signal);
+}
+
+.water-distributor-type-title {
+  font-family: var(--wd-font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--wd-teal-900);
+  margin: 20px 0 8px;
+}
+
+.water-distributor-type-desc {
+  font-size: 14.5px;
+  color: var(--wd-ink-soft);
+  margin: 0;
+}
+
+/* ---- Product table ------------------------------------------------------ */
+.water-distributor-table-wrap {
+  border: 1px solid var(--wd-line);
+  border-radius: var(--wd-radius);
+  overflow: hidden;
+}
+
+.water-distributor-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--wd-white);
+}
+
+.water-distributor-table thead th {
+  background: var(--wd-teal-900);
+  color: var(--wd-white);
+  font-family: var(--wd-font-body);
+  font-weight: 600;
+  font-size: 13.5px;
+  text-align: left;
+  padding: 14px 20px;
+}
+
+.water-distributor-table tbody td {
+  padding: 16px 20px;
+  font-size: 14.5px;
+  color: var(--wd-ink);
+  border-top: 1px solid var(--wd-line-soft);
+  vertical-align: top;
+}
+
+.water-distributor-table tbody td:first-child {
+  font-weight: 500;
+  color: var(--wd-teal-900);
+  width: 46%;
+}
+
+.water-distributor-table tbody tr:nth-child(even) td {
+  background: var(--wd-paper);
+}
+
+.water-distributor-table-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 18px;
+  font-family: var(--wd-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--wd-teal-600);
+  text-decoration: none;
+}
+
+.water-distributor-table-link:hover {
+  color: var(--wd-signal-dark);
+}
+
+/* ---- Onboarding steps (genuine sequence) --------------------------------- */
+.water-distributor-steps {
+  position: relative;
+  max-width: 720px;
+}
+
+.water-distributor-step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 36px;
+}
+
+.water-distributor-step:last-child {
+  padding-bottom: 0;
+}
+
+.water-distributor-step::before {
+  content: '';
+  position: absolute;
+  left: 23px;
+  top: 40px;
+  bottom: 0;
+  width: 1px;
+  background: var(--wd-line);
+}
+
+.water-distributor-step:last-child::before {
+  display: none;
+}
+
+.water-distributor-step-index {
+  width: 48px;
+  height: 34px;
+  border: 1px solid var(--wd-teal-600);
+  border-radius: var(--wd-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--wd-font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--wd-teal-700);
+  background: var(--wd-white);
+  z-index: 1;
+}
+
+.water-distributor-step-title {
+  font-family: var(--wd-font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--wd-teal-900);
+  margin: 4px 0 6px;
+}
+
+.water-distributor-step-desc {
+  font-size: 15px;
+  color: var(--wd-ink-soft);
+  margin: 0;
+  max-width: 58ch;
+}
+
+/* ---- FAQ ----------------------------------------------------------------- */
+.water-distributor-faq {
+  max-width: 780px;
+  border-top: 1px solid var(--wd-line);
+}
+
+.water-distributor-faq-item {
+  border-bottom: 1px solid var(--wd-line);
+}
+
+.water-distributor-faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 20px 4px;
+  font-family: var(--wd-font-body);
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--wd-teal-900);
+  cursor: pointer;
+}
+
+.water-distributor-faq-icon {
+  flex: 0 0 20px;
+  height: 20px;
+  position: relative;
+}
+
+.water-distributor-faq-icon::before,
+.water-distributor-faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--wd-teal-600);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+}
+
+.water-distributor-faq-icon::before {
+  width: 12px;
+  height: 2px;
+}
+
+.water-distributor-faq-icon::after {
+  width: 2px;
+  height: 12px;
+  transition: transform 0.15s ease;
+}
+
+.water-distributor-faq-item[data-open='true'] .water-distributor-faq-icon::after {
+  transform: translate(-50%, -50%) scaleY(0);
+}
+
+.water-distributor-faq-item[data-open='true'] .water-distributor-faq-question {
+  color: var(--wd-signal-dark);
+}
+
+.water-distributor-faq-answer {
+  display: none;
+  padding: 0 4px 20px;
+  font-size: 14.5px;
+  color: var(--wd-ink-soft);
+  max-width: 68ch;
+}
+
+.water-distributor-faq-item[data-open='true'] .water-distributor-faq-answer {
+  display: block;
+}
+
+/* ---- CTA / contact -------------------------------------------------------- */
+.water-distributor-cta {
+  background: linear-gradient(160deg, var(--wd-teal-900) 0%, #0d4557 100%);
+  color: var(--wd-white);
+  padding: 76px 0;
+  text-align: center;
+  position: relative;
+}
+
+.water-distributor-cta-inner {
+  position: relative;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.water-distributor-cta-title {
+  font-family: var(--wd-font-display);
+  font-size: clamp(24px, 3vw, 30px);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.water-distributor-cta-desc {
+  color: #cfe3e8;
+  font-size: 15.5px;
+  margin: 0 0 36px;
+}
+
+.water-distributor-contact-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--wd-radius);
+  padding: 28px 30px;
+  max-width: 420px;
+  margin: 0 auto 24px;
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.35);
+}
+
+.water-distributor-contact-title {
+  font-family: var(--wd-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: #9fc7d1;
+  margin: 0 0 16px;
+}
+
+.water-distributor-contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 15.5px;
+}
+
+.water-distributor-contact-item i {
+  color: var(--wd-signal);
+  width: 18px;
+}
+
+.water-distributor-contact-item a {
+  color: var(--wd-white);
+  text-decoration: none;
+}
+
+.water-distributor-contact-item a:hover {
+  text-decoration: underline;
+}
+
+.water-distributor-contact-divider {
+  color: #7fa6ae;
+  font-family: var(--wd-font-body);
+  font-size: 12.5px;
+  margin: 14px 0;
+}
+
+.water-distributor-cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.water-distributor-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  font-family: var(--wd-font-body);
+  font-size: 14.5px;
+  font-weight: 600;
+  border-radius: var(--wd-radius-sm);
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.water-distributor-btn:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.water-distributor-btn-primary {
+  background: var(--wd-signal);
+  color: var(--wd-white) !important;
+}
+
+.water-distributor-btn-primary:hover {
+  background: var(--wd-signal-dark);
+}
+
+.water-distributor-btn-outline {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--wd-white) !important;
+}
+
+.water-distributor-btn-outline:hover {
+  border-color: var(--wd-white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.water-distributor-btn-whatsapp {
+  background: var(--wd-whatsapp);
+  color: var(--wd-white) !important;
+}
+
+.water-distributor-btn-whatsapp:hover {
+  background: #187f46;
+}
+
+/* ---- Responsive ----------------------------------------------------------- */
+@media (max-width: 900px) {
+  .water-distributor-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .water-distributor-types-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .water-distributor-benefit-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .water-distributor-section {
+    padding: 52px 0;
+  }
+
+  .water-distributor-types-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .water-distributor-table thead th,
+  .water-distributor-table tbody td {
+    padding: 12px 14px;
+    font-size: 13.5px;
+  }
+
+  .water-distributor-contact-card {
+    padding: 22px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-distributor-page * {
+    transition: none !important;
+  }
+}

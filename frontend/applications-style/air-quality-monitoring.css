@@ -1,0 +1,812 @@
+/* ═══════════════════════════════════════════════
+   Air Quality Monitoring — Premium CSS
+   Agua Instruments
+   Matches water-quality-monitoring.css design system
+   ═══════════════════════════════════════════════ */
+
+/* ── TOKENS (same as water page) ── */
+:root {
+  --agua-navy:       #0b2e4e;
+  --agua-blue:       #0d7abf;
+  --agua-blue-lt:    #1a9be0;
+  --agua-teal:       #0fa891;
+  --agua-teal-lt:    #17c9ae;
+  --agua-accent:     #f97316;
+  --agua-white:      #ffffff;
+  --agua-off:        #f0f6fb;
+  --agua-surface:    #e8f3fb;
+  --agua-text:       #0f2035;
+  --agua-muted:      #4a6580;
+  --agua-border:     rgba(13, 122, 191, 0.15);
+
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  20px;
+  --radius-xl:  30px;
+
+  --shadow-sm:  0 2px 10px rgba(11, 46, 78, 0.08);
+  --shadow-md:  0 6px 24px rgba(11, 46, 78, 0.12);
+  --shadow-lg:  0 16px 48px rgba(11, 46, 78, 0.16);
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --font-display: 'Montserrat', 'Segoe UI', sans-serif;
+  --font-body:    'Montserrat', 'Segoe UI', sans-serif;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--agua-text);
+  background: var(--agua-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── VIDEO HERO ── */
+.bg-video {
+  min-width: 100%;
+  min-height: 46vh;
+  max-width: 100%;
+  max-height: 46vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.85;
+  display: block;
+}
+
+/* ── BANNER HEADINGS ── */
+.banner {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.banner h1,
+.banner h2 {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.head-color {
+  color: var(--agua-navy);
+}
+
+.banner hr.bg-dark {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border: none;
+  border-radius: 2px;
+  margin: 8px auto 0;
+  opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════
+   INTRO SECTION
+═══════════════════════════════════════════════ */
+.airmonitor-intro-container {
+  overflow: hidden;
+  padding: 2.5rem;
+  background: var(--agua-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--agua-border);
+  position: relative;
+}
+
+.airmonitor-intro-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.airmonitor-intro-img1,
+.airmonitor-intro-img2 {
+  max-width: 360px;
+  height: 240px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), box-shadow var(--transition);
+  border: 3px solid var(--agua-white);
+  outline: 1px solid var(--agua-border);
+}
+
+.airmonitor-intro-img1 {
+  float: left;
+  margin-right: 2rem;
+  margin-top: 0.5rem;
+}
+
+.airmonitor-intro-img2 {
+  float: right;
+  margin-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.airmonitor-intro-img1:hover,
+.airmonitor-intro-img2:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.airmonitor-intro-img1 img,
+.airmonitor-intro-img2 img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.airmonitor-intro-container h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--agua-navy);
+  letter-spacing: 0.05em;
+  margin: 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.airmonitor-intro-container h3::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1.2em;
+  background: linear-gradient(to bottom, var(--agua-blue), var(--agua-teal));
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.airmonitor-intro-para1,
+.airmonitor-intro-para2,
+.airmonitor-intro-para3 {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--agua-muted);
+  margin-bottom: 1rem;
+}
+
+/* ═══════════════════════════════════════════════
+   NEEDS SECTION
+═══════════════════════════════════════════════ */
+.airmonitor-needs-para1,
+.airmonitor-needs-para2 {
+  font-size: 16px;
+  line-height: 1.85;
+  color: var(--agua-muted);
+}
+
+/* ═══════════════════════════════════════════════
+   WHY CHOOSE US — CIRCLES
+═══════════════════════════════════════════════ */
+.why-choose-us {
+  background: linear-gradient(135deg, var(--agua-off) 0%, var(--agua-surface) 100%);
+  border-radius: var(--radius-lg);
+  margin: 2.5rem 0;
+  padding: 2rem 0;
+  border: 1px solid var(--agua-border);
+}
+
+.circle-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--agua-navy);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.why-choose-us h2 span {
+  color: var(--agua-blue);
+  position: relative;
+}
+
+.why-choose-us h2 span::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--agua-blue), var(--agua-teal));
+  border-radius: 1px;
+}
+
+.circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.air-circle {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: var(--agua-white);
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid var(--agua-border);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.air-circle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--agua-surface) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition);
+  border-radius: 50%;
+}
+
+.air-circle:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--agua-blue);
+}
+
+.air-circle:hover::before {
+  opacity: 1;
+}
+
+.air-circle h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--agua-navy);
+  margin-bottom: 0.75rem;
+  position: relative;
+  line-height: 1.3;
+}
+
+.air-circle p {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--agua-muted);
+  position: relative;
+  margin: 0;
+}
+
+.air-circle:nth-child(even) {
+  border-color: rgba(15, 168, 145, 0.2);
+}
+
+.air-circle:nth-child(even):hover {
+  border-color: var(--agua-teal);
+}
+
+/* ═══════════════════════════════════════════════
+   APPLICATION CARDS
+═══════════════════════════════════════════════ */
+.airmonitor-containercard {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1rem 0 2rem;
+}
+
+.airmonitor-containercard .airmonitor-card {
+  position: relative;
+  width: 300px;
+  height: 250px;
+  background: var(--agua-white);
+  border: 1px solid var(--agua-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition);
+  overflow: visible;
+}
+
+.airmonitor-containercard .airmonitor-card:hover {
+  height: 260px;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.airmonitor-containercard .airmonitor-card .airmonitor-imgbox {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  width: 260px;
+  height: 185px;
+  background: var(--agua-navy);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.airmonitor-containercard .airmonitor-card:hover .airmonitor-imgbox {
+  top: -90px;
+  scale: 0.82;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+}
+
+.airmonitor-containercard .airmonitor-card .airmonitor-imgbox::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(11, 46, 78, 0.5));
+  transition: opacity var(--transition);
+  opacity: 0;
+}
+
+.airmonitor-containercard .airmonitor-card:hover .airmonitor-imgbox::after {
+  opacity: 1;
+}
+
+.airmonitor-containercard .airmonitor-card .airmonitor-imgbox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+
+.airmonitor-containercard .airmonitor-card:hover .airmonitor-imgbox img {
+  transform: scale(1.05);
+}
+
+.airmonitor-containercard .airmonitor-card .airmonitor-cardcontent {
+  position: absolute;
+  width: 100%;
+  padding: 0 24px;
+  text-align: center;
+  top: 222px;
+  height: 30px;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.airmonitor-containercard .airmonitor-card:hover .airmonitor-cardcontent {
+  top: 76px;
+  height: 200px;
+}
+
+.airmonitor-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--agua-navy);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  position: relative;
+}
+
+.airmonitor-containercard .airmonitor-card:hover .airmonitor-card-title {
+  color: var(--agua-blue);
+  margin-bottom: 8px;
+}
+
+.airmonitor-cardpara,
+.airmonitor-cardpara2 {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--agua-muted);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════════════
+   TABLE
+═══════════════════════════════════════════════ */
+.table-bordered {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--agua-border) !important;
+  width: 100%;
+}
+
+.table-bordered thead th {
+  background: linear-gradient(135deg, var(--agua-navy), var(--agua-blue));
+  color: var(--agua-white);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  border: none;
+}
+
+.table-bordered tbody tr {
+  transition: background var(--transition);
+}
+
+.table-bordered tbody tr:nth-child(odd) {
+  background: var(--agua-white);
+}
+
+.table-bordered tbody tr:nth-child(even) {
+  background: var(--agua-off);
+}
+
+.table-bordered tbody tr:hover {
+  background: var(--agua-surface);
+}
+
+.table-bordered tbody td {
+  padding: 11px 16px;
+  font-size: 14px;
+  color: var(--agua-muted);
+  border: none;
+  border-bottom: 1px solid var(--agua-border);
+  vertical-align: middle;
+  transition: color var(--transition);
+}
+
+.table-bordered tbody tr:hover td {
+  color: var(--agua-navy);
+}
+
+.table-bordered tbody td:first-child {
+  font-weight: 500;
+  color: var(--agua-text);
+}
+
+.table-bordered tbody td:nth-child(2) {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: var(--agua-blue);
+  font-weight: 600;
+}
+
+.table-bordered tbody td:last-child {
+  font-size: 13px;
+  color: var(--agua-muted);
+}
+
+.table-bordered tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-responsive {
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+}
+
+/* ═══════════════════════════════════════════════
+   HIGHLIGHT PRODUCTS
+═══════════════════════════════════════════════ */
+.air-productlist1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--agua-white);
+  background: linear-gradient(135deg, var(--agua-blue), var(--agua-teal));
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 50px;
+  margin-left: 16px;
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 16px rgba(13, 122, 191, 0.3);
+}
+
+.air-productlist1::after {
+  content: '→';
+  font-size: 14px;
+  transition: transform var(--transition);
+}
+
+.air-productlist1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--agua-blue-lt), var(--agua-teal-lt));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.air-productlist1:hover {
+  color: var(--agua-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13, 122, 191, 0.4);
+}
+
+.air-productlist1:hover::before {
+  opacity: 1;
+}
+
+.air-productlist1:hover::after {
+  transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════════════
+   FAQ ACCORDION
+═══════════════════════════════════════════════ */
+.accordion {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--agua-border);
+  margin-bottom: 2rem;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--agua-border);
+  transition: background var(--transition);
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
+}
+
+.accordion-header {
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-button {
+  background: var(--agua-white);
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  padding: 18px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  color: var(--agua-navy);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), padding-left var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.accordion-button::before {
+  content: '';
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--agua-surface);
+  border: 1px solid var(--agua-border);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230d7abf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 14px;
+  transition: transform var(--transition), background-color var(--transition);
+  flex-shrink: 0;
+}
+
+.accordion-button:hover {
+  background: var(--agua-off);
+  color: var(--agua-blue);
+  padding-left: 30px;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+.accordion-button:hover::before {
+  background-color: var(--agua-blue);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M5 12h14'/%3E%3C/svg%3E");
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  padding: 0 24px 0;
+  display: none;
+  background: var(--agua-off);
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--agua-muted);
+  border-top: 1px solid var(--agua-border);
+}
+
+.accordion-body.show {
+  display: block;
+  padding: 16px 24px 20px 64px;
+  animation: accordionOpen 0.2s ease;
+}
+
+@keyframes accordionOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════
+   GLOBAL UTILITY
+═══════════════════════════════════════════════ */
+.section-container {
+  position: relative;
+  top: 70px;
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .airmonitor-intro-container {
+    padding: 1.5rem;
+  }
+
+  .airmonitor-intro-img1,
+  .airmonitor-intro-img2 {
+    float: none;
+    margin: 0 auto 1.5rem;
+    display: block;
+    max-width: 100%;
+    height: 220px;
+  }
+
+  .circles {
+    gap: 1.25rem;
+  }
+
+  .air-circle {
+    width: 190px;
+    height: 190px;
+  }
+
+  .air-circle h3 {
+    font-size: 0.85rem;
+  }
+
+  .air-circle p {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 720px) {
+  h1 {
+    font-size: 1.35rem;
+    line-height: 1.3;
+  }
+
+  .banner h2 {
+    font-size: 1.35rem;
+  }
+
+  .bg-video {
+    min-height: 30vh;
+    max-height: 30vh;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .bg-dark {
+    width: 70%;
+  }
+
+  .airmonitor-intro-container {
+    padding: 1.25rem;
+  }
+
+  .airmonitor-intro-img1,
+  .airmonitor-intro-img2 {
+    float: none;
+    margin: 0 auto 1rem;
+    display: block;
+    max-width: 80%;
+    height: auto;
+  }
+
+  .airmonitor-intro-para1,
+  .airmonitor-intro-para2,
+  .airmonitor-intro-para3,
+  .airmonitor-needs-para1,
+  .airmonitor-needs-para2 {
+    font-size: 15px;
+  }
+
+  .why-choose-us {
+    border-radius: var(--radius-md);
+  }
+
+  .circle-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .why-choose-us h2 {
+    font-size: 1.35rem;
+  }
+
+  .air-circle {
+    width: 160px;
+    height: 160px;
+    padding: 1rem;
+  }
+
+  .airmonitor-containercard .airmonitor-card {
+    width: 280px;
+    height: 270px;
+  }
+
+  .airmonitor-containercard .airmonitor-card .airmonitor-imgbox {
+    width: 240px;
+    left: 20px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table {
+    font-size: 13px;
+  }
+
+  .table td {
+    word-break: break-word;
+    padding: 10px 12px;
+  }
+
+  .accordion-button {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .accordion-body.show {
+    padding: 14px 16px 16px 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .circles {
+    justify-content: center;
+  }
+
+  .air-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .airmonitor-containercard {
+    gap: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════
+   PRINT
+═══════════════════════════════════════════════ */
+@media print {
+  .bg-video { display: none; }
+  .why-choose-us { background: none; }
+  .airmonitor-card { box-shadow: none; border: 1px solid #ccc; }
+}
