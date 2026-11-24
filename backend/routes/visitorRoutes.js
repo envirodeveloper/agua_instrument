@@ -1,14 +1,11 @@
 const express = require("express");
-const crypto = require("crypto");
 const fs = require("fs");
+const { checkAdminKey } = require("../middleware/auth");
 const { appendVisitor, FILE_PATH } = require("../utils/excelStore");
 
 const router = express.Router();
 
-const clean = (v, max) => String(v ?? "").replace(/[\u0000-\u001f]/g, " ").trim().slice(0, max);
-
-// Excel treats cells starting with = + - @ as formulas. Neutralise them.
-const safeCell = (s) => (/^[=+\-@]/.test(s) ? "'" + s : s);
+const { clean, safeCell, isEmail, isPhone10 } = require("../utils/validate");
 
 // Which website did this visitor come from? (from the browser's Origin, else the page URL sent by the popup)
 function siteName(req, body) {
@@ -42,10 +39,10 @@ router.post("/", async (req, res) => {
     console.warn("[visitors] REJECTED: missing field(s)");
     return res.status(400).json({ success: false, message: "All fields are required." });
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+  if (!isEmail(email)) {
     return res.status(400).json({ success: false, message: "Invalid email." });
   }
-  if (!/^\d{10}$/.test(phone)) {
+  if (!isPhone10(phone)) {
     return res.status(400).json({ success: false, message: "Mobile number must be 10 digits." });
   }
 
@@ -68,12 +65,8 @@ router.post("/", async (req, res) => {
 // ---- Download the Excel file (owner only).
 // Open:  https://YOUR-BACKEND/api/visitors/download?key=YOUR_ADMIN_KEY
 router.get("/download", (req, res) => {
-  const expected = process.env.ADMIN_KEY || "";
   const given = String(req.query.key || req.get("x-admin-key") || "");
-
-  const a = crypto.createHash("sha256").update(given).digest();
-  const b = crypto.createHash("sha256").update(expected).digest();
-  if (!expected || !crypto.timingSafeEqual(a, b)) {
+  if (!checkAdminKey(given)) {
     return res.status(401).json({ success: false, message: "Unauthorized." });
   }
   if (!fs.existsSync(FILE_PATH)) {

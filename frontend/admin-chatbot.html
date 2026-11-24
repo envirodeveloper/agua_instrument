@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Chatbot Admin – Agua Instruments</title>
+  <link rel="icon" href="/Favicon/aguaFavicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#2e8de8; --blue-d:#1a6fc4; --navy:#0b1f3a; --ink:#1e293b; --muted:#64748b; --line:#e2e8f0; --bg:#f4f8fc; --ok:#15803d; --warn:#b45309; --err:#c62828; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "DM Sans", system-ui, sans-serif; color: var(--ink); background: var(--bg); font-size: 15px; }
+    header { background: var(--navy); color: #fff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    header h1 { font-size: 18px; margin: 0; }
+    header .who { font-size: 13px; color: #9fc3ea; }
+    nav { display: flex; gap: 4px; padding: 0 16px; background: #fff; border-bottom: 1px solid var(--line); overflow-x: auto; }
+    nav button { border: 0; background: none; padding: 14px 14px 12px; font: inherit; font-weight: 500; color: var(--muted); border-bottom: 3px solid transparent; cursor: pointer; white-space: nowrap; }
+    nav button.on { color: var(--blue-d); border-bottom-color: var(--blue); }
+    main { max-width: 1280px; margin: 0 auto; padding: 20px 16px 60px; }
+    section[hidden] { display: none; }
+    h2 { font-size: 20px; margin: 4px 0 14px; color: var(--navy); }
+    h3 { font-size: 16px; margin: 22px 0 10px; color: var(--navy); }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px; margin-bottom: 16px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+    .stat { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+    .stat b { display: block; font-size: 26px; color: var(--navy); }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+    input[type=text], input[type=password], input[type=number], input[type=date], select, textarea { font: inherit; padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; color: var(--ink); }
+    textarea { width: 100%; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(46,141,232,.2); }
+    button.btn { font: inherit; font-weight: 500; border: 1px solid var(--blue); background: var(--blue); color: #fff; padding: 8px 14px; border-radius: 8px; cursor: pointer; }
+    button.btn:hover { background: var(--blue-d); }
+    button.ghost { background: #fff; color: var(--blue-d); }
+    button.ghost:hover { background: #eef6ff; }
+    button.danger { background: #fff; color: var(--err); border-color: #f3b4b4; }
+    button:disabled { opacity: .55; cursor: default; }
+    table { width: 100%; border-collapse: collapse; background: #fff; }
+    th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); background: #f8fafc; position: sticky; top: 0; }
+    td.desc { max-width: 520px; color: #334155; font-size: 14px; }
+    .tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; max-height: 70vh; overflow-y: auto; }
+    .pill { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 500; background: #eef2f7; color: #475569; }
+    .pill.ok { background: #e7f6ec; color: var(--ok); }
+    .pill.warn { background: #fff4e5; color: var(--warn); }
+    .pill.err { background: #fdecec; color: var(--err); }
+    .muted { color: var(--muted); font-size: 13px; }
+    .msg { padding: 10px 12px; border-radius: 8px; margin: 10px 0; }
+    .msg.ok { background: #e7f6ec; color: var(--ok); }
+    .msg.err { background: #fdecec; color: var(--err); }
+    .pager { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+    #login { max-width: 380px; margin: 12vh auto; }
+    dialog { border: 0; border-radius: 14px; padding: 0; width: min(760px, 94vw); box-shadow: 0 20px 60px rgba(0,0,0,.25); }
+    dialog::backdrop { background: rgba(11,31,58,.5); }
+    dialog .dhead { padding: 14px 18px; background: var(--navy); color: #fff; display: flex; justify-content: space-between; align-items: center; }
+    dialog .dbody { padding: 18px; max-height: 70vh; overflow-y: auto; }
+    dialog .dfoot { padding: 12px 18px; border-top: 1px solid var(--line); display: flex; gap: 8px; justify-content: flex-end; }
+    dialog label { display: block; font-weight: 500; margin: 10px 0 4px; font-size: 14px; }
+    dialog input[type=text] { width: 100%; }
+    .chatlog { display: flex; flex-direction: column; gap: 8px; }
+    .bubble { max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.55; overflow-wrap: anywhere; }
+    .bubble .plain { white-space: pre-wrap; }
+    .bubble .fmt p { margin: 0 0 8px; }
+    .bubble .fmt p:last-child { margin-bottom: 0; }
+    .bubble .fmt ul, .bubble .fmt ol { margin: 4px 0 8px; padding-left: 20px; }
+    .bubble .fmt li { margin: 2px 0; }
+    .bubble .fmt li > ul { margin: 2px 0; }
+    .bubble .fmt a { color: var(--blue-d); }
+    .bubble.user { align-self: flex-end; background: var(--blue); color: #fff; }
+    .bubble.assistant { align-self: flex-start; background: #f1f5f9; }
+    .bubble.note { align-self: center; background: #fff4e5; color: var(--warn); font-size: 13px; }
+    .bubble small.meta { display: block; opacity: .7; font-size: 11px; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(15, 23, 42, .08); line-height: 1.4; }
+    .bubble.user small.meta { border-top-color: rgba(255, 255, 255, .25); }
+    .diff-list { max-height: 220px; overflow-y: auto; font-size: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px; margin: 6px 0 12px; }
+    .keyrow { display: grid; grid-template-columns: 110px 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .keyrow:last-child { border-bottom: 0; }
+    .field { margin-bottom: 12px; }
+    .field label { display: block; font-weight: 500; margin-bottom: 4px; font-size: 14px; }
+    @media (max-width: 700px) { .keyrow { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agua Instruments · Chatbot admin</h1>
+    <div class="who" id="who"></div>
+  </header>
+
+  <div id="login" class="card">
+    <h2>Admin login</h2>
+    <form id="login-form">
+      <div class="field"><label for="login-key">Admin key</label><input type="password" id="login-key" autocomplete="current-password" style="width:100%"></div>
+      <div class="msg err" id="login-err" hidden></div>
+      <button class="btn" type="submit">Log in</button>
+    </form>
+  </div>
+
+  <div id="app" hidden>
+    <nav id="tabs">
+      <button data-tab="overview" class="on">Overview</button>
+      <button data-tab="inventory">Inventory</button>
+      <button data-tab="knowledge">Website knowledge</button>
+      <button data-tab="leads">Leads &amp; chats</button>
+      <button data-tab="ai">AI settings</button>
+    </nav>
+    <main>
+      <section id="tab-overview">
+        <h2>Overview</h2>
+        <div class="grid" id="stats"></div>
+        <div class="card" style="margin-top:16px">
+          <h3 style="margin-top:0">Link to email to prospects</h3>
+          <div class="row"><input type="text" id="campaign" placeholder="campaign tag, e.g. nov-water-expo" style="flex:1;min-width:220px"><button class="btn ghost" id="make-link">Build link</button></div>
+          <div class="row"><input type="text" id="link-out" readonly style="flex:1;min-width:220px"><button class="btn" id="copy-link">Copy</button></div>
+          <p class="muted">Each lead records the campaign tag, so you can filter leads by email blast.</p>
+        </div>
+      </section>
+
+      <section id="tab-inventory" hidden>
+        <h2>Inventory (what the chatbot knows)</h2>
+        <div class="card">
+          <div class="row">
+            <button class="btn" id="inv-add">+ Add item</button>
+            <button class="btn ghost" id="inv-import-btn">Import Excel…</button>
+            <input type="file" id="inv-file" accept=".xlsx" hidden>
+            <button class="btn ghost" id="inv-export">Export all (.xlsx)</button>
+            <button class="btn ghost" id="inv-export-active">Export active only</button>
+            <button class="btn ghost" id="inv-template">Download template</button>
+          </div>
+          <div id="import-panel" hidden></div>
+        </div>
+        <div class="row">
+          <input type="text" id="inv-q" placeholder="Search part no., name or description" style="flex:1;min-width:220px">
+          <select id="inv-status">
+            <option value="all">All</option>
+            <option value="active">Visible to chatbot</option>
+            <option value="hidden">Hidden</option>
+            <option value="nodesc">Missing description</option>
+          </select>
+          <span class="muted" id="inv-count"></span>
+        </div>
+        <div class="row" id="bulk-row" hidden>
+          <span class="muted" id="bulk-count"></span>
+          <button class="btn ghost" data-bulk="show">Show to chatbot</button>
+          <button class="btn ghost" data-bulk="hide">Hide from chatbot</button>
+          <button class="btn danger" data-bulk="delete">Delete permanently</button>
+        </div>
+        <div class="tablewrap"><table>
+          <thead><tr><th><input type="checkbox" id="inv-all" aria-label="Select all"></th><th>Part No.</th><th>Item name</th><th>Description</th><th>Status</th><th></th></tr></thead>
+          <tbody id="inv-body"></tbody>
+        </table></div>
+        <div class="pager"><button class="btn ghost" id="inv-prev">‹ Prev</button><span class="muted" id="inv-page"></span><button class="btn ghost" id="inv-next">Next ›</button></div>
+      </section>
+
+      <section id="tab-knowledge" hidden>
+        <h2>Website knowledge</h2>
+        <div class="card">
+          <p class="muted" style="margin-top:0">The chatbot also reads the website's product pages. Re-index after you publish or change product pages. Untick a page to keep the chatbot from using it.</p>
+          <button class="btn" id="kn-reindex">Re-index website pages</button>
+          <div id="kn-msg"></div>
+        </div>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Use</th><th>Page</th><th>Title</th><th>Chunks</th><th>Words</th><th>Indexed</th></tr></thead>
+          <tbody id="kn-body"></tbody>
+        </table></div>
+      </section>
+
+      <section id="tab-leads" hidden>
+        <h2>Leads &amp; chats</h2>
+        <div class="row">
+          <input type="text" id="ld-q" placeholder="Search name, email, phone, company" style="flex:1;min-width:200px">
+          <select id="ld-campaign"><option value="">All campaigns</option></select>
+          <select id="ld-status">
+            <option value="">All statuses</option><option>new</option><option>engaged</option><option>quote-requested</option><option>contacted</option><option>closed</option>
+          </select>
+          <label class="muted">From <input type="date" id="ld-from"></label>
+          <label class="muted">To <input type="date" id="ld-to"></label>
+          <label class="muted"><input type="checkbox" id="ld-flagged"> Flagged chats only</label>
+          <button class="btn ghost" id="ld-export">Export (.xlsx)</button>
+        </div>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Date</th><th>Name</th><th>Email</th><th>Phone</th><th>Company</th><th>Campaign</th><th>Questions</th><th>Status</th><th></th></tr></thead>
+          <tbody id="ld-body"></tbody>
+        </table></div>
+        <div class="pager"><button class="btn ghost" id="ld-prev">‹ Prev</button><span class="muted" id="ld-page"></span><button class="btn ghost" id="ld-next">Next ›</button></div>
+      </section>
+
+      <section id="tab-ai" hidden>
+        <h2>AI settings</h2>
+        <div class="card">
+          <h3 style="margin-top:0">Provider</h3>
+          <div class="field"><label for="ai-provider">Active provider</label>
+            <select id="ai-provider"><option value="claude">Claude (Anthropic)</option><option value="openai">OpenAI</option><option value="gemini">Google Gemini</option></select></div>
+          <div class="grid">
+            <div class="field"><label for="ai-model-claude">Claude model</label><input type="text" id="ai-model-claude" style="width:100%"></div>
+            <div class="field"><label for="ai-model-openai">OpenAI model</label><input type="text" id="ai-model-openai" style="width:100%"></div>
+            <div class="field"><label for="ai-model-gemini">Gemini model</label><input type="text" id="ai-model-gemini" style="width:100%"></div>
+          </div>
+          <h3>Limits</h3>
+          <div class="grid">
+            <div class="field"><label for="ai-turns">Questions per chat</label><input type="number" id="ai-turns" min="1" max="200"></div>
+            <div class="field"><label for="ai-lead-day">Questions per lead per day</label><input type="number" id="ai-lead-day" min="1" max="1000"></div>
+            <div class="field"><label for="ai-day-cap">Total AI answers per day (cost cap)</label><input type="number" id="ai-day-cap" min="0" max="100000"></div>
+            <div class="field"><label for="ai-tokens">Max output tokens (incl. reasoning)</label><input type="number" id="ai-tokens" min="256" max="16000"></div>
+            <div class="field"><label for="ai-effort">Reasoning effort</label>
+              <select id="ai-effort" style="width:100%">
+                <option value="none">None: fastest, fewer lookups</option>
+                <option value="low">Low: recommended</option>
+                <option value="medium">Medium: slower, more thorough</option>
+              </select></div>
+          </div>
+          <div class="field"><label for="ai-greeting">Greeting ({name} = customer's first name)</label><textarea id="ai-greeting" rows="2" maxlength="500"></textarea></div>
+          <label class="muted"><input type="checkbox" id="ai-enabled"> Chatbot enabled (when off, customers still submit the form and get a "we'll contact you" reply)</label>
+          <div class="row" style="margin-top:14px"><button class="btn" id="ai-save">Save settings</button><span id="ai-save-msg"></span></div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">API keys (encrypted)</h3>
+          <p class="muted">Keys are never shown here. Paste an encrypted key (<code>agua-enc:v1:…</code>). Plain keys are rejected.</p>
+          <div id="keys"></div>
+          <div id="key-msg"></div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Test</h3>
+          <div class="row"><select id="test-provider"><option value="claude">Claude</option><option value="openai">OpenAI</option><option value="gemini">Gemini</option></select><button class="btn ghost" id="ai-test">Send test question</button></div>
+          <div id="test-out"></div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Usage, last 14 days</h3>
+          <div class="tablewrap" style="max-height:none"><table><thead><tr><th>Day</th><th>AI answers</th><th>Blocked by guardrails</th><th>Tokens in</th><th>Tokens out</th></tr></thead><tbody id="usage-body"></tbody></table></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="dlg"><div class="dhead"><strong id="dlg-title"></strong><button class="btn ghost" id="dlg-x" type="button">Close</button></div><div class="dbody" id="dlg-body"></div><div class="dfoot" id="dlg-foot"></div></dialog>
+
+  <script src="/javascript/chat-format.js?v=1"></script>
+  <script src="/javascript/admin-chatbot.js?v=4"></script>
+</body>
+</html>

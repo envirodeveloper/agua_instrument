@@ -9,3 +9,13 @@ backend/data/*.xlsx
 backend/uploads/*
 !backend/uploads/.keep
 npm-debug.log*
+
+# Local-only tools (API key encryption utility, Excel importer). NEVER commit.
+local-tools/
+
+# Inventory source spreadsheet + Excel lock files (managed via Admin > Inventory)
+inventory_items.xlsx
+~$*.xlsx
+
+# Local-only notes on AI API key encryption. NEVER commit.
+AI_KEYS.md

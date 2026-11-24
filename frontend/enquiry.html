@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/Favicon/aguaFavicon.png" type="image/png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="/NewStyle/Footer.css">
+  <link rel="stylesheet" href="/NewStyle/Navbar.css">
+  <link rel="stylesheet" href="/NewStyle/sidebar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/NewStyle/enquiry.css?v=3">
+  <title>Product Enquiry – Agua Instruments</title>
+  <meta name="description" content="Ask Agua Instruments about water, air, emission and gas monitoring instruments.">
+</head>
+<body>
+
+  <div data-include-html="header.html"></div>
+
+  <!-- Sparkle icon, reused via <use href="#ai-spark"> -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="ai-grad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#5ee7ff"/><stop offset=".5" stop-color="#2e8de8"/><stop offset="1" stop-color="#8b5cf6"/>
+      </linearGradient>
+      <symbol id="ai-spark" viewBox="0 0 24 24">
+        <path d="M12 2l1.9 5.6a3 3 0 0 0 1.9 1.9L21.4 11.4l-5.6 1.9a3 3 0 0 0-1.9 1.9L12 20.8l-1.9-5.6a3 3 0 0 0-1.9-1.9L2.6 11.4l5.6-1.9a3 3 0 0 0 1.9-1.9z"/>
+        <path d="M19 2.5l.6 1.7a1 1 0 0 0 .6.6l1.7.6-1.7.6a1 1 0 0 0-.6.6L19 8.3l-.6-1.7a1 1 0 0 0-.6-.6l-1.7-.6 1.7-.6a1 1 0 0 0 .6-.6z" opacity=".75"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <main id="enq-page">
+    <section class="enq-hero">
+      <div class="enq-orbs" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="enq-wrap">
+        <div class="enq-intro">
+          <p class="enq-ai-chip"><span class="enq-pulse" aria-hidden="true"></span>AI-powered product assistant</p>
+          <h1>Find the right monitoring instrument, <span class="enq-grad-text">instantly.</span></h1>
+          <p class="enq-lead">Get instant answers from our AI assistant, trained on our product catalogue and datasheets. Or send your requirement to our sales team by email.</p>
+          <ul class="enq-points">
+            <li>Water &amp; wastewater quality analyzers and sensors</li>
+            <li>Ambient air, dust and emission (CEMS) monitoring</li>
+            <li>Gas analyzers, auto samplers and pharma TOC</li>
+            <li>Spare parts, flow cells, valves and accessories</li>
+          </ul>
+        </div>
+
+        <div class="enq-card-glow">
+        <div class="enq-card" id="enq-card">
+          <!-- Step 1: lead form -->
+          <form id="enq-form" class="enq-form" novalidate autocomplete="on">
+            <h2>How can we help?</h2>
+            <p class="enq-sub">Share your details, then chat with our AI or email our team.</p>
+
+            <div class="enq-two">
+              <div>
+                <label for="enq-name">Full name *</label>
+                <input id="enq-name" name="name" type="text" maxlength="100" autocomplete="name" required>
+              </div>
+              <div>
+                <label for="enq-company">Company <span class="enq-opt">(optional)</span></label>
+                <input id="enq-company" name="company" type="text" maxlength="150" autocomplete="organization">
+              </div>
+            </div>
+            <div class="enq-two">
+              <div>
+                <label for="enq-email">Work email *</label>
+                <input id="enq-email" name="email" type="email" maxlength="150" autocomplete="email" required>
+              </div>
+              <div>
+                <label for="enq-phone">Phone number *</label>
+                <input id="enq-phone" name="phone" type="tel" maxlength="20" autocomplete="tel" inputmode="tel" placeholder="e.g. 98765 43210" required>
+              </div>
+            </div>
+
+            <label for="enq-req">Your requirement <span class="enq-opt" id="enq-req-hint">(required for email, optional for chat)</span></label>
+            <textarea id="enq-req" name="requirement" rows="3" maxlength="2000" placeholder="e.g. Online ammonia and pH monitoring for our ETP outlet, with RS-485 output"></textarea>
+            <div class="enq-counter" id="enq-req-count">0 / 2000</div>
+
+            <!-- spam trap: real people never see or fill this -->
+            <div class="enq-hp" aria-hidden="true">
+              <label for="enq-hp">Leave this empty</label>
+              <input id="enq-hp" name="hp_check" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <label class="enq-consent">
+              <input type="checkbox" id="enq-consent" name="consent" required>
+              <span>I agree that Agua Instruments may store my details and messages to answer my enquiry and contact me.</span>
+            </label>
+
+            <p class="enq-error" id="enq-form-error" role="alert" hidden></p>
+
+            <div class="enq-actions">
+              <button type="submit" class="enq-btn enq-btn-ai" id="enq-chat-btn" value="chat">
+                <svg class="enq-ico" aria-hidden="true"><use href="#ai-spark"/></svg>
+                <span>Chat with AI assistant</span>
+              </button>
+              <button type="submit" class="enq-btn enq-btn-mail" id="enq-email-btn" value="email">
+                <svg class="enq-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5zm2 .9v9.6h14V7.4l-7 5.2z M5.8 7l6.2 4.6L18.2 7z" fill="currentColor"/></svg>
+                <span>Send enquiry by email</span>
+              </button>
+            </div>
+            <p class="enq-fine">The AI assistant answers instantly, 24×7. Email enquiries are answered by our sales team.</p>
+          </form>
+
+          <!-- Step 2a: email sent -->
+          <div id="enq-sent" class="enq-sent" hidden>
+            <div class="enq-sent-ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9.5 16.2L5.3 12l-1.4 1.4 5.6 5.6L20.1 8.4 18.7 7z" fill="currentColor"/></svg></div>
+            <h2>Enquiry sent</h2>
+            <p id="enq-sent-text"></p>
+            <div class="enq-sent-q" id="enq-sent-req"></div>
+            <p class="enq-sub">Want answers right now?</p>
+            <button type="button" class="enq-btn enq-btn-ai" id="enq-sent-chat">
+              <svg class="enq-ico" aria-hidden="true"><use href="#ai-spark"/></svg>
+              <span>Ask our AI assistant</span>
+            </button>
+            <button type="button" class="enq-link" id="enq-sent-new">Start a new enquiry</button>
+          </div>
+
+          <!-- Step 2b: chat -->
+          <div id="enq-chat" class="enq-chat" hidden>
+            <div class="enq-chat-head">
+              <div class="enq-bot-id">
+                <span class="enq-avatar" aria-hidden="true"><svg><use href="#ai-spark"/></svg></span>
+                <div>
+                  <strong>Agua AI assistant <span class="enq-ai-badge">AI</span></strong>
+                  <span class="enq-status"><span class="enq-dot" aria-hidden="true"></span>Online · answers from our product catalogue</span>
+                </div>
+              </div>
+              <div class="enq-head-actions">
+                <button type="button" class="enq-quote" id="enq-quote">Request a quote / call back</button>
+                <button type="button" class="enq-end" id="enq-end" title="End this chat and start a new enquiry" aria-label="End chat and start a new enquiry">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.4 5L5 6.4 10.6 12 5 17.6 6.4 19l5.6-5.6 5.6 5.6 1.4-1.4-5.6-5.6L19 6.4 17.6 5 12 10.6z" fill="currentColor"/></svg>
+                  <span>End chat</span>
+                </button>
+              </div>
+            </div>
+            <div class="enq-log" id="enq-log" role="log" aria-live="polite"></div>
+            <div class="enq-chips" id="enq-chips"></div>
+            <form class="enq-input" id="enq-input" autocomplete="off">
+              <textarea id="enq-msg" rows="1" maxlength="500" placeholder="Ask about a product or part number…" aria-label="Your message"></textarea>
+              <button type="submit" class="enq-send" id="enq-send" aria-label="Send">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.4 20.4l17.4-7.5a1 1 0 0 0 0-1.8L3.4 3.6a.9.9 0 0 0-1.3 1L4 11l9 1-9 1-1.9 6.4a.9.9 0 0 0 1.3 1z" fill="currentColor"/></svg>
+              </button>
+            </form>
+            <p class="enq-note"><svg class="enq-ico-sm" aria-hidden="true"><use href="#ai-spark"/></svg> AI-generated answers. Our sales team confirms specifications and prices.</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include-html="footer.html"></div>
+
+  <script src="/javascript/sidebar.js"></script>
+  <script src="/javascript/main.js"></script>
+  <script src="/javascript/chat-format.js?v=1" defer></script>
+  <script src="/javascript/enquiry.js?v=4" defer></script>
+</body>
+</html>

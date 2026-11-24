@@ -4,15 +4,24 @@
   "description": "Agua Instruments Website and Backend",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "start:local": "node --use-system-ca index.js"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^1.14.0",
+    "@google/genai": "^3.6.1",
+    "cheerio": "^1.2.0",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "exceljs": "^4.4.0",
     "express": "^5.1.0",
+    "express-rate-limit": "^8.7.5",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.13.1",
     "multer": "^2.0.1",
-    "nodemailer": "^10.6.1"
+    "nodemailer": "^10.6.1",
+    "openai": "^7.64.0"
   },
   "overrides": {
     "uuid": "^11.1.1"
